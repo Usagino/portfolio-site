@@ -5,9 +5,7 @@ section
   .first
     .first__wrap
       .first__wrap__logo
-        lottie(
-          :options="lottieOptions"
-          v-on:animCreated="handleAnimation")
+        myLogo
     h1 test
 </template>
 
@@ -16,29 +14,17 @@ section
 import cursorPointer from '@/components/cursorPointer'
 import sideMenu from '@/components/sideMenu'
 import Lottie from '@/components/Lottie'
-import * as animationData from "~/assets/json/my_logo.json";
+import myLogo from '@/components/myLogo'
 // library
-import products from '@/assets/json/product.json'
+import * as animationData from "~/assets/json/my_logo.json";
 
 
 export default {
   components: {
     cursorPointer,
     Lottie,
-    sideMenu
-  },
-  data() {
-    return {
-      lottieOptions: {
-        animationData: animationData
-      },
-      animationSpeed: 1,
-    }
-  },
-  methods: {
-    handleAnimation: function(anim) {
-      this.anim = anim;
-    },
+    sideMenu,
+    myLogo
   },
 }
 </script>
