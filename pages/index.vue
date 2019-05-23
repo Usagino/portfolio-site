@@ -7,12 +7,14 @@ section
       .first__wrap__logo
         myLogo
     h1 test
+  vueFooter
 </template>
 
 <script>
 // components
 import cursorPointer from '@/components/cursorPointer'
 import sideMenu from '@/components/sideMenu'
+import vueFooter from '@/components/vueFooter'
 import Lottie from '@/components/Lottie'
 import myLogo from '@/components/myLogo'
 // library
@@ -24,7 +26,8 @@ export default {
     cursorPointer,
     Lottie,
     sideMenu,
-    myLogo
+    myLogo,
+    vueFooter
   },
 }
 </script>

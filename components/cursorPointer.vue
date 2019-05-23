@@ -10,13 +10,15 @@ export default {
   mounted(){
     let cursor = document.querySelector('.cursor')
     let cursorRect = cursor.getBoundingClientRect();
-    console.log(cursorRect);
+    // console.log(cursorRect);
     window.onmousemove = event =>{
+      let scroll = document.documentElement.scrollTop;
       event = event || window.event; // IE対応
       let x = event.clientX;
-      let y = event.clientY;
+      let y = event.clientY  + scroll ;
       TweenMax.set('.cursor',{x:x,y:y})
       TweenMax.to('.follower',1,{x:x -20,y:y-20})
+
     }
   }
 }
