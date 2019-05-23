@@ -41,5 +41,16 @@ export default {
 </script>
 
 <style lang="scss">
-
+section{
+  .first{
+    @include full_screen;
+    &__wrap{
+      @include full_size;
+      @include middle;
+      &__logo{
+        width: 40vw;
+      }
+    }
+  }
+}
 </style>

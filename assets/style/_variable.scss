@@ -5,7 +5,7 @@ $header_size:15rem;
 
 @mixin Title_font{
   font-family: "Raleway",'Noto Sans JP';
-  font-size: 8rem 
+  font-size: 8rem
 }
 @mixin subTitle_font{
   font-family: "Raleway",'Noto Sans JP';
@@ -22,6 +22,10 @@ $header_size:15rem;
 @mixin full_size{
   height: 100%;
   width: 100%;
+}
+@mixin full_screen{
+  height: 100vh;
+  width: 100vw;
 }
 @mixin middle{
   display: flex;
