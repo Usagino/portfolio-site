@@ -32,7 +32,7 @@
       return {
         lottieOptions: {
           animationData: animationData,
-          loop: true,
+          loop: false,
           autoplay:false
         },
       }
