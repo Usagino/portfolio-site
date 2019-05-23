@@ -15,7 +15,7 @@ export default {
       event = event || window.event; // IE対応
       let x = event.clientX;
       let y = event.clientY;
-      TweenMax.set('.cursor',{x:x-4,y:y-4})
+      TweenMax.set('.cursor',{x:x,y:y})
       TweenMax.to('.follower',1,{x:x -20,y:y-20})
     }
   }
