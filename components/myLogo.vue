@@ -14,7 +14,8 @@ export default {
   data() {
     return {
       lottieOptions: {
-        animationData: animationData
+        animationData: animationData,
+        loop:false
       },
       animationSpeed: 1,
     }
