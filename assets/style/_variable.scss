@@ -1,0 +1,30 @@
+$text_color1:#141414;
+$text_color2:#666666;
+$material_color:#AEAEAE;
+$header_size:15rem;
+
+@mixin Title_font{
+  font-family: "Raleway",'Noto Sans JP';
+  font-size: 8rem 
+}
+@mixin subTitle_font{
+  font-family: "Raleway",'Noto Sans JP';
+  font-size: 6rem;
+}
+@mixin Text_font{
+  font-family: "Raleway",'Noto Sans JP';
+  font-size: 4rem;
+}
+@mixin subText_font{
+  font-family: "Raleway",'Noto Sans JP';
+  font-size: 3rem;
+}
+@mixin full_size{
+  height: 100%;
+  width: 100%;
+}
+@mixin middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
