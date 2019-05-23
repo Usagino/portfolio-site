@@ -1,6 +1,7 @@
 <template lang="pug">
 section
   cursorPointer
+  sideMenu
   .first
     .first__wrap
       .first__wrap__logo
@@ -13,6 +14,7 @@ section
 <script>
 // components
 import cursorPointer from '@/components/cursorPointer'
+import sideMenu from '@/components/sideMenu'
 import Lottie from '@/components/Lottie'
 import * as animationData from "~/assets/json/my_logo.json";
 // library
@@ -22,7 +24,8 @@ import products from '@/assets/json/product.json'
 export default {
   components: {
     cursorPointer,
-    Lottie
+    Lottie,
+    sideMenu
   },
   data() {
     return {
