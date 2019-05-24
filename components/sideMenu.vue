@@ -1,6 +1,10 @@
 <template lang="pug">
   .menu
-    .menu__icon(v-on:click="play")
+    .menu__icon(
+      v-on:click="play"
+      @mouseenter="mouseenter"
+      @mouseleave="mouseleave"
+      )
       lottie(
         :options="lottieOptions"
         v-on:animCreated="handleAnimation"
@@ -38,6 +42,12 @@
       }
     },
     methods: {
+      mouseenter:function(){
+        return console.log("hi");
+      },
+      mouseleave: () =>{
+        return console.log("out");
+      },
       handleAnimation: function(anim) {
         this.anim = anim;
       },
@@ -99,7 +109,7 @@
     &__icon{
       height: 4rem;
       width: 4rem;
-      right: 1rem;
+      right: 4rem;
       z-index: 1001;
     }
     &__nav{

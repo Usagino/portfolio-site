@@ -1,7 +1,11 @@
 <template lang="pug">
   .cursors
     .cursor
-    .follower
+    .follower.follower1
+    .follower.follower2
+    .follower.follower3
+    .follower.follower4
+    .follower.follower5
 </template>
 
 <script>
@@ -11,14 +15,18 @@ export default {
     let cursor = document.querySelector('.cursor')
     let cursorRect = cursor.getBoundingClientRect();
     // console.log(cursorRect);
+
     window.onmousemove = event =>{
       let scroll = document.documentElement.scrollTop;
       event = event || window.event; // IE対応
       let x = event.clientX;
       let y = event.clientY  + scroll ;
       TweenMax.set('.cursor',{x:x,y:y})
-      TweenMax.to('.follower',1,{x:x -20,y:y-20})
-
+      TweenMax.to('.follower1',0.1,{x:x -20,y:y-20});
+      TweenMax.to('.follower2',0.2,{x:x -20,y:y-20});
+      TweenMax.to('.follower3',0.3,{x:x -20,y:y-20});
+      TweenMax.to('.follower4',0.4,{x:x -20,y:y-20});
+      TweenMax.to('.follower5',0.5,{x:x -20,y:y-20});
     }
   }
 }
@@ -27,6 +35,21 @@ export default {
 <style lang="scss">
   html{
     // cursor: none !important;
+  }
+  .follower1{
+    opacity: 1
+  }
+  .follower2{
+    opacity: 0.8
+  }
+  .follower3{
+    opacity: 0.6
+  }
+  .follower4{
+    opacity: 0.4
+  }
+  .follower5{
+    opacity: 0.2
   }
   .cursor,
   .follower {
