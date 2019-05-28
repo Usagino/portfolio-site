@@ -23,7 +23,7 @@ section
       .about__wrap__image
         img(src="/image/top/my.png")
       .about__wrap__title
-        h1 About him
+        nuxt-link(to="/about") About him
 
   vueFooter
 </template>
@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 section{
   .first{
     @include full_screen;
@@ -155,10 +155,12 @@ section{
         top: 0;bottom: 0;
         right: 0;
         margin: auto;
-        h1{
+        a{
+          color: $text_color1;
           font-size: 10rem;
           display: inline-block;
           line-height: 72vh;
+
         }
       }
 
