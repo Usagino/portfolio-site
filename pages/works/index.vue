@@ -5,7 +5,7 @@
     .works
       .works__wrap
         .works__wrap__contents(v-for="(item,index) in items")
-
+          img.works__wrap__contents--image(:src="`image/thumbnail/${item.thumbnail}`")
     vueFooter
 </template>
 
@@ -33,12 +33,12 @@ export default {
 <style lang="scss" scoped>
 .works{
   width: 100vw;
-  margin-top: 4rem;
+  margin-top: 10rem;
   &__wrap{
-    width: 100%;
-    padding: 0 10rem;
+    width: 64vw;
+    margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 4rem;
 
     &__contents{
@@ -46,6 +46,11 @@ export default {
       height: 200px;
       content: "";
       background: red;
+      &--image{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
 }
