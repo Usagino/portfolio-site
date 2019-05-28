@@ -17,7 +17,7 @@
               li Japan Tokyo
               li copylight 2019 yuki itoh
           .footer__wrap__container__image
-            img.footer__wrap__container__image__logo(src="image/my_logo.svg")
+            img.footer__wrap__container__image__logo(src="/image/my_logo.svg")
 </template>
 
 <script>

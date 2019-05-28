@@ -1,9 +1,14 @@
 <template lang="pug">
   section
     cursorPointer
+    .first
+      .first__wrap
+        .first__wrap__title-box
+          h1.first__wrap__title-box--title {{ items[$route.params.id].title }}
+          p.first__wrap__title-box--date {{ items[$route.params.id].date }}
+        img.first__wrap--image(:src="`/image/thumbnail/${items[$route.params.id].thumbnail}`")
     .article
       .article__wrap
-        h1.article__wrap--title {{ items[$route.params.id].title }}
     sideMenu
     vueFooter
 </template>
@@ -30,5 +35,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .first{
+    &__wrap{
+      @include full_screen;
+      position: relative;
+      &__title-box{
+        position: absolute;
+        height: 20%;
+        width: 50vw;
+        top: 0;bottom: 0;
+        left: 0;right: 0;
+        margin: auto;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        &--title{
+          font-size: 10rem;
+          align-self:flex-start
+        }
+        &--date{
+          font-size: 4rem;
+          align-self:flex-end;
+        }
+      }
+      &--image{
+        @include full_screen;
+        object-fit: cover;
+        filter: blur(0.3rem);
+      }
+    }
+  }
 </style>
