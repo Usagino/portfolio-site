@@ -1,7 +1,9 @@
 <template lang="pug">
   section
     cursorPointer
-    h1 {{_id}}
+    .article
+      .article__wrap
+        h1.article__wrap--title {{ items[$route.params.id].title }}
     sideMenu
     vueFooter
 </template>
