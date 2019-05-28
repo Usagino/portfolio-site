@@ -10,7 +10,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  loading: '~/components/loading.vue',
+  
   build: {
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
@@ -29,7 +29,8 @@ module.exports = {
   },
   modules: [
     '@nuxtjs/style-resources',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    // '@nuxtjs/markdownit'
   ],
   styleResources: {
     sass: [
@@ -42,5 +43,15 @@ module.exports = {
       families: ['Noto+Sans+JP','Raleway']
     }
   },
+  // markdownit: {
+  //   injected: true, // $mdを利用してmarkdownをhtmlにレンダリングする
+  //   breaks: true, // 改行コードを<br>に変換する
+  //   html: true, // HTML タグを有効にする
+  //   linkify: true, // URLに似たテキストをリンクに自動変換する
+  //   typography: true,  // 言語に依存しないきれいな 置換 + 引用符 を有効にします。
+  //   use: [
+  //     'markdown-it-toc' // 目次を作るためのライブラリ。別途インストールが必要
+  //   ]
+  // },
   mode: 'universal',
 }

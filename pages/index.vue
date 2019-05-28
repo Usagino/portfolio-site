@@ -22,6 +22,7 @@ section
     .about__wrap
       .about__wrap__image
         img(src="/image/top/my.png")
+        img.shadow(src="/image/top/my.png")
       .about__wrap__title
         nuxt-link(to="/about") About him
 
@@ -51,6 +52,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.shadow{
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  filter: blur(4rem);
+  opacity: 0.5;
+  transform: translate(4rem, 4rem);
+}
 section{
   .first{
     @include full_screen;
@@ -72,23 +81,23 @@ section{
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
       grid-template-areas: "area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-2 area-2 area-2 area-2" "area-3 area-3 area-3 area-3 area-4 area-4" "area-3 area-3 area-3 area-3 area-4 area-4";
-      overflow: hidden;
+
       position: relative;
       & > *{
         transition: all .3s ease 0s;
       }
       &:hover{
         & > .works__wrap__area-1{
-          transform: translate(-14vw,-14vh);
+          transform: translate(-10vw,-11vh);
         }
         & > .works__wrap__area-2{
-          transform: translate(14vw,-14vh);
+          transform: translate(10vw,-11vh);
         }
         & > .works__wrap__area-3{
-          transform: translate(-10vw,10vh);
+          transform: translate(-10vw,11vh);
         }
         & > .works__wrap__area-4{
-          transform: translate(10vw,10vh);
+          transform: translate(10vw,11vh);
         }
         & > .works__wrap--title{
           z-index: 1;
