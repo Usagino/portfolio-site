@@ -34,9 +34,7 @@ footer{
       @include middle;
       @include full_size;
       &__container{
-        width: 64vw;
-        height: 72vh;
-        background: red;
+        @include custom_size;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;

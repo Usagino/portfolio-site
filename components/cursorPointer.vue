@@ -4,8 +4,6 @@
     .follower.follower1
     .follower.follower2
     .follower.follower3
-    .follower.follower4
-    .follower.follower5
 </template>
 
 <script>
@@ -14,19 +12,15 @@ export default {
   mounted(){
     let cursor = document.querySelector('.cursor')
     let cursorRect = cursor.getBoundingClientRect();
-    // console.log(cursorRect);
-
     window.onmousemove = event =>{
       let scroll = document.documentElement.scrollTop;
       event = event || window.event; // IE対応
       let x = event.clientX;
-      let y = event.clientY  + scroll ;
+      let y = event.clientY  + scroll;
       TweenMax.set('.cursor',{x:x,y:y})
-      TweenMax.to('.follower1',0.1,{x:x -20,y:y-20});
-      TweenMax.to('.follower2',0.2,{x:x -20,y:y-20});
-      TweenMax.to('.follower3',0.3,{x:x -20,y:y-20});
-      TweenMax.to('.follower4',0.4,{x:x -20,y:y-20});
-      TweenMax.to('.follower5',0.5,{x:x -20,y:y-20});
+      TweenMax.to('.follower1',0.01,{x:x -20,y:y-20});
+      TweenMax.to('.follower2', 0.1,{x:x -20,y:y-20});
+      TweenMax.to('.follower3', 0.2,{x:x -20,y:y-20});
     }
   }
 }

@@ -9,17 +9,17 @@
         :options="lottieOptions"
         v-on:animCreated="handleAnimation"
         )
-    nav.menu__nav
+    nav.menu__nav(
+      @mouseenter="mouseenter"
+      @mouseleave="mouseleave"
+      )
       ul.menu__nav__list
         li
-          no-ssr
-            nuxt-link(to="/") TOP
+          nuxt-link(to="/") TOP
         li
-          no-ssr
-            nuxt-link(to="/works") WORKS
+          nuxt-link(to="/works") WORKS
         li
-          no-ssr
-            nuxt-link(to="/about") ABOUT
+          nuxt-link(to="/about") ABOUT
 </template>
 
 <script>
@@ -43,10 +43,12 @@
     },
     methods: {
       mouseenter:function(){
-        return console.log("hi");
+        TweenMax.to('.cursor',1,{background:'white'})
+        TweenMax.to('.follower',1,{borderColor:'white'})
       },
       mouseleave: () =>{
-        return console.log("out");
+        TweenMax.to('.cursor',1,{background:''})
+        TweenMax.to('.follower',1,{borderColor:''})
       },
       handleAnimation: function(anim) {
         this.anim = anim;
@@ -119,17 +121,20 @@
       z-index: 1000;
       right: 0;
       transform: translateX(100%);
+      @include middle;
+      justify-content: flex-start;
       &__list{
-        height: 100%;
+        height: 70%;
+        padding-left: 10rem;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: flex-start;
         flex-direction: column;
         li{
           margin:1rem 0;
         }
         a{
-          font-size: 3rem;
+          font-size: 4rem;
           color: #f9f9f9;
         }
       }

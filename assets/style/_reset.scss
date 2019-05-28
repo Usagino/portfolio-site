@@ -11,6 +11,8 @@
   box-sizing: border-box;
 }
 html {
+  width: 100vw;
+  overflow-x: hidden;
   font-size: 8px;
   font-family: sans-serif;
   line-height: 1.15;
