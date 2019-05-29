@@ -59,5 +59,8 @@ module.exports = {
     langPrefix: 'language-',
     quotes: '“”‘’',
   },
+  plugins: [
+    '~plugins/scroll.js'
+  ],
   mode: 'universal',
 }
