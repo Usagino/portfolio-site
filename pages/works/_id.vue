@@ -9,7 +9,6 @@
         img.first__wrap--image(:src="`/image/thumbnail/${items[$route.params.id].thumbnail}`")
     .article
       .article__wrap
-        div(v-html="$md.render(`${items[$route.params.id].mark}`)")
         div(v-html="post")
     sideMenu
     vueFooter
