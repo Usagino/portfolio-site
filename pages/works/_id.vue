@@ -10,7 +10,7 @@
     .article
       .article__wrap
         div(v-html="post")
-        div(v-html="num")
+        div(v-html="$md.render(md.default)")
     sideMenu
     vueFooter
 </template>
@@ -22,6 +22,7 @@ import sideMenu from '@/components/sideMenu'
 import vueFooter from '@/components/vueFooter'
 // library
 import works from '@/assets/json/works.json'
+
 export default {
   components: {
     cursorPointer,
@@ -31,14 +32,19 @@ export default {
   data () {
     return {
       items: works,
+      md: require(`@/static/markdown/note-0.md`)
     }
   },
-  async asyncData ({params,works}) {
-    console.log(works);
+  async asyncData ({params}) {
+    const {post_md} = require(`~/static/markdown/note-0.md`)
+    console.log(post_md)
     return {
-      num:works,
-      post: require(`~/static/markdown/note-0.md`)
+      post: post_md
     }
+  },
+  mounted:()=>{
+    let md = require(`@/static/markdown/note-0.md`)
+    console.log(md);
   }
 }
 </script>
