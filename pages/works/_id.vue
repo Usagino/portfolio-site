@@ -9,8 +9,7 @@
         img.first__wrap--image(:src="`/image/thumbnail/${items[$route.params.id].thumbnail}`")
     .article
       .article__wrap
-        div(v-html="post")
-        div(v-html="$md.render(require(`@/static/markdown/${items[$route.params.id].fileName}`).default)")
+        div.article__wrap__text(v-html="$md.render(require(`@/static/markdown/${items[$route.params.id].fileName}`).default)")
     sideMenu
     vueFooter
 </template>
@@ -33,19 +32,9 @@ export default {
     return {
       hello:"hello",
       items: works,
-      md: require(`@/static/markdown/note-0.md`)
     }
   },
-  async asyncData ({params}) {
-    const {post_md} = require(`~/static/markdown/note-0.md`)
-    console.log(post_md)
-    return {
-      post: post_md
-    }
-  },
-  mounted:()=>{
-    let md = require(`@/static/markdown/note-0.md`)
-  }
+
 }
 </script>
 
@@ -86,6 +75,24 @@ export default {
       @include custom_size;
       height: auto;
       margin: auto;
+      &__text{
+        /deep/ section{
+          p{
+            margin: 3rem 0;
+            line-height: 3rem;
+            letter-spacing: 0.2rem;
+            font-size: 2rem;
+
+            img{
+              width: 100vw;
+              transform: translateX(-16vw);
+            }
+          }
+        }
+        img{
+          width: 100% !important;
+        }
+      }
     }
   }
 </style>
