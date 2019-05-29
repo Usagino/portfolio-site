@@ -9,7 +9,8 @@
         img.first__wrap--image(:src="`/image/thumbnail/${items[$route.params.id].thumbnail}`")
     .article
       .article__wrap
-        div(v-html="content")
+        div(v-html="$md.render(`${items[$route.params.id].mark}`)")
+        div(v-html="post")
     sideMenu
     vueFooter
 </template>
@@ -22,6 +23,8 @@ import vueFooter from '@/components/vueFooter'
 // library
 import works from '@/assets/json/works.json'
 
+import mark from '~/static/markdown/note-0.md'
+
 export default {
   components: {
     cursorPointer,
@@ -30,14 +33,17 @@ export default {
   },
   data () {
     return {
-      items: works
+      items: works,
+      model: mark,
+      md_root: works[this.$route.params.id].fileName
     }
   },
-  async asyncData ({params}) {
-    const works = await import ('@/assets/json/works.json')
-    const fileContent = await import(`@/static/markdown/${works[params.id].fileName}`)
+  async asyncData ({params,works}) {
+    // const fileContent = await import(`~/static/markdown/${this.md_root}`)
+    // return { markdown: fileContent }
+    console.log(works);
     return {
-      content: fileContent
+      post: require(`~/static/markdown/note-0.md`)
     }
   }
 }
@@ -72,6 +78,14 @@ export default {
         object-fit: cover;
         filter: blur(0.3rem);
       }
+    }
+  }
+  .article{
+    &__wrap{
+      padding-top: 2rem;
+      @include custom_size;
+      height: auto;
+      margin: auto;
     }
   }
 </style>

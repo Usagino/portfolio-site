@@ -45,8 +45,14 @@ module.exports = {
   },
   markdownit: {
     preset: 'default',
-    linkify: true,
+    injected: true,
     breaks: true,
+    html: true,
+    linkify: true,
+    typography: true,
+    xhtmlOut: true,
+    langPrefix: 'language-',
+    quotes: '“”‘’',
   },
   mode: 'universal',
 }

@@ -3,36 +3,7 @@
     "title": "Front-artgraph",
     "thumbnail":"front-artgraph.png",
     "fileName":"front-artgraph.md",
-    "date":"6-2018"
-  },
-  {
-    "title": "sample_1",
-    "thumbnail":"sample_1.png",
-    "fileName":"front-artgraph.md",
-    "date":"6-2018"
-  },
-  {
-    "title": "sample_2",
-    "thumbnail":"sample_2.png",
-    "fileName":"front-artgraph.md",
-    "date":"6-2018"
-  },
-  {
-    "title": "sample_3",
-    "thumbnail":"sample_3.png",
-    "fileName":"front-artgraph.md",
-    "date":"6-2018"
-  },
-  {
-    "title": "sample_4",
-    "thumbnail":"sample_4.png",
-    "fileName":"front-artgraph.md",
-    "date":"6-2018"
-  },
-  {
-    "title": "sample_5",
-    "thumbnail":"sample_5.png",
-    "fileName":"front-artgraph.md",
-    "date":"6-2018"
+    "date":"6-2018",
+    "mark":"# hoge \n # hoge"
   }
 ]
