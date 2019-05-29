@@ -14,7 +14,7 @@ html {
   width: 100vw;
   overflow-x: hidden;
   font-size: 8px;
-  font-family: sans-serif;
+  font-family: futuraPT, sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -26,7 +26,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: futura-pt, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  // font-family:futuraPT, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -57,9 +60,11 @@ h2,h3,h4{
   font-size: 3rem;
 }
 p {
+
   margin-top: 0;
   margin-bottom: 0px;
   font-size: 2rem;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 abbr[title],
@@ -137,11 +142,9 @@ sup {
 a {
   text-decoration: none !important;
   background-color: transparent;
+  color: $text_color1;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 
 a:not([href]):not([tabindex]) {
   color: inherit;
@@ -339,4 +342,16 @@ li{
 }
 [hidden] {
   display: none !important;
+}
+.shadow{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-filter: blur(4rem);
+  filter: blur(4rem);
+  opacity: 0.5;
+  transform: translate(4rem, 4rem);
 }

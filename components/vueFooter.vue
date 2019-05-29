@@ -6,10 +6,12 @@
           nav.footer__wrap__container__sns
             h2.footer__wrap__container__sns__title SNS
             ul.footer__wrap__container__sns__list
-              li Twitter
-              li Instagram
-              li Wantedly
-              li Dribbble
+              li
+                a(href="https://twitter.com/_Frontart" target="_blank") Twitter
+              li
+                a(href="https://www.instagram.com/frontartgraph/" target="_blank") Instagram
+              li
+                a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
           .footer__wrap__container__contact
             h2.footer__wrap__container__contact__title Contact
             ul.footer__wrap__container__contact__list

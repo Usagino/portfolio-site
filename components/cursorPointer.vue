@@ -17,10 +17,35 @@ export default {
       event = event || window.event; // IE対応
       let x = event.clientX;
       let y = event.clientY  + scroll;
+      TweenMax.set('.cursors',{opacity:1})
       TweenMax.set('.cursor',{x:x,y:y})
-      TweenMax.to('.follower1',0.01,{x:x -20,y:y-20});
-      TweenMax.to('.follower2', 0.1,{x:x -20,y:y-20});
-      TweenMax.to('.follower3', 0.2,{x:x -20,y:y-20});
+      TweenMax.to('.follower1',0.01,{x:x -15,y:y-15});
+      TweenMax.to('.follower2', 0.1,{x:x -15,y:y-15});
+      TweenMax.to('.follower3', 0.2,{x:x -15,y:y-15});
+    }
+
+
+    const target = document.querySelectorAll('a');
+    for (let i of target) {
+      //ON
+      i.addEventListener('mouseenter', () => {
+        TweenMax.to('.cursor',1,{
+          scale:6,
+          opacity:0.2
+        });
+        TweenMax.to('.follower1,.follower2,.follower3',0.4,{
+          scale:2,
+          opacity:0.2,
+        });
+      }, false);
+      //OUT
+      i.addEventListener('mouseleave', () => {
+        TweenMax.to('.cursor, .follower1,.follower2,.follower3',0.4,{
+          scale:1,
+          background:'',
+          opacity:1
+        });
+      }, false);
     }
   }
 }
@@ -30,23 +55,13 @@ export default {
   html{
     // cursor: none !important;
   }
-  .follower1{
-    opacity: 1
+  .follower1{ opacity: 1 }
+  .follower2{ opacity: 0.8 }
+  .follower3{ opacity: 0.4 }
+  .cursors{
+    opacity: 0;
   }
-  .follower2{
-    opacity: 0.8
-  }
-  .follower3{
-    opacity: 0.6
-  }
-  .follower4{
-    opacity: 0.4
-  }
-  .follower5{
-    opacity: 0.2
-  }
-  .cursor,
-  .follower {
+  .cursor, .follower {
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -55,8 +70,8 @@ export default {
     box-sizing: border-box;
   }
   .cursor {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background-color: #000;
     z-index: 9000;
   }

@@ -8,6 +8,11 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    link: [
+      {
+        rel: 'stylesheet', href:'https://use.typekit.net/mwt6wiq.css'
+      }
     ]
   },
 

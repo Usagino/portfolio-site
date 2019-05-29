@@ -10,7 +10,7 @@
     .article
       .article__wrap
         div(v-html="post")
-        div(v-html="$md.render(require(`@/static/markdown/note-0.md`).default)")
+        div(v-html="$md.render(require(`@/static/markdown/${items[$route.params.id].fileName}`).default)")
     sideMenu
     vueFooter
 </template>
@@ -45,7 +45,6 @@ export default {
   },
   mounted:()=>{
     let md = require(`@/static/markdown/note-0.md`)
-    console.log(md);
   }
 }
 </script>

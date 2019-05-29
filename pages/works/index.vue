@@ -5,6 +5,7 @@
     .works
       .works__wrap
         .works__wrap__contents(v-for="(item,index) in items")
+          img.shadow(:src="`/image/thumbnail/${item.thumbnail}`")
           nuxt-link(:to="`/works/${index}`").works__wrap__contents__wrap
             img.works__wrap__contents__wrap--image(:src="`/image/thumbnail/${item.thumbnail}`")
             .works__wrap__contents__wrap__link
@@ -61,8 +62,12 @@
       content: "";
 
       position: relative;
+      .shadow{
+        filter: blur(2rem);
+      }
       &__wrap{
         @include full_size;
+
         &:hover{
           & > img{
             filter: blur(1rem);

@@ -1,5 +1,6 @@
 <template lang="pug">
   .menu
+    span.menu__background
     .menu__icon(
       v-on:click="play"
       @mouseenter="mouseenter"
@@ -20,6 +21,13 @@
           nuxt-link(to="/works") WORKS
         li
           nuxt-link(to="/about") ABOUT
+        li.menu__nav__list__medias
+          li
+            a(href="https://twitter.com/_Frontart" target="_blank") Twitter
+          li
+            a(href="https://www.instagram.com/frontartgraph/" target="_blank") Instagram
+          li
+            a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
 </template>
 
 <script>
@@ -68,6 +76,13 @@
             left:"0%"
           });
 
+          TweenMax.to('.menu__background',0.6,{
+            opacity:0
+          });
+          TweenMax.to('.menu__background',0.6,{
+            display:'none',
+            delay:0.6
+          })
           side_toggle = 1;
         }else{
           // 出てくる方
@@ -82,6 +97,13 @@
             opacity:0.4,
             left:"-20%"
           });
+          TweenMax.set('.menu__background',{
+            display:'block'
+          })
+          TweenMax.to('.menu__background',0.6,{
+            opacity:1,
+            delay:1
+          })
 
           side_toggle = 0;
         }
@@ -92,15 +114,17 @@
 
 <style lang="scss" scoped>
   .menu{
-    &::after{
+    &__background{
       content: "";
       position: fixed;
       z-index: 998;
+      top: 0;
+      left: 0;
       height: 100vh;
       width: 100vw;
-      background: #1c1c1caa;
+      background: #FF616130;
       display: none;
-
+      opacity: 0;
     }
     &__icon, &__nav{
       position: fixed;
@@ -134,7 +158,7 @@
           margin:1rem 0;
         }
         a{
-          font-size: 4rem;
+          font-size: 6rem;
           color: #f9f9f9;
         }
       }

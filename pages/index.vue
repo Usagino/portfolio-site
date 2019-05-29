@@ -9,7 +9,6 @@ section
   .works
     .works__wrap
       nuxt-link.works__wrap--title(to="/works") Works
-
       .works__wrap__area-1.works__wrap__area
         img(src="image/top/works_1.png")
       .works__wrap__area-2.works__wrap__area
@@ -52,14 +51,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.shadow{
-  position: absolute;
-  left: 0;
-  z-index: -1;
-  filter: blur(4rem);
-  opacity: 0.5;
-  transform: translate(4rem, 4rem);
-}
+
 section{
   .first{
     @include full_screen;
