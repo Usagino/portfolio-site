@@ -9,6 +9,7 @@
         img.first__wrap--image(:src="`/image/thumbnail/${items[$route.params.id].thumbnail}`")
     .article
       .article__wrap
+        div(v-html="content")
     sideMenu
     vueFooter
 </template>
@@ -20,6 +21,7 @@ import sideMenu from '@/components/sideMenu'
 import vueFooter from '@/components/vueFooter'
 // library
 import works from '@/assets/json/works.json'
+
 export default {
   components: {
     cursorPointer,
@@ -29,6 +31,13 @@ export default {
   data () {
     return {
       items: works
+    }
+  },
+  async asyncData ({params}) {
+    const works = await import ('@/assets/json/works.json')
+    const fileContent = await import(`@/static/markdown/${works[params.id].fileName}`)
+    return {
+      content: fileContent
     }
   }
 }
