@@ -10,7 +10,7 @@
     .article
       .article__wrap
         div(v-html="post")
-        div(v-html="$md.render(md.default)")
+        div(v-html="$md.render(require(`@/static/markdown/note-0.md`).default)")
     sideMenu
     vueFooter
 </template>
@@ -31,6 +31,7 @@ export default {
   },
   data () {
     return {
+      hello:"hello",
       items: works,
       md: require(`@/static/markdown/note-0.md`)
     }
