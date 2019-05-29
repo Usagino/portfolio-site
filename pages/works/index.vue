@@ -6,7 +6,7 @@
       .works__wrap
         .works__wrap__contents(v-for="(item,index) in items")
           nuxt-link(:to="`/works/${index}`").works__wrap__contents__wrap
-            img.works__wrap__contents__wrap--image(:src="`image/thumbnail/${item.thumbnail}`")
+            img.works__wrap__contents__wrap--image(:src="`/image/thumbnail/${item.thumbnail}`")
             .works__wrap__contents__wrap__link
               h1 {{item.title}}
     vueFooter
