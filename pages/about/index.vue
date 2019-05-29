@@ -11,7 +11,7 @@
           img.shadow(src="/image/about/about_page.jpg")
     .about
       .about__wrap
-        p 日本工学院専門学校所属、デザイン専攻。高校の頃は工業高校だったので紙のレポートに数十行あるプログラムを手書きで書いてレポートを提出する文化に憤りを感じつつもなんやかんや卒業。<br>プログラミングは独学で勉強しつつデザインを学ぶ。趣味はものを作ることとコーヒーと写真。
+        p
     vueFooter
 </template>
 
@@ -22,6 +22,7 @@
   import vueFooter from '@/components/vueFooter'
 
   import { TweenMax } from 'gsap'
+  import { init } from 'ityped'
   export default {
     components: {
       cursorPointer,
@@ -29,6 +30,7 @@
       vueFooter
     },
     mounted:()=>{
+      // .first view animations
       TweenMax.to('.first__wrap__image-box img',0.6,{
         scale:1,
         delay:0.3
@@ -41,6 +43,16 @@
         width:'80vw',
         delay:0.8
       })
+      // .about view animations
+      const target = document.querySelector('.about__wrap p');
+      init(target, {
+        showCursor: false,
+        strings: ['日本工学院専門学校所属、デザイン専攻。高校の頃は工業高校だったので紙のレポートに数十行あるプログラムを手書きで書いてレポートを提出する文化に憤りを感じつつもなんやかんや卒業。プログラミングは独学で勉強しつつデザインを学ぶ。趣味はものを作ることとコーヒーと写真。','それが私です'],
+        loop:false,
+        typeSpeed:  60,
+        placeholder: false,
+        backDelay:  1000,
+      });
     }
   }
 </script>
