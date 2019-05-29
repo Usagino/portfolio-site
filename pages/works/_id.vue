@@ -10,6 +10,7 @@
     .article
       .article__wrap
         div(v-html="post")
+        div(v-html="num")
     sideMenu
     vueFooter
 </template>
@@ -21,9 +22,6 @@ import sideMenu from '@/components/sideMenu'
 import vueFooter from '@/components/vueFooter'
 // library
 import works from '@/assets/json/works.json'
-
-import mark from '~/static/markdown/note-0.md'
-
 export default {
   components: {
     cursorPointer,
@@ -33,15 +31,12 @@ export default {
   data () {
     return {
       items: works,
-      model: mark,
-      md_root: works[this.$route.params.id].fileName
     }
   },
   async asyncData ({params,works}) {
-    // const fileContent = await import(`~/static/markdown/${this.md_root}`)
-    // return { markdown: fileContent }
     console.log(works);
     return {
+      num:works,
       post: require(`~/static/markdown/note-0.md`)
     }
   }
