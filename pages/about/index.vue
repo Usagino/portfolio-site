@@ -161,4 +161,49 @@
     }
   }
 }
+@include mq(sm){
+  .first{
+    &__wrap{
+      &__title-box{
+        &--text{
+        }
+      }
+
+      &__image-box{
+        img{
+        }
+      }
+    }
+  }
+  .about{
+    &__wrap{
+      position: relative;
+      height: 440px;
+      p{
+        @include text_center;
+        height: auto;
+        font-size: 1rem;
+      }
+      &__image{
+        // display: none;
+        display: block;
+        width: 25%;
+        img{
+          height: auto;
+        }
+        &--1{
+          opacity: 0,
+        }
+        &--2{
+          opacity: 0;
+          left: 2rem;
+        }
+        &--3{
+          opacity: 0;
+          right: 2rem;
+        }
+      }
+    }
+  }
+}
 </style>
