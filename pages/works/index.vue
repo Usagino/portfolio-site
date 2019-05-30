@@ -104,4 +104,14 @@
     }
   }
 }
+
+@include mq(sm){
+  .works{
+    &__wrap{
+      -webkit-column-count: 1;
+      -moz-column-count:1;
+      column-count: 1;
+    }
+  }
+}
 </style>
