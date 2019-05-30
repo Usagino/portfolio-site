@@ -19,12 +19,12 @@ section
         img(src="image/top/works_4.png")
   .about
     .about__wrap
-      img.about__wrap__parallax.about__wrap__parallax--1(src="/image/top/polaroid_1.JPG" v-parallax="0.5")
-      img.about__wrap__parallax.about__wrap__parallax--2(src="/image/top/polaroid_2.JPG" v-parallax="0.1")
-      img.about__wrap__parallax.about__wrap__parallax--3(src="/image/top/polaroid_3.JPG" v-parallax="0.2")
-      img.about__wrap__parallax.about__wrap__parallax--4(src="/image/top/polaroid_4.JPG" v-parallax="0.6")
-      img.about__wrap__parallax.about__wrap__parallax--5(src="/image/top/polaroid_5.JPG" v-parallax="0.2")
-      img.about__wrap__parallax.about__wrap__parallax--6(src="/image/top/polaroid_6.JPG" v-parallax="0.5")
+      //- img.about__wrap__parallax.about__wrap__parallax--1(src="/image/top/polaroid_1.JPG" v-parallax="0.5")
+      //- img.about__wrap__parallax.about__wrap__parallax--2(src="/image/top/polaroid_2.JPG" v-parallax="0.1")
+      //- img.about__wrap__parallax.about__wrap__parallax--3(src="/image/top/polaroid_3.JPG" v-parallax="0.2")
+      //- img.about__wrap__parallax.about__wrap__parallax--4(src="/image/top/polaroid_4.JPG" v-parallax="0.6")
+      //- img.about__wrap__parallax.about__wrap__parallax--5(src="/image/top/polaroid_5.JPG" v-parallax="0.2")
+      //- img.about__wrap__parallax.about__wrap__parallax--6(src="/image/top/polaroid_6.JPG" v-parallax="0.5")
       nuxt-link.about__wrap__title(to="/about") <span></span> me
   vueFooter
 </template>
@@ -159,38 +159,38 @@ export default {
     @include full_screen;
     @include middle;
     position: relative;
-    &__parallax{
-      position: absolute;
-      z-index: -1;
-      opacity: 0.6;
-      width: 250px;
-      height: auto;
-      filter: blur(3rem);
-      &--1{
-        left: 30%;
-        bottom: 10%;
-      }
-      &--2{
-        left: 60%;
-        bottom: 60%;
-      }
-      &--3{
-        left: 80%;
-        bottom: 50%;
-      }
-      &--4{
-        right: 30%;
-        top: 10%;
-      }
-      &--5{
-        right: 60%;
-        top: 23%;
-      }
-      &--6{
-        right: 80%;
-        top: 20%;
-      }
-    }
+    // &__parallax{
+    //   position: absolute;
+    //   z-index: -1;
+    //   opacity: 0.6;
+    //   width: 250px;
+    //   height: auto;
+    //   filter: blur(3rem);
+    //   &--1{
+    //     left: 30%;
+    //     bottom: 10%;
+    //   }
+    //   &--2{
+    //     left: 60%;
+    //     bottom: 60%;
+    //   }
+    //   &--3{
+    //     left: 80%;
+    //     bottom: 50%;
+    //   }
+    //   &--4{
+    //     right: 30%;
+    //     top: 10%;
+    //   }
+    //   &--5{
+    //     right: 60%;
+    //     top: 23%;
+    //   }
+    //   &--6{
+    //     right: 80%;
+    //     top: 20%;
+    //   }
+    // }
     &__title{
       font-size: 20rem;
       font-weight: bold;
