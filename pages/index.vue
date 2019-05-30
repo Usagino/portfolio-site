@@ -109,6 +109,7 @@ export default {
       color: $text_color1;
       opacity: 0;
       transition: all .3s ease .4s;
+      font-weight: bold;
     }
     &__area{
       @include full_size;
@@ -162,12 +163,54 @@ export default {
         line-height: 72vh;
         position: absolute;
         right: 0;
+        font-weight: bold;
       }
     }
 
   }
 }
  @include mq(sm) {
+   .first{
+     @include full_screen;
+     &__wrap{
+       @include full_size;
+       @include middle;
+       &__logo{
+         width: 80vw;
+       }
+     }
+   }
+   .works{
+     &__wrap{
+       &--title{
+         font-size: 5rem;
+
+       }
+       &__area{
+         @include full_size;
+         img{
+           @include full_size;
+           object-fit: cover;
+         }
+       }
+       &__area-1{
+         grid-area: area-1;
+         transition: transform .4s ease 0s;
+       }
+       &__area-2{
+         grid-area: area-2;
+         transition: transform .4s ease .4s;
+       }
+       &__area-3{
+         grid-area: area-3;
+         transition: transform .4s ease .1s;
+       }
+       &__area-4{
+         grid-area: area-4;
+         transition: transform .4s ease .2s;
+       }
+     }
+   }
    .about{
      &__wrap{
        &__image{
