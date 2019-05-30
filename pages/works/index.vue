@@ -37,7 +37,7 @@
 <style lang="scss" scoped>
 .works{
   width: 100vw;
-  margin-top: 10rem;
+  margin: 10rem 0;
   &__wrap{
     @include custom_size;
     height: auto;
@@ -47,7 +47,6 @@
     -webkit-column-count: 3;
     -moz-column-count:3;
     column-count: 3;
-
     -webkit-column-gap: 4rem;
     -moz-column-gap: 4rem;
     column-gap: 4rem;
@@ -56,10 +55,10 @@
 
     &__contents{
       break-inside: avoid-column;
-	    margin-bottom: 6rem;
       width: auto;
       height: auto;
       content: "";
+      margin-bottom: 7rem;
 
       position: relative;
       .shadow{
@@ -67,13 +66,11 @@
       }
       &__wrap{
         @include full_size;
-
         &:hover{
           & > img{
-            filter: blur(1rem);
+            filter: blur(0.2rem);
           }
           & > * > h1{
-
             opacity: 1;
           }
         }

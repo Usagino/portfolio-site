@@ -153,10 +153,9 @@ export default {
           /deep/ section{
             p{
               margin: 3rem 0;
-              line-height: 3rem;
+              line-height: 2.2rem;
               letter-spacing: 0.2rem;
-              font-size: 2rem;
-
+              font-size: 1.5rem;
               img{
                 width: 100vw;
                 transform: translateX(-16vw);
