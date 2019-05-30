@@ -50,7 +50,7 @@
         delay:0.8
       })
       TweenMax.to('.first__wrap__title-box',1,{
-        width:'80vw',
+        width:'100vw',
         delay:0.8
       })
       // .about view animations
@@ -166,6 +166,7 @@
     &__wrap{
       &__title-box{
         &--text{
+              letter-spacing: 8px;
         }
       }
 
