@@ -53,7 +53,10 @@ export default {
 
 <style lang="scss">
   html{
-    // cursor: none !important;
+    cursor: none !important;
+    *:hover{
+      cursor: none !important;
+    }
   }
   .follower1{ opacity: 1 }
   .follower2{ opacity: 0.8 }

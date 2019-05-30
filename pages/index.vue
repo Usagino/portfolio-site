@@ -19,11 +19,7 @@ section
         img(src="image/top/works_4.png")
   .about
     .about__wrap
-      .about__wrap__image
-        img(src="/image/top/my.png")
-        img.shadow(src="/image/top/my.png")
-      .about__wrap__title
-        nuxt-link(to="/about") About him
+      nuxt-link.about__wrap__title(to="/about") <span></span> me
 
   vueFooter
 </template>
@@ -37,7 +33,8 @@ import Lottie from '@/components/Lottie'
 import myLogo from '@/components/myLogo'
 // library
 import * as animationData from "~/assets/json/my_logo.json";
-
+import inView from 'in-view'
+import { init } from 'ityped'
 
 export default {
   components: {
@@ -47,6 +44,20 @@ export default {
     myLogo,
     vueFooter
   },
+  mounted:()=>{
+    const target = document.querySelector('.about__wrap__title span');
+
+    inView('.about__wrap__title span')
+    .once('enter', ()=>{
+      init(target, {
+        showCursor: false,
+        strings: ['Touch','About'],
+        loop:false,
+        backDelay:  1000,
+        startDelay: 200
+      });
+    })
+  }
 }
 </script>
 
@@ -141,30 +152,14 @@ export default {
   @include middle;
   &__wrap{
     @include custom_size;
+    @include middle;
     position: relative;
-
-    &__image{
-      @include full_size;
-      img{
-        height: 100%;
-        width: auto;
-      }
-    }
     &__title{
-      display: inline-block;
-      position: absolute;
-      top: 0;bottom: 0;
-      right: 0; left: 0;
-      margin: auto;
-      a{
-        color: $text_color1;
-        font-size: 10rem;
-        display: inline-block;
-        line-height: 72vh;
-        position: absolute;
-        right: 0;
-        font-weight: bold;
-      }
+      font-size: 20rem;
+      font-weight: bold;
+      background-image: url('/image/top/my.gif');
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
   }
@@ -212,26 +207,20 @@ export default {
      }
    }
    .about{
+     @include full_screen;
+     @include middle;
      &__wrap{
-       &__image{
-         @include middle;
-         img{
-           height: auto ;
-           width: 100%;
-         }
-       }
+       @include custom_size;
+       @include middle;
+       position: relative;
        &__title{
-         a{
-           font-size: 5rem;
-           line-height: normal;
-           bottom: 0;
-           left: 0;
-           margin: auto;
-           position: absolute;
-
-         }
+         font-size: 10rem;
+         font-weight: bold;
+         background-image: url('/image/top/my.gif');
+         -webkit-background-clip: text;
+         color: transparent;
+         height: 240px;
        }
-
      }
    }
  }
