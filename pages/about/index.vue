@@ -179,11 +179,11 @@
   .about{
     &__wrap{
       position: relative;
-      height: 440px;
+      height: 480px;
       p{
         @include text_center;
         height: auto;
-        font-size: 1rem;
+        font-size: 1.5rem;
       }
       &__image{
         // display: none;
