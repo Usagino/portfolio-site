@@ -35,6 +35,16 @@
 </script>
 
 <style lang="scss" scoped>
+@mixin Masonry($grid) {
+  margin: 0 auto;
+  column-count: $grid;
+  column-gap: 7rem;
+}
+@mixin Masonry_child{
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
 .works{
   width: 100vw;
   margin: 10rem 0;
@@ -42,19 +52,9 @@
     @include custom_size;
     height: auto;
     margin: auto;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
-    -webkit-column-count: 3;
-    -moz-column-count:3;
-    column-count: 3;
-    -webkit-column-gap: 4rem;
-    -moz-column-gap: 4rem;
-    column-gap: 4rem;
-
-    grid-gap: 6rem;
-
+    @include Masonry(3)
     &__contents{
-      break-inside: avoid-column;
+      @include Masonry_child
       width: auto;
       height: auto;
       content: "";
@@ -63,6 +63,7 @@
       position: relative;
       .shadow{
         filter: blur(2rem);
+        height: auto
       }
       &__wrap{
         @include full_size;
@@ -79,6 +80,7 @@
           width: 100%;
           object-fit: cover;
           transition: all .3s ease .2s;
+          padding-bottom: 10rem;
         }
         &__link{
 
@@ -105,9 +107,7 @@
 @include mq(sm){
   .works{
     &__wrap{
-      -webkit-column-count: 1;
-      -moz-column-count:1;
-      column-count: 1;
+      @include Masonry(1)
     }
   }
 }
