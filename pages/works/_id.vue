@@ -23,6 +23,7 @@ import sideMenu from '@/components/sideMenu'
 import vueFooter from '@/components/vueFooter'
 // library
 import works from '@/assets/json/works.json'
+import { TweenMax } from 'gsap';
 
 export default {
   components: {
@@ -36,7 +37,12 @@ export default {
       items: works,
     }
   },
+  mounted:()=>{
+    console.log("hi");
+    let target = document.querySelectorAll('.article__wrap__text section p')
+    console.table(target);
 
+  }
 }
 </script>
 
@@ -87,21 +93,24 @@ export default {
   }
   .article{
     &__wrap{
-      padding-top: 2rem;
-      @include custom_size;
+      padding-top: 20rem;
       height: auto;
       margin: auto;
       &__text{
         /deep/ section{
+          width: 100vw;
           p{
+            padding: 0 30rem;
             margin: 3rem 0;
             line-height: 3rem;
             letter-spacing: 0.2rem;
             font-size: 2rem;
 
             img{
-              width: 100vw;
-              transform: translateX(-16vw);
+              width: 60%;
+              margin: auto;
+              display:block;
+              margin: 25vh;
             }
           }
         }
@@ -151,19 +160,18 @@ export default {
         margin: auto;
         &__text{
           /deep/ section{
+            width: auto;
             p{
               margin: 3rem 0;
               line-height: 2.2rem;
               letter-spacing: 0.2rem;
               font-size: 1.5rem;
+              padding: 0 10%;
               img{
-                width: 100vw;
-                transform: translateX(-16vw);
+                width: 100%;
+                margin: 25vh auto;
               }
             }
-          }
-          img{
-            width: 100% !important;
           }
         }
       }
