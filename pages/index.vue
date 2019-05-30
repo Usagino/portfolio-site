@@ -59,7 +59,9 @@ export default {
         strings: ['Touch','About'],
         loop:false,
         backDelay:  1000,
-        startDelay: 200
+        startDelay: 200,
+        typeSpeed:  700,
+        backSpeed: 100,
       });
     })
   }
