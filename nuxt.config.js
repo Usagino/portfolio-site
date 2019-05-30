@@ -61,7 +61,8 @@ module.exports = {
     quotes: '“”‘’',
   },
   plugins: [
-    '~plugins/scroll.js'
+    '~plugins/scroll.js',
+    { src :'~/plugins/vue-parallax-js', ssr: false },
   ],
   mode: 'universal',
 }
