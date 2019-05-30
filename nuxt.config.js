@@ -41,6 +41,7 @@ module.exports = {
     sass: [
       '~/assets/style/_variable.scss',
       '~/assets/style/_reset.scss',
+      '~/assets/style/_transition.scss',
     ],
   },
   webfontloader: {

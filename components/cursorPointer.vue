@@ -95,4 +95,9 @@ export default {
       transform: scale(3);
     }
   }
+  @include mq(sm){
+    .cursors{
+      display: none;
+    }
+  }
 </style>

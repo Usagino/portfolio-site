@@ -47,8 +47,10 @@ export default {
         position: absolute;
         height: 20%;
         width: 50vw;
-        top: 0;bottom: 0;
-        left: 0;right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
         margin: auto;
         z-index: 2;
         display: flex;

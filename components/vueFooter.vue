@@ -4,8 +4,10 @@
       .footer__wrap
         .footer__wrap__container
           nav.footer__wrap__container__sns
-            h2.footer__wrap__container__sns__title SNS
+
             ul.footer__wrap__container__sns__list
+              li
+                h2 SNS
               li
                 a(href="https://twitter.com/_Frontart" target="_blank") Twitter
               li
@@ -13,8 +15,9 @@
               li
                 a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
           .footer__wrap__container__contact
-            h2.footer__wrap__container__contact__title Contact
             ul.footer__wrap__container__contact__list
+              li
+                h2 Contact
               li yuki.itoh@front-artgraph.com
               li Japan Tokyo
               li copylight 2019 yuki itoh
@@ -73,6 +76,31 @@ footer{
           &__logo{
             width: 30%;
             height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+@include mq(sm){
+  footer{
+    *{
+      font-size: 1.5rem !important;
+    }
+    @include full_screen;
+    .footer{
+      @include full_size;
+      &__wrap{
+        @include middle;
+        @include full_size;
+        &__container{
+          @include custom_size;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas: "sns image" "contact image";
+          &__image{
+            display: none;
           }
         }
       }

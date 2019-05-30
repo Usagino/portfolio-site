@@ -21,13 +21,12 @@
           nuxt-link(to="/works") WORKS
         li
           nuxt-link(to="/about") ABOUT
-        li.menu__nav__list__medias
-          li
-            a(href="https://twitter.com/_Frontart" target="_blank") Twitter
-          li
-            a(href="https://www.instagram.com/frontartgraph/" target="_blank") Instagram
-          li
-            a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
+        li.menu__nav__list__media
+          a(href="https://twitter.com/_Frontart" target="_blank") Twitter
+        li.menu__nav__list__media
+          a(href="https://www.instagram.com/frontartgraph/" target="_blank") Instagram
+        li.menu__nav__list__media
+          a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
 </template>
 
 <script>
@@ -161,7 +160,26 @@
           font-size: 6rem;
           color: #f9f9f9;
         }
+        &__media{
+          a{
+            font-size: 4rem;
+          }
+
+        }
       }
     }
   }
+   @include mq(sm){
+     .menu{
+       &__nav{
+         height: 100vh;
+         width: 100vw;
+         @include middle;
+         &__list{
+           height: 80%;
+           padding: 0;
+         }
+       }
+     }
+   }
 </style>

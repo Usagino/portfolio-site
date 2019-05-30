@@ -10,6 +10,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 html {
   width: 100vw;
   overflow-x: hidden;
@@ -79,7 +80,6 @@ abbr[data-original-title] {
 }
 
 address {
-  margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
 }
@@ -88,7 +88,7 @@ ol,
 ul,
 dl {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 	-webkit-padding-start: 0px;
 	padding-inline-start: 0px !important;
 }
@@ -142,6 +142,7 @@ sup {
 a {
   text-decoration: none !important;
   background-color: transparent;
+  font-family: futuraPT, sans-serif;
   color: $text_color1;
 }
 
