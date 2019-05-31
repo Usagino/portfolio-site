@@ -16,5 +16,11 @@
     "thumbnail":"Rockinjapan.png",
     "fileName":"Rockinjapan.md",
     "date":"5-2018"
+  },
+  {
+    "title": "ArchitectureAnomalies",
+    "thumbnail":"Architecture_Anomalies.png",
+    "fileName":"Architecture.md",
+    "date":"12-2017"
   }
 ]
