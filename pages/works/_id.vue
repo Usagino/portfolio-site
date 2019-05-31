@@ -7,7 +7,7 @@
         .first__wrap__title-box
           h1.first__wrap__title-box--title {{ items[$route.params.id].title }}
           p.first__wrap__title-box--date {{ items[$route.params.id].date }}
-        img.first__wrap--image(:src="`/image/thumbnail/${items[$route.params.id].thumbnail}`" decoding="async")
+        img.first__wrap--image(:src="`/markdown/thumbnail/${items[$route.params.id].thumbnail}`" decoding="async")
     .article
       .article__wrap
         div.article__wrap__text(v-html="$md.render(require(`@/static/markdown/${items[$route.params.id].fileName}`).default)")
@@ -40,13 +40,13 @@ export default {
   mounted:()=>{
     console.log("hi");
     let target = document.querySelectorAll('.article__wrap__text section p')
-    console.table(target);
 
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
   .first{
     &__wrap{
       @include full_screen;
@@ -111,6 +111,9 @@ export default {
               margin: auto;
               display:block;
               margin: 25vh;
+            }
+            a{
+              color: #717171 !important;
             }
           }
         }
