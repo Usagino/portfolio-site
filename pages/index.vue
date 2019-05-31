@@ -10,13 +10,13 @@ section
     .works__wrap
       nuxt-link.works__wrap--title(to="/works") Works
       .works__wrap__area-1.works__wrap__area
-        img(src="image/top/works_1.png" decoding=“async”)
+        img(src="image/top/works_1.png" decoding="async")
       .works__wrap__area-2.works__wrap__area
-        img(src="image/top/works_2.png" decoding=“async”)
+        img(src="image/top/works_2.png" decoding="async")
       .works__wrap__area-3.works__wrap__area
-        img(src="image/top/works_3.png" decoding=“async”)
+        img(src="image/top/works_3.png" decoding="async")
       .works__wrap__area-4.works__wrap__area
-        img(src="image/top/works_4.png" decoding=“async”)
+        img(src="image/top/works_4.png" decoding="async")
   .about
     .about__wrap
       nuxt-link.about__wrap__title(to="/about") About me
