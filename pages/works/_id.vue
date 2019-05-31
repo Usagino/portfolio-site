@@ -111,6 +111,7 @@ export default {
               margin: auto;
               display:block;
               margin: 25vh;
+              box-shadow: 2rem 2rem 4rem #e6e6e660;
             }
             a{
               color: #717171 !important;
