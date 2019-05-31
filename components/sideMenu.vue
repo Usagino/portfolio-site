@@ -1,19 +1,12 @@
 <template lang="pug">
   .menu
-    span.menu__background
-    .menu__icon(
-      v-on:click="play"
-      @mouseenter="mouseenter"
-      @mouseleave="mouseleave"
-      )
+    .menu__icon(v-on:click="play")
       lottie(
         :options="lottieOptions"
         v-on:animCreated="handleAnimation"
         )
-    nav.menu__nav(
-      @mouseenter="mouseenter"
-      @mouseleave="mouseleave"
-      )
+    span.menu__back
+    nav.menu__nav
       ul.menu__nav__list
         li
           nuxt-link(to="/") TOP
@@ -49,14 +42,6 @@
       }
     },
     methods: {
-      mouseenter:function(){
-        TweenMax.to('.cursor',1,{background:'white'})
-        TweenMax.to('.follower',1,{borderColor:'white'})
-      },
-      mouseleave: () =>{
-        TweenMax.to('.cursor',1,{background:''})
-        TweenMax.to('.follower',1,{borderColor:''})
-      },
       handleAnimation: function(anim) {
         this.anim = anim;
       },
@@ -67,21 +52,22 @@
           this.anim.play();
           TweenMax.to(".menu__nav",0.5,{
             delay:0.8,
-            x:"100%"
+            x:"100%",
+            ease: Expo.easeIn
           });
           TweenMax.to(".menu + *",0.5,{
             delay:0.8,
             opacity:1,
-            left:"0%"
+            left:"0%",
+            ease: Expo.easeIn
           });
-
-          TweenMax.to('.menu__background',0.6,{
-            opacity:0
+          TweenMax.to(".menu__back",0.5,{
+            delay:1,
+            x:"-100%",
+            ease: Expo.easeIn
           });
-          TweenMax.to('.menu__background',0.6,{
-            display:'none',
-            delay:0.6
-          })
+          TweenMax.to('.cursor',1,{background:'',delay:0.6,})
+          TweenMax.to('.follower',1,{borderColor:'',delay:0.6,})
           side_toggle = 1;
         }else{
           // 出てくる方
@@ -89,21 +75,19 @@
           this.anim.play();
           TweenMax.to(".menu__nav",0.5,{
             delay:0.6,
-            x:"0%"
+            x:"0%",
+          });
+          TweenMax.to(".menu__back",0.5,{
+            delay:0.2,
+            x:"0%",
           });
           TweenMax.to(".menu + *",0.5,{
             delay:0.6,
             opacity:0.4,
             left:"-20%"
           });
-          TweenMax.set('.menu__background',{
-            display:'block'
-          })
-          TweenMax.to('.menu__background',0.6,{
-            opacity:1,
-            delay:1
-          })
-
+          TweenMax.to('.cursor',1,{background:'white',delay:0.6,})
+          TweenMax.to('.follower',1,{borderColor:'white',delay:0.6,})
           side_toggle = 0;
         }
       },
@@ -113,19 +97,7 @@
 
 <style lang="scss" scoped>
   .menu{
-    &__background{
-      content: "";
-      position: fixed;
-      z-index: 998;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      background: #FF616130;
-      display: none;
-      opacity: 0;
-    }
-    &__icon, &__nav{
+    &__icon, &__nav,&__back{
       position: fixed;
       top: 0;
       bottom: 0;
@@ -137,9 +109,16 @@
       right: 4rem;
       z-index: 1001;
     }
+    &__back{
+      height: 100vh;
+      width: 100vw;
+      background: #6188ff;
+      z-index: 999;
+      transform: translateX(-100%);
+    }
     &__nav{
       height: 100vh;
-      width: 28vw;
+      width: 100vw;
       background: #FF6161;
       z-index: 1000;
       right: 0;

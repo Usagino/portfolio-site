@@ -30,20 +30,17 @@ export default {
       //ON
       i.addEventListener('mouseenter', () => {
         TweenMax.to('.cursor',1,{
-          scale:6,
-          opacity:0.2
+          scale:2,
         });
         TweenMax.to('.follower1,.follower2,.follower3',0.4,{
           scale:2,
-          opacity:0.2,
+          scaleY:0.5
         });
       }, false);
       //OUT
       i.addEventListener('mouseleave', () => {
         TweenMax.to('.cursor, .follower1,.follower2,.follower3',0.4,{
           scale:1,
-          background:'',
-          opacity:1
         });
       }, false);
     }

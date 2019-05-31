@@ -50,6 +50,9 @@ module.exports = {
       families: ['Noto+Sans+JP','Raleway']
     }
   },
+  plugins: [
+    { src: '~/plugins/lazy', ssr: true }
+  ],
   markdownit: {
     preset: 'default',
     injected: true,
