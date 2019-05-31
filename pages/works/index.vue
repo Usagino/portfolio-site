@@ -5,9 +5,9 @@
     .works
       .works__wrap
         .works__wrap__contents(v-for="(item,index) in items")
-          img.shadow(:src="`/image/thumbnail/${item.thumbnail}`")
+          img.shadow(:src="`/image/thumbnail/${item.thumbnail}`" decoding=“async”)
           nuxt-link(:to="`/works/${index}`").works__wrap__contents__wrap
-            img.works__wrap__contents__wrap--image(:src="`/image/thumbnail/${item.thumbnail}`")
+            img.works__wrap__contents__wrap--image(:src="`/image/thumbnail/${item.thumbnail}`" decoding=“async”)
             .works__wrap__contents__wrap__link
               h1 {{item.title}}
     vueFooter

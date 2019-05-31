@@ -7,20 +7,20 @@
         .first__wrap__title-box
           h1.first__wrap__title-box--text YUKI ITOH
         .first__wrap__image-box
-          img(src="/image/about/about_page.jpg")
-          img.shadow(src="/image/about/about_page.jpg")
+          img(src="/image/about/about_page.jpg" decoding=“async”)
+          img.shadow(src="/image/about/about_page.jpg" decoding=“async”)
     .about
       .about__wrap
         p
         .about__wrap__image.about__wrap__image--1
-          img(src="/image/about/about_1.png")
-          img.shadow(src="/image/about/about_1.png")
+          img(src="/image/about/about_1.png" decoding=“async”)
+          img.shadow(src="/image/about/about_1.png" decoding=“async”)
         .about__wrap__image.about__wrap__image--2
           img(src="/image/about/about_2.png")
-          img.shadow(src="/image/about/about_2.png")
+          img.shadow(src="/image/about/about_2.png" decoding=“async”)
         .about__wrap__image.about__wrap__image--3
           img(src="/image/about/about_3.png")
-          img.shadow(src="/image/about/about_3.png")
+          img.shadow(src="/image/about/about_3.png" decoding=“async”)
     vueFooter
 </template>
 

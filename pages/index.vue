@@ -10,21 +10,15 @@ section
     .works__wrap
       nuxt-link.works__wrap--title(to="/works") Works
       .works__wrap__area-1.works__wrap__area
-        img(src="image/top/works_1.png")
+        img(src="image/top/works_1.png" decoding=“async”)
       .works__wrap__area-2.works__wrap__area
-        img(src="image/top/works_2.png")
+        img(src="image/top/works_2.png" decoding=“async”)
       .works__wrap__area-3.works__wrap__area
-        img(src="image/top/works_3.png")
+        img(src="image/top/works_3.png" decoding=“async”)
       .works__wrap__area-4.works__wrap__area
-        img(src="image/top/works_4.png")
+        img(src="image/top/works_4.png" decoding=“async”)
   .about
     .about__wrap
-      //- img.about__wrap__parallax.about__wrap__parallax--1(src="/image/top/polaroid_1.JPG" v-parallax="0.5")
-      //- img.about__wrap__parallax.about__wrap__parallax--2(src="/image/top/polaroid_2.JPG" v-parallax="0.1")
-      //- img.about__wrap__parallax.about__wrap__parallax--3(src="/image/top/polaroid_3.JPG" v-parallax="0.2")
-      //- img.about__wrap__parallax.about__wrap__parallax--4(src="/image/top/polaroid_4.JPG" v-parallax="0.6")
-      //- img.about__wrap__parallax.about__wrap__parallax--5(src="/image/top/polaroid_5.JPG" v-parallax="0.2")
-      //- img.about__wrap__parallax.about__wrap__parallax--6(src="/image/top/polaroid_6.JPG" v-parallax="0.5")
       nuxt-link.about__wrap__title(to="/about") About me
   vueFooter
 </template>

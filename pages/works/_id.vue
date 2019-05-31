@@ -7,7 +7,7 @@
         .first__wrap__title-box
           h1.first__wrap__title-box--title {{ items[$route.params.id].title }}
           p.first__wrap__title-box--date {{ items[$route.params.id].date }}
-        img.first__wrap--image(:src="`/image/thumbnail/${items[$route.params.id].thumbnail}`")
+        img.first__wrap--image(:src="`/image/thumbnail/${items[$route.params.id].thumbnail}`" decoding=“async”)
     .article
       .article__wrap
         div.article__wrap__text(v-html="$md.render(require(`@/static/markdown/${items[$route.params.id].fileName}`).default)")
