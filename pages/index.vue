@@ -25,7 +25,7 @@ section
       //- img.about__wrap__parallax.about__wrap__parallax--4(src="/image/top/polaroid_4.JPG" v-parallax="0.6")
       //- img.about__wrap__parallax.about__wrap__parallax--5(src="/image/top/polaroid_5.JPG" v-parallax="0.2")
       //- img.about__wrap__parallax.about__wrap__parallax--6(src="/image/top/polaroid_6.JPG" v-parallax="0.5")
-      nuxt-link.about__wrap__title(to="/about") <span></span> me
+      nuxt-link.about__wrap__title(to="/about") About me
   vueFooter
 </template>
 
@@ -51,19 +51,19 @@ export default {
   },
   mounted:()=>{
     const target = document.querySelector('.about__wrap__title span');
-
-    inView('.about__wrap__title span')
-    .once('enter', ()=>{
-      init(target, {
-        showCursor: false,
-        strings: ['Touch','About'],
-        loop:false,
-        backDelay:  1000,
-        startDelay: 200,
-        typeSpeed:  700,
-        backSpeed: 100,
-      });
-    })
+    //
+    // inView('.about__wrap__title span')
+    // .once('enter', ()=>{
+    //   init(target, {
+    //     showCursor: false,
+    //     strings: ['Touch','About'],
+    //     loop:false,
+    //     backDelay:  1000,
+    //     startDelay: 200,
+    //     typeSpeed:  700,
+    //     backSpeed: 100,
+    //   });
+    // })
   }
 }
 </script>
