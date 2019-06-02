@@ -3,16 +3,17 @@
     cursorPointer
     sideMenu
     .works
-      magic-grid.works__wrap
-        div.works__wrap__contents(
-          v-for="(item,index) in items"
-          :key="index"
-          )
-          img.shadow(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
-          nuxt-link(:to="`/works/${index}`").works__wrap__contents__wrap
-            img.works__wrap__contents__wrap--image(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
-            .works__wrap__contents__wrap__link
-              h1 {{item.title}}
+      no-ser
+        magic-grid.works__wrap
+          div.works__wrap__contents(
+            v-for="(item,index) in items"
+            :key="index"
+            )
+            img.shadow(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
+            nuxt-link(:to="`/works/${index}`").works__wrap__contents__wrap
+              img.works__wrap__contents__wrap--image(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
+              .works__wrap__contents__wrap__link
+                h1 {{item.title}}
     vueFooter
 </template>
 

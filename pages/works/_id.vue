@@ -37,6 +37,9 @@ export default {
       items: works,
     }
   },
+  props:{
+    animate:true
+  },
   mounted:()=>{
     console.log("hi");
     let target = document.querySelectorAll('.article__wrap__text section p')
@@ -51,6 +54,7 @@ export default {
     &__wrap{
       @include full_screen;
       position: relative;
+      overflow: hidden;
       &::before{
         /* 透過した黒を上から重ねるイメージ */
         background-color: rgba(0,0,0,0.2);
@@ -86,7 +90,8 @@ export default {
         }
       }
       &--image{
-        @include full_screen;
+        width: 100vw;
+        height: 100vh;
         object-fit: cover;
       }
     }
