@@ -4,3 +4,4 @@ Architecture Anomaliesという個展のトップページを新しくデザイ�
 Architecture Anomaliesの作者、ダニエルアーシャムというアメリカ人の方は色盲で色の区別がつかない病のようでした。実際に彼の作品の多くは白を基調としたものばかりで神々しさすら感じさせるものばかりです。個展に訪れた方がLITALICOを紹介し、実際の授業を体験することができるという企画を考えプレゼンしました。
 
 ![](/markdown/material/Architecture_Anomalies.png)
+

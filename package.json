@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.4.1",
     "gsap": "^2.1.2",
     "in-view": "^0.6.1",
+    "macy": "^2.5.0",
     "nuxt": "^2.0.0",
     "nuxt-sass-resources-loader": "^2.0.5",
     "nuxt-webfontloader": "^1.0.0",
@@ -27,6 +28,7 @@
     "superagent": "^5.0.5",
     "vue-intersect": "^1.1.3",
     "vue-lazyload": "^1.2.6",
+    "vue-magic-grid": "0.0.4",
     "vue-masonry": "^0.11.7",
     "vue-observe-visibility": "^0.4.4",
     "vue-parallax-js": "^0.2.3"

@@ -3,13 +3,17 @@
     cursorPointer
     sideMenu
     .works
-      .works__wrap
-        .works__wrap__contents(v-for="(item,index) in items")
-          img.shadow(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
-          nuxt-link(:to="`/works/${index}`").works__wrap__contents__wrap
-            img.works__wrap__contents__wrap--image(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
-            .works__wrap__contents__wrap__link
-              h1 {{item.title}}
+      no-ssr
+        magic-grid.works__wrap
+          div.works__wrap__contents(
+            v-for="(item,index) in items"
+            :key="index"
+            )
+            img.shadow(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
+            nuxt-link(:to="`/works/${index}`").works__wrap__contents__wrap
+              img.works__wrap__contents__wrap--image(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
+              .works__wrap__contents__wrap__link
+                h1 {{item.title}}
     vueFooter
 </template>
 
@@ -20,6 +24,7 @@
   import vueFooter from '@/components/vueFooter'
   // library
   import works from '@/assets/json/works.json'
+  // import Macy from 'macy'
   export default {
     components: {
       cursorPointer,
@@ -29,6 +34,11 @@
     data () {
       return {
         items: works
+      }
+    },
+    mounted(){
+      if (typeof this.$redrawVueMasonry === 'function') {
+        this.$redrawVueMasonry()
       }
     }
   }
@@ -52,13 +62,12 @@
     @include custom_size;
     height: auto;
     margin: auto;
-    @include Masonry(3)
+    // @include Masonry(3)
     &__contents{
-      @include Masonry_child
-      width: auto;
+      // @include Masonry_child
+      width: 250px;
       height: auto;
       content: "";
-      margin-bottom: 7rem;
 
       position: relative;
       .shadow{
@@ -80,7 +89,7 @@
           width: 100%;
           object-fit: cover;
           transition: all .3s ease .2s;
-          padding-bottom: 10rem;
+          padding-bottom: 3rem;
         }
         &__link{
 
