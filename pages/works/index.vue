@@ -4,7 +4,7 @@
     sideMenu
     .works
       no-ser
-        magic-grid.works__wrap
+        masonry.works__wrap(:cols='3', :gutter='32')
           div.works__wrap__contents(
             v-for="(item,index) in items"
             :key="index"
@@ -36,6 +36,10 @@
         items: works
       }
     },
+    props:{
+      gap:"100px",
+      maxCols:2
+    },
     mounted(){
       if (typeof this.$redrawVueMasonry === 'function') {
         this.$redrawVueMasonry()
@@ -56,8 +60,10 @@
   break-inside: avoid;
 }
 .works{
-  width: 100vw;
-  margin: 10rem 0;
+  @include custom_size;
+  height: auto;
+  // margin: auto;
+  margin: 10rem auto;
   &__wrap{
     @include custom_size;
     height: auto;

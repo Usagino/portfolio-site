@@ -53,7 +53,8 @@ module.exports = {
   plugins: [
     { src: '~/plugins/lazy', ssr: true },
     { src: '~/plugins/vue-masonry', ssr: false },
-    { src: '~/plugins/magic-grid', ssr: false }
+    { src: '~/plugins/magic-grid', ssr: false },
+    { src: '~/plugins/vue-masonry-css', ssr: false }
   ],
   markdownit: {
     preset: 'default',
