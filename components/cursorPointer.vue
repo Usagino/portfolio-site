@@ -10,11 +10,8 @@
 import { TweenMax } from 'gsap'
 export default {
   mounted(){
-    let cursor = document.querySelector('.cursor')
-    let cursorRect = cursor.getBoundingClientRect();
     window.onmousemove = event =>{
-      let scroll = document.documentElement.scrollTop;
-      event = event || window.event; // IE対応
+      let scroll = window.pageYOffset ;
       let x = event.clientX;
       let y = event.clientY  + scroll;
       TweenMax.set('.cursors',{opacity:1})
@@ -23,7 +20,10 @@ export default {
       TweenMax.to('.follower2', 0.1,{x:x -15,y:y-15});
       TweenMax.to('.follower3', 0.2,{x:x -15,y:y-15});
     }
-
+    // スクロールしてもカーソルが追尾するようにしたかった....
+    // window.onscroll = event => {
+    //   let scroll =  window.pageYOffset ;
+    // }
 
     const target = document.querySelectorAll('a');
     for (let i of target) {
@@ -31,10 +31,12 @@ export default {
       i.addEventListener('mouseenter', () => {
         TweenMax.to('.cursor',1,{
           scale:2,
+          delay:2
         });
         TweenMax.to('.follower1,.follower2,.follower3',0.4,{
           scale:2,
-          scaleY:0.5
+          scaleY:0.5,
+          delay:2
         });
       }, false);
       //OUT
@@ -44,7 +46,9 @@ export default {
         });
       }, false);
     }
+
   }
+
 }
 </script>
 
