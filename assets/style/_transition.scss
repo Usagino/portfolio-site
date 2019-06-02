@@ -1,19 +1,15 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-}
-
-.container {
-  text-align: center;
-  padding-top: 200px;
-  font-size: 20px;
-  transition: all .5s cubic-bezier(.55,0,.1,1);
-}
+// .container {
+//   text-align: center;
+//   padding-top: 200px;
+//   font-size: 20px;
+//   transition: all .5s cubic-bezier(.55,0,.1,1);
+// }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity .5s
+  transition: all .5s;
 }
 .page-enter, .page-leave-active {
-  opacity: 0
+  opacity: 0;
 }
 
 .bounce-enter-active {
@@ -32,6 +28,7 @@ body {
   50% { transform: scale(1.5) }
   100% { transform: scale(0) }
 }
+
 
 .slide-left-enter,
 .slide-right-leave-active {
