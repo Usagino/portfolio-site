@@ -4,7 +4,9 @@
     sideMenu
     .works
       no-ser
-        masonry.works__wrap(:cols='3', :gutter='32')
+        masonry.works__wrap(
+          :cols="{default: 4, 1500: 3, 700: 2, 400: 1}"
+          :gutter='32')
           div.works__wrap__contents(
             v-for="(item,index) in items"
             :key="index"
@@ -71,7 +73,7 @@
     // @include Masonry(3)
     &__contents{
       // @include Masonry_child
-      width: 250px;
+      width: 100%;
       height: auto;
       content: "";
 
