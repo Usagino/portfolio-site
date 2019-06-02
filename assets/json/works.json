@@ -1,31 +1,37 @@
 [
   {
     "title": "Earphone site",
-    "thumbnail":"earphone.png",
+    "thumbnail":"earphone.svg",
     "fileName":"earphone.md",
     "date":"5-2019"
   },
   {
     "title": "MIDORIYA NIKOGUSA",
-    "thumbnail":"nikogusa_1.png",
+    "thumbnail":"nikogusa.svg",
     "fileName":"nikogusa.md",
     "date":"2-2019"
   },
   {
+    "title": "Daily UI",
+    "thumbnail":"dailyui.svg",
+    "fileName":"dailyui.md",
+    "date":"12-2018"
+  },
+  {
     "title": "Front-Art Graph",
-    "thumbnail":"frontartgraph_1.png",
+    "thumbnail":"frontartgraph.svg",
     "fileName":"Frontartgraph.md",
     "date":"7-2018"
   },
   {
     "title": "Rock in japan website",
-    "thumbnail":"Rockinjapan.png",
+    "thumbnail":"Rockinjapan.svg",
     "fileName":"Rockinjapan.md",
     "date":"5-2018"
   },
   {
     "title": "ArchitectureAnomalies",
-    "thumbnail":"Architecture_Anomalies.png",
+    "thumbnail":"Architecture_Anomalies.svg",
     "fileName":"Architecture.md",
     "date":"12-2017"
   }
