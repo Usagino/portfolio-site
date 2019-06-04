@@ -8,18 +8,20 @@
           h1.first__wrap__title-box--text YUKI ITOH
     .caption
       .caption__wrap
-        itohLogo(v-parallax="0.3").caption__wrap__image
+        aboutMe.caption__wrap__image
         .caption__wrap__text-box
           h1 About me
-          p 日本工学院専門学校所属、デザイン専攻。高校の頃は工業高校だったので紙のレポートに数十行あるプログラムを手書きで書いてレポートを提出する文化に憤りを感じつつもなんやかんや卒業。プログラミングは独学で勉強しつつデザインを学ぶ。趣味はものを作ることとコーヒーと写真。
+          p 日本工学院専門学校所属、デザイン専攻。
+          p 画面の中のデザインだけではなく、使用者の将来までもをデザインできるデザイナーになりたいと考えている。趣味は写真とコーヒー。最近はモーショングラフィックスにはまっている。
+          p 愛読書は伊藤計劃の「Harmony」と森博嗣の「すべてがFになる」
     .caption
       .caption__wrap
         .caption__wrap__text-box
           h1 Programming for the Design
-          p IllustratorやPhotoshop、XDやFigma、どれもデザインツールと呼ばれるものだ。個人ないし群衆が何かを表現したいとき表現するための道具である。
+          p IllustratorやPhotoshop、XDやFigma、これらはどれもデザインツールと呼ばれるものだ。個人ないし集団が何かを表現したいとき表現したいときに使うツールだ。
           p 私の場合はそれがプログラミングだった。高校生の頃からプログラミングにふれ、JavaScriptなど多々あるプログラミング言語を使って、何かを表現してきた。
-          p プログラミングは必ずしも技術者だけのものではない、表現者の道具なのだ。
-        codeDesign(v-parallax="0.2").caption__wrap__image
+          p プログラミングは必ずしも技術者だけのものではない、表現者の道具でもあるのだと私は考えている。
+        codeDesign.caption__wrap__image
     vueFooter
 </template>
 
@@ -29,7 +31,7 @@
   import sideMenu from '@/components/sideMenu'
   import vueFooter from '@/components/vueFooter'
   import codeDesign from '@/components/codeDesign'
-  import itohLogo from '@/components/itohLogo'
+  import aboutMe from '@/components/aboutMe'
 
   import { TweenMax } from 'gsap'
   import inView from 'in-view'
@@ -40,7 +42,7 @@
       sideMenu,
       vueFooter,
       codeDesign,
-      itohLogo
+      aboutMe
     },
     mounted:()=>{
       // .first view animations
