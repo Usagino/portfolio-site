@@ -6,21 +6,12 @@
       .first__wrap
         .first__wrap__title-box
           h1.first__wrap__title-box--text YUKI ITOH
-        .first__wrap__image-box
-          img(src="/image/about/about_page.jpg" decoding="async")
-          img.shadow(src="/image/about/about_page.jpg" decoding="async")
-    .about
-      .about__wrap
-        p
-        .about__wrap__image.about__wrap__image--1
-          img(src="/image/about/about_1.png" decoding="async")
-          img.shadow(src="/image/about/about_1.png" decoding="async")
-        .about__wrap__image.about__wrap__image--2
-          img(src="/image/about/about_2.png")
-          img.shadow(src="/image/about/about_2.png" decoding="async")
-        .about__wrap__image.about__wrap__image--3
-          img(src="/image/about/about_3.png")
-          img.shadow(src="/image/about/about_3.png" decoding="async")
+    .caption
+      .caption__wrap
+        itohLogo(v-parallax="0.3").caption__wrap__image
+        .caption__wrap__text-box
+          h1 About me
+          p 日本工学院専門学校所属、デザイン専攻。高校の頃は工業高校だったので紙のレポートに数十行あるプログラムを手書きで書いてレポートを提出する文化に憤りを感じつつもなんやかんや卒業。プログラミングは独学で勉強しつつデザインを学ぶ。趣味はものを作ることとコーヒーと写真。
     .caption
       .caption__wrap
         .caption__wrap__text-box
@@ -38,6 +29,7 @@
   import sideMenu from '@/components/sideMenu'
   import vueFooter from '@/components/vueFooter'
   import codeDesign from '@/components/codeDesign'
+  import itohLogo from '@/components/itohLogo'
 
   import { TweenMax } from 'gsap'
   import inView from 'in-view'
@@ -47,7 +39,8 @@
       cursorPointer,
       sideMenu,
       vueFooter,
-      codeDesign
+      codeDesign,
+      itohLogo
     },
     mounted:()=>{
       // .first view animations
@@ -63,39 +56,6 @@
         width:'100vw',
         delay:0.8
       })
-      // .about view animations
-      const target = document.querySelector('.about__wrap p');
-
-
-      inView('.about__wrap p')
-      .once('enter', ()=>{
-        init(target, {
-          showCursor: false,
-          strings: ['日本工学院専門学校所属、デザイン専攻。高校の頃は工業高校だったので紙のレポートに数十行あるプログラムを手書きで書いてレポートを提出する文化に憤りを感じつつもなんやかんや卒業。プログラミングは独学で勉強しつつデザインを学ぶ。趣味はものを作ることとコーヒーと写真。','それが私です'],
-          loop:false,
-          typeSpeed:  60,
-          backSpeed: 10,
-          placeholder: false,
-          backDelay:  1000,
-          startDelay: 1000,
-        });
-        TweenMax.to('.about__wrap__image--1',1,{
-          y:'-10vh',
-          opacity:1,
-          delay:13
-        })
-        TweenMax.to('.about__wrap__image--2',1,{
-          y:'-20vh',
-          opacity:1,
-          delay:12
-        })
-        TweenMax.to('.about__wrap__image--3',1,{
-          y:'-15vh',
-          opacity:1,
-          delay:12.5
-        })
-      });
-      // other
     },
   }
 </script>
@@ -214,39 +174,10 @@
       }
     }
   }
-  .about{
-    &__wrap{
-      position: relative;
-      height: 480px;
-      p{
-        @include text_center;
-        height: auto;
-        font-size: 1.5rem;
-      }
-      &__image{
-        // display: none;
-        display: block;
-        width: 25%;
-        img{
-          height: auto;
-        }
-        &--1{
-          opacity: 0,
-        }
-        &--2{
-          opacity: 0;
-          left: 2rem;
-        }
-        &--3{
-          opacity: 0;
-          right: 2rem;
-        }
-      }
-    }
-  }
   .caption{
     @include full_screen
     @include middle
+    margin: 10rem 0;
     &__wrap{
       position: relative;
       @include custom_size;
