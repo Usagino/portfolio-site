@@ -25,7 +25,7 @@
   import sideMenu from '@/components/sideMenu'
   import vueFooter from '@/components/vueFooter'
   // library
-  import works from '@/assets/json/works.json'
+  import works from '@/assets/works.json'
   // import Macy from 'macy'
   export default {
     components: {

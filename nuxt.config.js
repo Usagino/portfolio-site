@@ -36,7 +36,8 @@ module.exports = {
   modules: [
     '@nuxtjs/style-resources',
     'nuxt-webfontloader',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    'nuxt-user-agent'
   ],
   styleResources: {
     sass: [
@@ -51,6 +52,7 @@ module.exports = {
     }
   },
   plugins: [
+    { src :'~/plugins/vue-parallax-js', ssr: false },
     { src: '~/plugins/vue-masonry-css', ssr: false }
   ],
   markdownit: {

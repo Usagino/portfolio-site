@@ -21,6 +21,14 @@
         .about__wrap__image.about__wrap__image--3
           img(src="/image/about/about_3.png")
           img.shadow(src="/image/about/about_3.png" decoding="async")
+    .caption
+      .caption__wrap
+        .caption__wrap__text-box
+          h1 Programming for the Design
+          p IllustratorやPhotoshop、XDやFigma、どれもデザインツールと呼ばれるものだ。個人ないし群衆が何かを表現したいとき表現するための道具である。
+          p 私の場合はそれがプログラミングだった。高校生の頃からプログラミングにふれ、JavaScriptなど多々あるプログラミング言語を使って、何かを表現してきた。
+          p プログラミングは必ずしも技術者だけのものではない、表現者の道具なのだ。
+        codeDesign(v-parallax="0.2").caption__wrap__image
     vueFooter
 </template>
 
@@ -29,6 +37,7 @@
   import cursorPointer from '@/components/cursorPointer'
   import sideMenu from '@/components/sideMenu'
   import vueFooter from '@/components/vueFooter'
+  import codeDesign from '@/components/codeDesign'
 
   import { TweenMax } from 'gsap'
   import inView from 'in-view'
@@ -37,7 +46,8 @@
     components: {
       cursorPointer,
       sideMenu,
-      vueFooter
+      vueFooter,
+      codeDesign
     },
     mounted:()=>{
       // .first view animations
@@ -161,6 +171,34 @@
     }
   }
 }
+.caption{
+  @include full_screen
+  @include middle
+  &__wrap{
+    @include custom_size;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__text-box{
+      height: 100%;
+      width: 60%;
+      @include middle;
+      flex-direction: column;
+      align-items: flex-start;
+      h1{
+        padding-bottom: 5rem;
+        font-size: 7rem
+      }
+      p{
+        line-height: 3.5rem;
+        letter-spacing: 2px
+      }
+    }
+    &__image{
+      width: 30% !important;
+    }
+  }
+}
 @include mq(sm){
   .first{
     &__wrap{
@@ -203,6 +241,41 @@
           opacity: 0;
           right: 2rem;
         }
+      }
+    }
+  }
+  .caption{
+    @include full_screen
+    @include middle
+    &__wrap{
+      position: relative;
+      @include custom_size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__text-box{
+        height: 100%;
+        width: 100%;
+        @include middle;
+        flex-direction: column;
+        align-items: flex-start;
+        h1{
+          padding-bottom: 2rem;
+          font-size: 4rem
+        }
+        p{
+          line-height: 3.5rem;
+          letter-spacing: 2px
+        }
+      }
+      &__image{
+        position: absolute;
+        top: 0;bottom: 0;
+        left: 0;right: 0;
+        margin: auto;
+        z-index: -1;
+        width: 80% !important;
+        opacity: 0.4;
       }
     }
   }

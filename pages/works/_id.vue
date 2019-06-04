@@ -22,7 +22,7 @@ import cursorPointer from '@/components/cursorPointer'
 import sideMenu from '@/components/sideMenu'
 import vueFooter from '@/components/vueFooter'
 // library
-import works from '@/assets/json/works.json'
+import works from '@/assets/works.json'
 import { TweenMax } from 'gsap';
 
 export default {
