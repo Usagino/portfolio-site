@@ -10,7 +10,7 @@ module.exports = {
       { property: 'og:url',content:'https://frontart.tokyo/' },
       { property: 'og:title',content:'Frontart' },
       { property: 'og:description',content:'This is my Portfolio' },
-      { property: 'og:image',content:'/screen.png' },
+      { property: 'og:image',content:'/image/screen.png' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
