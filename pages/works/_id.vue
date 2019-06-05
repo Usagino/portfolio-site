@@ -172,8 +172,8 @@ export default {
             width: auto;
             p{
               margin: 3rem 0;
-              line-height: 2.2rem;
-              letter-spacing: 0.2rem;
+              line-height: 2.7rem;
+              letter-spacing: 0.3rem;
               font-size: 1.5rem;
               padding: 0 10%;
               img{
