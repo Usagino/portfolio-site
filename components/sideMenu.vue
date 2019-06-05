@@ -6,6 +6,7 @@
         v-on:animCreated="handleAnimation"
         )
     span.menu__back
+
     nav.menu__nav
       ul.menu__nav__list
         li
@@ -20,9 +21,11 @@
           a(href="https://www.instagram.com/frontartgraph/" target="_blank") Instagram
         li.menu__nav__list__media
           a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
+      menuAnime
 </template>
 
 <script>
+  import menuAnime from '~/components/menuAnime';
   import Lottie from "~/components/Lottie.vue";
   import * as animationData from "~/assets/json/menuIcon.json";
   import { TimelineLite,TweenMax,Expo } from 'gsap'
@@ -30,7 +33,8 @@
   let side_toggle = 1;
   export default {
     components:{
-      Lottie
+      Lottie,
+      menuAnime
     },
     data(){
       return {
@@ -125,6 +129,8 @@
       transform: translateX(100%);
       @include middle;
       justify-content: flex-start;
+      display: grid;
+      grid-template-columns: 1fr 10fr;
       &__list{
         height: 70%;
         padding-left: 10rem;
