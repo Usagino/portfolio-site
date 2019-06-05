@@ -4,16 +4,18 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { name: 'twitter:card' , content:'summary_large_image'},
+      { name: 'twitter:site' , content:'@_Frontart'},
+      { property: 'og:url',content:'https://frontart.tokyo/' },
+      { property: 'og:title',content:'Frontart' },
+      { property: 'og:description',content:'This is my Portfolio' },
+      { property: 'og:image',content:'/screen.png' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel: 'stylesheet', href:'https://use.typekit.net/mwt6wiq.css'}
     ],
-    link: [
-      {
-        rel: 'stylesheet', href:'https://use.typekit.net/mwt6wiq.css'
-      }
-    ]
   },
 
   build: {
