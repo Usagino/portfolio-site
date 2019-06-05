@@ -130,10 +130,11 @@
       @include middle;
       justify-content: flex-start;
       display: grid;
-      grid-template-columns: 1fr 10fr;
+      grid-template-columns: 1fr 5fr;
+      padding: 0 20rem;
+      grid-gap: 2rem;
       &__list{
         height: 70%;
-        padding-left: 10rem;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
