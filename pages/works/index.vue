@@ -5,7 +5,7 @@
     .works
       no-ser
         masonry.works__wrap(
-          :cols="{default: 4, 1500: 3, 700: 2, 400: 1}"
+          :cols="{default: 3, 1500: 3, 700: 2, 400: 1}"
           :gutter='32')
           div.works__wrap__contents(
             v-for="(item,index) in items"
@@ -64,19 +64,15 @@
 .works{
   @include custom_size;
   height: auto;
-  // margin: auto;
   margin: 10rem auto;
   &__wrap{
     @include custom_size;
     height: auto;
     margin: auto;
-    // @include Masonry(3)
     &__contents{
-      // @include Masonry_child
       width: 100%;
       height: auto;
       content: "";
-
       position: relative;
       .shadow{
         filter: blur(2rem);
@@ -97,7 +93,7 @@
           width: 100%;
           object-fit: cover;
           transition: all .3s ease .2s;
-          padding-bottom: 3rem;
+          padding-bottom: 5rem;
         }
         &__link{
 
