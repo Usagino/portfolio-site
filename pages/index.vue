@@ -1,6 +1,5 @@
 <template lang="pug">
 section
-  cursorPointer
   sideMenu
   .first
     .first__wrap
@@ -34,6 +33,7 @@ import myLogo from '@/components/myLogo'
 import * as animationData from "~/assets/json/my_logo.json";
 import inView from 'in-view'
 import { init } from 'ityped'
+import {TweenMax} from 'gsap'
 
 export default {
   components: {
@@ -44,204 +44,206 @@ export default {
     vueFooter,
   },
   mounted:()=>{
-    console.log('hi');
+    TweenMax.set('.about__wrap__title',{'display':'none'})
+    inView('.about__wrap').once('enter',()=>{
+      TweenMax.set('.about__wrap__title',{'display':'block'})
+    })
   },
 }
 </script>
 
 <style lang="scss" scoped>
-
-.first{
-  @include full_screen;
-  &__wrap{
-    @include full_size;
-    @include middle;
-    &__logo{
-      width: 40vw;
-    }
-  }
-}
-.works{
-  @include full_screen;
-  @include middle;
-  &__wrap{
-    @include custom_size;
-    display: grid;
-    grid-gap:4rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-2 area-2 area-2 area-2" "area-3 area-3 area-3 area-3 area-4 area-4" "area-3 area-3 area-3 area-3 area-4 area-4";
-
-    position: relative;
-    & > *{
-      transition: all .3s ease 0s;
-    }
-    &:hover{
-      & > .works__wrap__area-1{
-        transform: translate(-10vw,-11vh);
-      }
-      & > .works__wrap__area-2{
-        transform: translate(10vw,-11vh);
-      }
-      & > .works__wrap__area-3{
-        transform: translate(-10vw,11vh);
-      }
-      & > .works__wrap__area-4{
-        transform: translate(10vw,11vh);
-      }
-      & > .works__wrap--title{
-        z-index: 1;
-        opacity: 1;
-      }
-
-    }
-    &--title{
-      position: absolute;
-      top: 0;bottom: 0;
-      left: 0;right: 0;
-      margin: auto;
-      line-height: 72vh;
-      text-align: center;
-      display: block;
-      font-size: 10rem;
-      z-index: -1;
-      color: $text_color1;
-      opacity: 0;
-      transition: all .3s ease .4s;
-      font-weight: bold;
-    }
-    &__area{
+  .first{
+    @include full_screen;
+    &__wrap{
       @include full_size;
-      img{
-        @include full_size;
-        object-fit: cover;
+      @include middle;
+      &__logo{
+        width: 40vw;
       }
     }
-    &__area-1{
-      grid-area: area-1;
-      transition: transform .4s ease 0s;
-    }
-    &__area-2{
-      grid-area: area-2;
-      transition: transform .4s ease .4s;
-    }
-    &__area-3{
-      grid-area: area-3;
-      transition: transform .4s ease .1s;
-    }
-    &__area-4{
-      grid-area: area-4;
-      transition: transform .4s ease .2s;
-    }
   }
-}
-.about{
-  @include full_screen;
-  @include middle;
-  &__wrap{
+  .works{
     @include full_screen;
     @include middle;
-    position: relative;
-    // &__parallax{
-    //   position: absolute;
-    //   z-index: -1;
-    //   opacity: 0.6;
-    //   width: 250px;
-    //   height: auto;
-    //   filter: blur(3rem);
-    //   &--1{
-    //     left: 30%;
-    //     bottom: 10%;
-    //   }
-    //   &--2{
-    //     left: 60%;
-    //     bottom: 60%;
-    //   }
-    //   &--3{
-    //     left: 80%;
-    //     bottom: 50%;
-    //   }
-    //   &--4{
-    //     right: 30%;
-    //     top: 10%;
-    //   }
-    //   &--5{
-    //     right: 60%;
-    //     top: 23%;
-    //   }
-    //   &--6{
-    //     right: 80%;
-    //     top: 20%;
-    //   }
-    // }
-    &__title{
-      font-size: 20rem;
-      font-weight: bold;
-      background-image: url('/image/top/my.gif');
-      -webkit-background-clip: text;
-      color: transparent;
+    &__wrap{
+      @include custom_size;
+      display: grid;
+      grid-gap:4rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-2 area-2 area-2 area-2" "area-3 area-3 area-3 area-3 area-4 area-4" "area-3 area-3 area-3 area-3 area-4 area-4";
+
+      position: relative;
+      & > *{
+        transition: all .3s ease 0s;
+      }
+      &:hover{
+        & > .works__wrap__area-1{
+          transform: translate(-10vw,-11vh);
+        }
+        & > .works__wrap__area-2{
+          transform: translate(10vw,-11vh);
+        }
+        & > .works__wrap__area-3{
+          transform: translate(-10vw,11vh);
+        }
+        & > .works__wrap__area-4{
+          transform: translate(10vw,11vh);
+        }
+        & > .works__wrap--title{
+          z-index: 1;
+          opacity: 1;
+        }
+
+      }
+      &--title{
+        position: absolute;
+        top: 0;bottom: 0;
+        left: 0;right: 0;
+        margin: auto;
+        line-height: 72vh;
+        text-align: center;
+        display: block;
+        font-size: 10rem;
+        z-index: -1;
+        color: $text_color1;
+        opacity: 0;
+        transition: all .3s ease .4s;
+        font-weight: bold;
+      }
+      &__area{
+        @include full_size;
+        img{
+          @include full_size;
+          object-fit: cover;
+        }
+      }
+      &__area-1{
+        grid-area: area-1;
+        transition: transform .4s ease 0s;
+      }
+      &__area-2{
+        grid-area: area-2;
+        transition: transform .4s ease .4s;
+      }
+      &__area-3{
+        grid-area: area-3;
+        transition: transform .4s ease .1s;
+      }
+      &__area-4{
+        grid-area: area-4;
+        transition: transform .4s ease .2s;
+      }
     }
-
   }
-}
- @include mq(sm) {
-   .first{
-     @include full_screen;
-     &__wrap{
-       @include full_size;
-       @include middle;
-       &__logo{
-         width: 80vw;
-       }
-     }
-   }
-   .works{
-     &__wrap{
-       &--title{
-         font-size: 5rem;
+  .about{
+    @include full_screen;
+    @include middle;
+    &__wrap{
+      @include full_screen;
+      @include middle;
+      position: relative;
+      // &__parallax{
+      //   position: absolute;
+      //   z-index: -1;
+      //   opacity: 0.6;
+      //   width: 250px;
+      //   height: auto;
+      //   filter: blur(3rem);
+      //   &--1{
+      //     left: 30%;
+      //     bottom: 10%;
+      //   }
+      //   &--2{
+      //     left: 60%;
+      //     bottom: 60%;
+      //   }
+      //   &--3{
+      //     left: 80%;
+      //     bottom: 50%;
+      //   }
+      //   &--4{
+      //     right: 30%;
+      //     top: 10%;
+      //   }
+      //   &--5{
+      //     right: 60%;
+      //     top: 23%;
+      //   }
+      //   &--6{
+      //     right: 80%;
+      //     top: 20%;
+      //   }
+      // }
+      &__title{
+        font-size: 20rem;
+        font-weight: bold;
+        background-image: url('/image/top/my.gif');
+        -webkit-background-clip: text;
+        color: transparent;
+      }
 
-       }
-       &__area{
+    }
+  }
+   @include mq(sm) {
+     .first{
+       @include full_screen;
+       &__wrap{
          @include full_size;
-         img{
-           @include full_size;
-           object-fit: cover;
+         @include middle;
+         &__logo{
+           width: 80vw;
          }
        }
-       &__area-1{
-         grid-area: area-1;
-         transition: transform .4s ease 0s;
-       }
-       &__area-2{
-         grid-area: area-2;
-         transition: transform .4s ease .4s;
-       }
-       &__area-3{
-         grid-area: area-3;
-         transition: transform .4s ease .1s;
-       }
-       &__area-4{
-         grid-area: area-4;
-         transition: transform .4s ease .2s;
+     }
+     .works{
+       &__wrap{
+         &--title{
+           font-size: 5rem;
+
+         }
+         &__area{
+           @include full_size;
+           img{
+             @include full_size;
+             object-fit: cover;
+           }
+         }
+         &__area-1{
+           grid-area: area-1;
+           transition: transform .4s ease 0s;
+         }
+         &__area-2{
+           grid-area: area-2;
+           transition: transform .4s ease .4s;
+         }
+         &__area-3{
+           grid-area: area-3;
+           transition: transform .4s ease .1s;
+         }
+         &__area-4{
+           grid-area: area-4;
+           transition: transform .4s ease .2s;
+         }
        }
      }
-   }
-   .about{
-     @include full_screen;
-     @include middle;
-     &__wrap{
-       @include custom_size;
+     .about{
+       @include full_screen;
        @include middle;
-       position: relative;
-       &__title{
-         font-size: 10rem;
-         font-weight: bold;
-         background-image: url('/image/top/my.gif');
-         -webkit-background-clip: text;
-         color: transparent;
-         height: 240px;
+       &__wrap{
+         @include custom_size;
+         @include middle;
+         position: relative;
+         &__title{
+           font-size: 10rem;
+           font-weight: bold;
+           background-image: url('/image/top/my.gif');
+           -webkit-background-clip: text;
+           color: transparent;
+           height: 240px;
+         }
        }
      }
    }
- }
 </style>

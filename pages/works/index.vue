@@ -1,6 +1,5 @@
 <template lang="pug">
   section
-    cursorPointer
     sideMenu
     .works
       no-ser

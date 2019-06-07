@@ -52,13 +52,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  html{
-    cursor: none !important;
-    *:hover{
-      cursor: none !important;
-    }
-  }
+<style lang="scss" scoped>
+  // html{
+  //   cursor: none !important;
+  //   *:hover{
+  //     cursor: none !important;
+  //   }
+  // }
   .follower1{ opacity: 1 }
   .follower2{ opacity: 0.8 }
   .follower3{ opacity: 0.4 }

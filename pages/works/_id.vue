@@ -1,7 +1,5 @@
 <template lang="pug">
   section
-
-    cursorPointer
     .first
       .first__wrap
         .first__wrap__title-box
