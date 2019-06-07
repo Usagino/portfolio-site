@@ -205,11 +205,15 @@ export default {
            top: 0;left: 0;
            bottom: 0; right: 0;
            margin: auto;
-           @include full_size;
-           z-index: -1
+           z-index: -1;
+           opacity: 0.5;
+           & > *{
+             transform: scale(4);
+           }
          }
          &__title{
            font-size: 5rem;
+
          }
        }
      }
