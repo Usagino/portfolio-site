@@ -25,8 +25,8 @@
 </template>
 
 <script>
-  import menuAnime from '~/components/menuAnime';
-  import Lottie from "~/components/Lottie.vue";
+  import menuAnime from '~/components/lottie/menuAnime';
+  import Lottie from "~/components/lottie/Lottie.vue";
   import * as animationData from "~/assets/json/menuIcon.json";
   import { TimelineLite,TweenMax,Expo } from 'gsap'
 

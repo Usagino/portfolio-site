@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Lottie from '@/components/Lottie'
+import Lottie from '@/components/lottie/Lottie'
 import * as animationData from "~/assets/json/about.json";
 export default {
   components:{

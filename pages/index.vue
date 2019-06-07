@@ -18,6 +18,8 @@ section
         img(src="image/top/works_4.png" )
   .about
     .about__wrap
+      .about__wrap__image
+        cube
       nuxt-link.about__wrap__title(to="/about") About me
   vueFooter
 </template>
@@ -27,8 +29,9 @@ section
 import cursorPointer from '@/components/cursorPointer'
 import sideMenu from '@/components/sideMenu'
 import vueFooter from '@/components/vueFooter'
-import Lottie from '@/components/Lottie'
-import myLogo from '@/components/myLogo'
+import Lottie from '@/components/lottie/Lottie'
+import myLogo from '@/components/lottie/myLogo'
+import cube from '@/components/lottie/cube'
 // library
 import * as animationData from "~/assets/json/my_logo.json";
 import inView from 'in-view'
@@ -42,12 +45,7 @@ export default {
     sideMenu,
     myLogo,
     vueFooter,
-  },
-  mounted:()=>{
-    TweenMax.set('.about__wrap__title',{'display':'none'})
-    inView('.about__wrap').once('enter',()=>{
-      TweenMax.set('.about__wrap__title',{'display':'block'})
-    })
+    cube
   },
 }
 </script>
@@ -142,48 +140,20 @@ export default {
     @include middle;
     &__wrap{
       @include full_screen;
-      @include middle;
       position: relative;
-      // &__parallax{
-      //   position: absolute;
-      //   z-index: -1;
-      //   opacity: 0.6;
-      //   width: 250px;
-      //   height: auto;
-      //   filter: blur(3rem);
-      //   &--1{
-      //     left: 30%;
-      //     bottom: 10%;
-      //   }
-      //   &--2{
-      //     left: 60%;
-      //     bottom: 60%;
-      //   }
-      //   &--3{
-      //     left: 80%;
-      //     bottom: 50%;
-      //   }
-      //   &--4{
-      //     right: 30%;
-      //     top: 10%;
-      //   }
-      //   &--5{
-      //     right: 60%;
-      //     top: 23%;
-      //   }
-      //   &--6{
-      //     right: 80%;
-      //     top: 20%;
-      //   }
-      // }
-      &__title{
-        font-size: 20rem;
-        font-weight: bold;
-        background-image: url('/image/top/my.gif');
-        -webkit-background-clip: text;
-        color: transparent;
-      }
 
+      @include middle;
+      &__image{
+        @include full_size;
+        height: 30rem;
+        width: 30rem;
+        object-fit: cover;
+      }
+      &__title{
+        white-space: nowrap;
+        font-size: 10rem;
+        font-weight: bold;
+      }
     }
   }
    @include mq(sm) {
@@ -229,19 +199,17 @@ export default {
        }
      }
      .about{
-       @include full_screen;
-       @include middle;
        &__wrap{
-         @include custom_size;
-         @include middle;
-         position: relative;
+         &__image{
+           position: absolute;
+           top: 0;left: 0;
+           bottom: 0; right: 0;
+           margin: auto;
+           @include full_size;
+           z-index: -1
+         }
          &__title{
-           font-size: 10rem;
-           font-weight: bold;
-           background-image: url('/image/top/my.gif');
-           -webkit-background-clip: text;
-           color: transparent;
-           height: 240px;
+           font-size: 5rem;
          }
        }
      }

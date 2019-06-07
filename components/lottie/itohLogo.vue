@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Lottie from '@/components/Lottie'
-import * as animationData from "~/assets/json/code_design.json";
+import Lottie from '@/components/lottie/Lottie'
+import * as animationData from "~/assets/json/itoh_logo.json";
 export default {
   components:{
     Lottie

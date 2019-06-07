@@ -29,8 +29,8 @@
   import cursorPointer from '@/components/cursorPointer'
   import sideMenu from '@/components/sideMenu'
   import vueFooter from '@/components/vueFooter'
-  import codeDesign from '@/components/codeDesign'
-  import aboutMe from '@/components/aboutMe'
+  import codeDesign from '@/components/lottie/codeDesign'
+  import aboutMe from '@/components/lottie/aboutMe'
 
   import { TweenMax } from 'gsap'
   import inView from 'in-view'

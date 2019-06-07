@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import Lottie from '@/components/Lottie'
-import * as animationData from "~/assets/json/my_logo.json";
+import Lottie from '@/components/lottie/Lottie'
+import * as animationData from "~/assets/json/cube.json";
 export default {
   components:{
     Lottie
@@ -15,7 +15,7 @@ export default {
     return {
       lottieOptions: {
         animationData: animationData,
-        loop:false
+        loop:true
       },
       animationSpeed: 1,
     }
