@@ -145,9 +145,18 @@ export default {
       @include middle;
       &__image{
         @include full_size;
-        height: 30rem;
-        width: 30rem;
+        height: 40vh;
+        width: 40vh;
         object-fit: cover;
+        position: absolute;
+        top: 0;left: 0;
+        bottom: 0; right: 0;
+        margin: auto;
+        z-index: -1;
+        opacity: 0.8;
+        & > *{
+          transform: scale(4);
+        }
       }
       &__title{
         white-space: nowrap;
