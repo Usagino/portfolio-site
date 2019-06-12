@@ -190,9 +190,12 @@ export default {
       }
     }
   }
-  @media all and (-ms-high-contrast:none) {
+  @media all and (-ms-high-contrast: none){
     .works__wrap__area{
       display: none;
+      img{
+        display: none;
+      }
     }
   }
    @include mq(sm) {
