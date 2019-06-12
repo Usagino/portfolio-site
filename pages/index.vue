@@ -195,6 +195,7 @@ export default {
       &__wrap{
         &__title{
           opacity: 1;
+          font-size: 20rem;
         }
         &__area{
           display: none;
