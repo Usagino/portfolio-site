@@ -61,6 +61,7 @@ export default {
       }
     }
   }
+
   .works{
     @include full_screen;
     @include middle;
@@ -187,6 +188,11 @@ export default {
         font-size: 10rem;
         font-weight: bold;
       }
+    }
+  }
+  @media all and (-ms-high-contrast:none) {
+    .works__wrap__area{
+      display: none;
     }
   }
    @include mq(sm) {
