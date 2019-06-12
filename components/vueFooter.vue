@@ -40,9 +40,12 @@ footer{
       @include full_size;
       &__container{
         @include custom_size;
+        display: -ms-grid;
         display: grid;
         grid-template-columns: 1fr 1fr;
+        -ms-grid-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
         grid-template-areas: "sns image" "contact image";
         @mixin list-style{
           @include middle;
