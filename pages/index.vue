@@ -70,7 +70,15 @@ export default {
       grid-gap:4rem;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-areas: "area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-2 area-2 area-2 area-2" "area-1 area-1 area-2 area-2 area-2 area-2" "area-3 area-3 area-3 area-3 area-4 area-4" "area-3 area-3 area-3 area-3 area-4 area-4";
+      grid-template-areas:
+        "area-1 area-1 area-2 area-2 area-2 area-2"
+        "area-1 area-1 area-2 area-2 area-2 area-2"
+        "area-1 area-1 area-2 area-2 area-2 area-2"
+        "area-3 area-3 area-3 area-3 area-4 area-4"
+        "area-3 area-3 area-3 area-3 area-4 area-4";
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
 
       position: relative;
       & > *{
@@ -120,18 +128,34 @@ export default {
       &__area-1{
         grid-area: area-1;
         transition: transform .4s ease 0s;
+        -ms-grid-row: 1;
+       -ms-grid-row-span: 3;
+       -ms-grid-column: 1;
+       -ms-grid-column-span: 2;
       }
       &__area-2{
         grid-area: area-2;
         transition: transform .4s ease .4s;
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 3;
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 4;
       }
       &__area-3{
         grid-area: area-3;
         transition: transform .4s ease .1s;
+        -ms-grid-row: 4;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 4;
       }
       &__area-4{
         grid-area: area-4;
         transition: transform .4s ease .2s;
+        -ms-grid-row: 4;
+        -ms-grid-row-span: 2;
+        -ms-grid-column: 5;
+        -ms-grid-column-span: 2;
       }
     }
   }
