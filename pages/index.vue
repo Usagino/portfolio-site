@@ -191,10 +191,17 @@ export default {
     }
   }
   @media all and (-ms-high-contrast: none){
-    .works__wrap__area{
-      display: none;
-      img{
-        display: none;
+    .works{
+      &__wrap{
+        &__title{
+          opacity: 1;
+        }
+        &__area{
+          display: none;
+          img{
+            display: none;
+          }
+        }
       }
     }
   }
