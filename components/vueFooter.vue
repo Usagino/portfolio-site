@@ -40,13 +40,13 @@ footer{
       @include full_size;
       &__container{
         @include custom_size;
-        display: -ms-grid;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        -ms-grid-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        -ms-grid-rows: 1fr 1fr;
         grid-template-areas: "sns image" "contact image";
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
         @mixin list-style{
           @include middle;
           flex-direction: column;
@@ -64,16 +64,28 @@ footer{
         }
         &__sns{
           grid-area: sns;
+          -ms-grid-row: 1;
+          -ms-grid-row-span: 1;
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 1;
           background: #f8f8f8;
           @include list_style;
         }
         &__contact{
           grid-area: contact;
+          -ms-grid-row: 2;
+          -ms-grid-row-span: 1;
+          -ms-grid-column: 1;
+          -ms-grid-column-span: 1;
           background: #f0f0f0;
           @include list_style;
         }
         &__image{
           grid-area: image;
+          -ms-grid-row: 1;
+          -ms-grid-row-span: 2;
+          -ms-grid-column: 2;
+          -ms-grid-column-span: 1;
           background: #f6f6f6;
           @include middle;
           &__logo{
