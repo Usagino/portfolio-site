@@ -54,8 +54,8 @@ module.exports = {
     }
   },
   plugins: [
-    { src :'~/plugins/vue-parallax-js', ssr: false },
-    { src: '~/plugins/vue-masonry-css', ssr: false }
+    { src: '~/plugins/vue-masonry-css', ssr: false },
+    { src: '~/plugins/fullpage', ssr: false }
   ],
   markdownit: {
     preset: 'default',

@@ -1,52 +1,26 @@
-<template>
-  <div>
+<template lang="pug">
+  section
+    no-ssr
+      full-page( ref="fullpage" :options="options" id="fullpage")
+        div Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        div Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-        <p class="hoge">
-            高さ違ってくるので、スマホでやってね。
-        </p>
-
-        <div v-observe-visibility="visibilityChanged">見えているので、下のは true になる</div>
-
-        <div class="piyo">
-            {{isVisible}}
-        </div>
-
-        <div style="height: 1000px;">
-            v-observe-visibility が 見えていないので、 下のは false になる
-        </div>
-
-        <div class="piyo">
-            {{isVisible}}
-        </div>
-
-    </div>
-
+        div Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </template>
 
 <script>
-
-    export default {
-
-
-        data () {
-            return {
-                isVisible: false,
-            }
+  export default {
+    data() {
+      return {
+        options: {
+          licenseKey: 'C369A22F-73704243-8980D98A-0B1A5553',
+          controlArrows: true,
+          scrollBar: true
         },
-        methods: {
-            visibilityChanged (isVisible, entry) {
-                this.isVisible = isVisible;
-                console.log(entry);
-            },
-        },
-    };
+      }
+    },
+  }
 </script>
-<style media="screen">
-  .hoge{
-    height: 100vh;
-  }
-  .piyo{
-    position: fixed;
-    top: 0;
-  }
+<style lang="scss">
+
 </style>
