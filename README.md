@@ -1,3 +1,3 @@
-# this is Portfoliosite
+# That is Portfoliosite
 
 frontart.tokyo
