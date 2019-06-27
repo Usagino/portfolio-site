@@ -18,6 +18,12 @@
     "date":"12-2018"
   },
   {
+    "title": "Progate slides",
+    "thumbnail":"Progate_slides.svg",
+    "fileName":"Progate_slides.md",
+    "date":"8-2018"
+  },
+  {
     "title": "Front-Art Graph",
     "thumbnail":"frontartgraph.svg",
     "fileName":"Frontartgraph.md",
