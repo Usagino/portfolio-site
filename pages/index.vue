@@ -41,6 +41,19 @@ export default {
     vueFooter,
     cube
   },
+  mounted(){
+    const about_el = document.querySelector('.about__wrap__title')
+    about_el.addEventListener('mousemove',()=>{
+      TweenMax.to('.about__wrap__image',0.2,{
+        'scale':0.8
+      })
+    });
+    about_el.addEventListener('mouseout',()=>{
+      TweenMax.to('.about__wrap__image',0.2,{
+        'scale':1
+      })
+    });
+  }
 }
 </script>
 
@@ -71,6 +84,17 @@ export default {
         font-size: 10rem;
         font-weight: bold;
         color: $text_color1;
+        &:hover + .works__wrap--circle{
+          border-radius: 100% 90% 100% 100%/90% 100% 100% 100%;
+          height: 42vw;
+          width: 42vw;
+          background: #90acf4;
+        }
+        &:hover + .works__wrap--circle > .works__wrap--circle--inner{
+          border-radius: 40% 30% 20% 80%/20% 30% 50% ;
+          height: 7vw;
+          width: 7vw;
+        }
       }
       &--circle{
         content: "";
@@ -82,6 +106,7 @@ export default {
         animation: rotate-anime 10s linear 0s forwards;
         animation-iteration-count: infinite;
         border-radius: 40% 40% 50% 40%/30% 50% 50% ;
+        transition: all .2s ease .1s;
 
         @keyframes rotate-anime{
           to{
@@ -92,6 +117,7 @@ export default {
           }
         }
         &--inner{
+          transition: all .2s ease .1s;
           height: 10vw;
           width: 10vw;
           background: #ffffff;
@@ -110,7 +136,6 @@ export default {
     &__wrap{
       @include full_screen;
       position: relative;
-
       @include middle;
       &__image{
         @include full_size;
@@ -131,6 +156,10 @@ export default {
         white-space: nowrap;
         font-size: 10rem;
         font-weight: bold;
+        &:hover + div{
+          height: 70%;
+          width: 70%;
+        }
       }
     }
   }

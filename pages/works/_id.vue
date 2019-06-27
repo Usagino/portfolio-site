@@ -39,6 +39,10 @@ export default {
     animate:true
   },
   mounted:()=>{
+    const a_el = document.querySelectorAll('.article__wrap a');
+    for (var i = 0; i < a_el.length; i++) {
+      a_el[i].setAttribute('target','_brank')
+    }
     console.log("hi");
     let target = document.querySelectorAll('.article__wrap__text section p')
 
