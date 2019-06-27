@@ -2,7 +2,7 @@
   section
     sideMenu
     .works
-      no-ser
+      no-ssr
         masonry.works__wrap(
           :cols="{default: 3, 1500: 3, 700: 2, 400: 1}"
           :gutter='32')
@@ -117,9 +117,18 @@
 }
 
 @include mq(sm){
+  .shadow{
+    display: none;
+  }
+
   .works{
     &__wrap{
-      @include Masonry(1)
+      @include Masonry(1);
+      &__contents__wrap--image{
+          box-shadow: 0px 10px 10px #dbdbdb;
+          padding: 0;
+          margin-bottom: 3rem;
+      }
     }
   }
 }
