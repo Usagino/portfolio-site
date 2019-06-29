@@ -14,7 +14,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {rel: 'stylesheet', href:'https://use.typekit.net/mwt6wiq.css'}
+      { rel: 'stylesheet', href:'https://use.typekit.net/mwt6wiq.css'}
     ],
   },
 
@@ -39,7 +39,8 @@ module.exports = {
     '@nuxtjs/style-resources',
     'nuxt-webfontloader',
     '@nuxtjs/markdownit',
-    'nuxt-user-agent'
+    'nuxt-user-agent',
+    'nuxt-fullpage.js'
   ],
   styleResources: {
     sass: [

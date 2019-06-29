@@ -1,5 +1,5 @@
 <template lang="pug">
-  footer
+  footer(id="footer")
     .footer
       .footer__wrap
         .footer__wrap__container
