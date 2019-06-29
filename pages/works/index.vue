@@ -134,7 +134,7 @@
     height: 2px;
     width: 100%;
     background: #2a2a2a;
-    count:'';
+    content: "";
     transform: rotate(-45deg);
   }
 }
@@ -197,7 +197,7 @@
       height: 2px;
       width: 100%;
       background: #2a2a2a;
-      count:'';
+      content: "";
     }
   }
   .work{
