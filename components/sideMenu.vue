@@ -112,6 +112,7 @@
       width: 4rem;
       right: 4rem;
       z-index: 1001;
+      cursor: pointer;
     }
     &__back{
       height: 100vh;
@@ -127,6 +128,7 @@
       z-index: 1000;
       right: 0;
       transform: translateX(100%);
+
       @include middle;
       justify-content: flex-start;
       display: grid;
