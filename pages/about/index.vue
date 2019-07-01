@@ -171,8 +171,8 @@
     @include middle
     margin: 10rem 0;
     &__wrap{
+      padding: 2rem 5rem;
       position: relative;
-      @include custom_size;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -184,11 +184,12 @@
         align-items: flex-start;
         h1{
           padding-bottom: 2rem;
-          font-size: 4rem
+          font-size: 3rem
         }
         p{
-          line-height: 3.5rem;
-          letter-spacing: 2px
+          line-height: 1.7rem;
+          letter-spacing: 2px;
+          font-size: 1rem;
         }
       }
       &__image{
