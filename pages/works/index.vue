@@ -2,14 +2,8 @@
   section
     sideMenu
     no-ssr
-      .fp-nav
-        p.fp-nav__count
-        .fp-nav__line
-        p.fp-nav__index
-      full-page(
-        ref="fullpage"
-        :options="options"
-        id="fullpage")
+      fp_nav
+      full-page( ref="fullpage" :options="options" id="fullpage")
         .work.section(
           v-for="(item,index) in items"
           :key="index"
@@ -29,6 +23,7 @@
   import cursorPointer from '@/components/cursorPointer'
   import sideMenu from '@/components/sideMenu'
   import vueFooter from '@/components/vueFooter'
+  import fp_nav from '@/components/fp-nav'
   // library
   import works from '@/assets/works.json'
   import inView from 'in-view'
@@ -38,7 +33,8 @@
     components: {
       cursorPointer,
       sideMenu,
-      vueFooter
+      vueFooter,
+      fp_nav
     },
     props:{
       indexLength :Number
@@ -112,32 +108,7 @@
 </script>
 
 <style lang="scss" scoped>
-.fp-nav{
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  z-index: 2;
-  left: 4rem;
-  // right: 0;
-  margin: auto;
-  height: 6rem;
-  width: 4rem;
-  @include middle
-  flex-direction: column;
-  &__count{
-    align-self: flex-start;
-  }
-  &__index{
-    align-self: flex-end;
-  }
-  &__line{
-    height: 2px;
-    width: 100%;
-    background: #2a2a2a;
-    content: "";
-    transform: rotate(-45deg);
-  }
-}
+
 .work{
   @include full_screen;
   &__wrap{
