@@ -201,6 +201,10 @@ export default {
      }
      .works{
        &__wrap{
+         &--circle{
+             height: 60vw;
+             width: 60vw;
+         }
          &--title{
            font-size: 5rem;
 
@@ -240,7 +244,7 @@ export default {
            z-index: -1;
            opacity: 0.5;
            & > *{
-             transform: scale(4);
+             transform: scale(2);
            }
          }
          &__title{

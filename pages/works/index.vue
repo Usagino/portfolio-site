@@ -152,25 +152,7 @@
 }
 
 @include mq(sm){
-  .fp-nav{
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    right: 0;
-    top: auto;
-    bottom: 1rem;
-    margin: auto;
-    height: 6rem;
-    width: 4rem;
-    @include middle
-    flex-direction: column;
-    &__line{
-      height: 2px;
-      width: 100%;
-      background: #2a2a2a;
-      content: "";
-    }
-  }
+
   .work{
     &__wrap{
       position: relative;
