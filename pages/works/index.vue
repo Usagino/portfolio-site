@@ -202,19 +202,36 @@
   }
   .work{
     &__wrap{
+      position: relative;
     }
     &__thumbnail{
       width: 100%;
       &__wrap{
       }
       &__image{
+
       }
       &__shadow{
+        top: 1rem;
+        left: 0rem;
+        filter: blur(1rem);
       }
     }
     &__link{
-      display: none;
+      width: auto;
+      position: absolute;
+      margin: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10rem;
+      padding: 1rem;
+      // background:linear-gradient(#ffffff00, #323232aa);
+      display: flex;
+      align-items: flex-end;
       &__text{
+        font-size: 3rem;
+        color: #ededed;
 
       }
     }
