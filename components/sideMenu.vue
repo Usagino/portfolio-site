@@ -160,9 +160,9 @@
    @include mq(sm){
      .menu{
        &__icon{
-         height: 4rem;
-         width: 4rem;
-         right: 2rem;
+         height: 3rem;
+         width: 3rem;
+         right: 1rem;
          z-index: 1001;
        }
        &__nav{

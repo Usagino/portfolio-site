@@ -171,7 +171,7 @@
     @include middle
     margin: 10rem 0;
     &__wrap{
-      padding: 2rem 5rem;
+      padding: 3rem 5rem;
       position: relative;
       display: flex;
       justify-content: center;
@@ -187,9 +187,9 @@
           font-size: 3rem
         }
         p{
-          line-height: 1.7rem;
+          line-height: 2rem;
           letter-spacing: 2px;
-          font-size: 1rem;
+          font-size: 1.5rem;
         }
       }
       &__image{
