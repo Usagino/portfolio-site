@@ -7,17 +7,19 @@
         .first.section
           .first__wrap
             h1 Works
+
         .work.section(
-          v-for="(item,index) in items"
+          v-for="(item,index) in itmesDivision()"
           :key="index"
           )
-          .work__wrap
-            nuxt-link.work__thumbnail(:to=" `/works/${index}` ")
-              .work__thumbnail__wrap
-                img.work__thumbnail__image(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
-              img.work__thumbnail__shadow(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
-            nuxt-link.work__link(:to="`/works/${index}`")
-              h1.work__link__text {{item.title}}
+
+          .work__box
+            .work__item(v-for="(works,index_child) in item" :key="index_child")
+              //p {{works.title}}
+              nuxt-link.work__thumbnail(:to="`/works/${index * 2 + index_child}`")
+                img(:src="`/markdown/thumbnail/${works.thumbnail}`" decoding="async")
+                h2 {{works.title}}
+              img.work__shadow(:src="`/markdown/thumbnail/${works.thumbnail}`" decoding="async")
         vueFooter.section
 </template>
 
@@ -31,6 +33,7 @@
   import works from '@/assets/works.json'
   import inView from 'in-view'
   import { TweenMax } from 'gsap'
+  import axios from 'axios'
 
   export default {
     components: {
@@ -51,76 +54,47 @@
           css3: true,
 
           afterLoad:this.afterLoad,
-          onLeave: this.onLeave,
+
           afterRender: this.afterRender,
         }
       }
     },
-
+    // async asyncData ({ params }) {
+    //   let { data } = await axios.get('https://script.googleusercontent.com/macros/echo?user_content_key=ykmzprBhxIgeyx2EJO00xMRZcrspmD2LwvThc2zvztcfn70I-aDutJMragDjbltjp6CB6kDzEybu2t3HsEODtYttLhuVSIBmm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnCijglmWlxAmF13opfkr7Kunlc5NaKK-uUgvVWdy6J2_PV1KDXweF4KGaJfRhoZeWqV-rV9yhQ38&lib=M3OFKgHajIZP3__lgiCKQyHrg4_LTEsPs')
+    //   console.log({data});
+    // },
     methods:{
       afterLoad(anchorLink, index){
-        console.log('afterLoad');
+        console.log(index.index);
         document.querySelector('.fp-nav__count').innerHTML = index.index + 1;
-        let section_el = document.querySelectorAll('.section')
-        console.log(index.item);
-        let works_boolean = !(section_el.length -1 == index.index || 0 == index.index)
-        console.log(works_boolean);
-        if (!(section_el.length -1 == index.index || 0 == index.index)) {
-          let works_el_array = [
-            index.item.querySelector('.work__thumbnail__image'),
-            index.item.querySelector('.work__link__text'),
-            index.item.querySelector('.work__thumbnail__shadow',)
-          ]
-          let a_tag_el = index.item.querySelector('.work__link')
-          let a_two_el = index.item.querySelector('.work__thumbnail')
-
-          TweenMax.to(works_el_array[0],0.3,{ y:'0%' })
-          TweenMax.to(works_el_array[1],0.3,{
-              y:'0%',
-              delay:0.5})
-          TweenMax.to(works_el_array[2],1,{
-            scale:1,delay:0.2
-          })
-
-          a_tag_el.addEventListener('mouseover',()=>{
-            TweenMax.to('.work__thumbnail__shadow',2,{
-              scale:1.4
-            })
-          })
-          a_tag_el.addEventListener('mouseout',()=>{
-            TweenMax.to('.work__thumbnail__shadow',2,{
-              scale:1
-            })
-          })
-
-          a_two_el.addEventListener('mouseover',()=>{
-            TweenMax.to('.work__thumbnail__shadow',2,{
-              scale:1.4
-            })
-          })
-          a_two_el.addEventListener('mouseout',()=>{
-            TweenMax.to('.work__thumbnail__shadow',2,{
-              scale:1
-            })
-          })
-        }
-      },
-      onLeave(origin,destination){
-        console.log('onLeave');
-        if (true) {
-          // console.log(origin.item.querySelector("h1"));
-          // console.log(destination.item.querySelector("h1"));
-        }
       },
       afterRender(){
-        const el_thumbnail = document.querySelectorAll('.work')
         const section_length = document.querySelectorAll('.section').length
-        TweenMax.set('.work__thumbnail__image,.work__link__text',{y:'110%'})
-        TweenMax.set('.work__thumbnail__shadow',{scale:0})
         document.querySelector('.fp-nav__index').innerHTML = section_length
-        return section_length
-      }
+      },
+      itmesDivision(){
+        const items_len = this.items.length;
+        const cnt = 2;
+        let works_arr = [];
+        for(let i = 0; i < Math.ceil(items_len / cnt); i++){
+          let j = i * cnt;
+          let p = this.items.slice(j, j + cnt);
+          works_arr.push(p)
+        }
+        return works_arr
+      },
+      // test(e){
+      //   console.log(e.path[2]);
+      //   TweenMax.to(e.path[2],0.5,{'opacity':'.8'})
+      // },
+      // test2(e){
+      //   console.log(e.path[0]);
+      //   TweenMax.to(e.path[0],0.5,{'opacity':'1'})
+      // }
     },
+    mounted(){
+      console.log(this.itmesDivision());
+    }
   }
 </script>
 
@@ -132,50 +106,99 @@
     @include middle;
   }
   h1{
+    font-size: 20vh;
     display: inline-block;
   }
 }
 .work{
-  @include full_screen;
-  &__wrap{
-    @include custom_size;
-    margin: auto;
+  &__box{
+    margin:0 calc(8rem + 40px);
+    height: 60vh;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+  }
+  &__item{
+    width: 45%;
+    transition: all .6s ease .2s;
+    position: relative;
   }
   &__thumbnail{
+    overflow: hidden;
+    display: block;
     height: 100%;
-    width: 50vw;
+    width: 100%;
     position: relative;
-    &__wrap{
-      @include full_size;
-      overflow: hidden;
+    @include middle;
+    &:hover > img{
+      transform: scale(3)
     }
-    &__image{
-      @include full_size;
-      object-fit: cover;
+    &:hover > h2{
+      transform: translateY(-6rem);
     }
-    &__shadow{
+    img{
+      height: 100%;
+      transform: scale(2);
+      transition: all .6s ease .2s;
+    }
+    h2{
       position: absolute;
-      z-index: -1;
-      top: 6rem;
-      left: 3rem;
-      opacity: 0.8;
-      filter: blur(3rem);
-      @include full_size;
-      object-fit: cover;
+      bottom: -4rem;
+      left: 2rem;
+      z-index: 2;
+      transition: all .6s ease .2s;
     }
   }
-  &__link{
-    margin-left: 6rem;
-    width: calc(100% - 6rem - 50vw);
-    overflow: hidden;
-    &__text{
-
-    }
+  &__shadow{
+    position: absolute;
+    bottom: -4rem;
+    left: 4rem;
+    z-index: -2;
+    opacity: 0.4;
+    filter: blur(1rem);
   }
 }
+// .work{
+//   @include full_screen;
+//   &__wrap{
+//     @include custom_size;
+//     margin: auto;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+//   &__thumbnail{
+//     height: 100%;
+//     width: 50vw;
+//     position: relative;
+//     &__wrap{
+//       @include full_size;
+//       overflow: hidden;
+//     }
+//     &__image{
+//       @include full_size;
+//       object-fit: cover;
+//     }
+//     &__shadow{
+//       position: absolute;
+//       z-index: -1;
+//       top: 6rem;
+//       left: 3rem;
+//       opacity: 0.8;
+//       filter: blur(3rem);
+//       @include full_size;
+//       object-fit: cover;
+//     }
+//   }
+//   &__link{
+//     margin-left: 6rem;
+//     width: calc(100% - 6rem - 50vw);
+//     overflow: hidden;
+//     &__text{
+//
+//     }
+//   }
+// }
 
 @include mq(sm){
 
