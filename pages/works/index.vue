@@ -4,12 +4,15 @@
     no-ssr
       fp_nav
       full-page( ref="fullpage" :options="options" id="fullpage")
+        .first.section
+          .first__wrap
+            h1 Works
         .work.section(
           v-for="(item,index) in items"
           :key="index"
           )
           .work__wrap
-            nuxt-link.work__thumbnail(:to="`/works/${index}`")
+            nuxt-link.work__thumbnail(:to=" `/works/${index}` ")
               .work__thumbnail__wrap
                 img.work__thumbnail__image(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
               img.work__thumbnail__shadow(:src="`/markdown/thumbnail/${item.thumbnail}`" decoding="async")
@@ -46,69 +49,92 @@
         options: {
           licenseKey: 'C369A22F-73704243-8980D98A-0B1A5553',
           css3: true,
+
           afterLoad:this.afterLoad,
-          afterRender: this.afterRender
+          onLeave: this.onLeave,
+          afterRender: this.afterRender,
         }
       }
     },
 
     methods:{
       afterLoad(anchorLink, index){
-        console.log(index.index);
+        console.log('afterLoad');
         document.querySelector('.fp-nav__count').innerHTML = index.index + 1;
-        let footer_el = document.querySelector('#footer')
         let section_el = document.querySelectorAll('.section')
-
-        if (section_el.length -1 !== index.index) {
-          let image_el = index.item.querySelector('.work__thumbnail__image')
-          let link_el = index.item.querySelector('.work__link__text')
-          let shadow_el = index.item.querySelector('.work__thumbnail__shadow')
+        console.log(index.item);
+        let works_boolean = !(section_el.length -1 == index.index || 0 == index.index)
+        console.log(works_boolean);
+        if (!(section_el.length -1 == index.index || 0 == index.index)) {
+          let works_el_array = [
+            index.item.querySelector('.work__thumbnail__image'),
+            index.item.querySelector('.work__link__text'),
+            index.item.querySelector('.work__thumbnail__shadow',)
+          ]
           let a_tag_el = index.item.querySelector('.work__link')
           let a_two_el = index.item.querySelector('.work__thumbnail')
-          TweenMax.to(image_el,0.3,{ y:'0%' })
-          TweenMax.to(link_el,0.3,{
+
+          TweenMax.to(works_el_array[0],0.3,{ y:'0%' })
+          TweenMax.to(works_el_array[1],0.3,{
               y:'0%',
               delay:0.5})
-          TweenMax.to(shadow_el,1,{
+          TweenMax.to(works_el_array[2],1,{
             scale:1,delay:0.2
           })
+
           a_tag_el.addEventListener('mouseover',()=>{
-            TweenMax.to(shadow_el,2,{
+            TweenMax.to('.work__thumbnail__shadow',2,{
               scale:1.4
             })
           })
           a_tag_el.addEventListener('mouseout',()=>{
-            TweenMax.to(shadow_el,2,{
+            TweenMax.to('.work__thumbnail__shadow',2,{
               scale:1
             })
           })
 
           a_two_el.addEventListener('mouseover',()=>{
-            TweenMax.to(shadow_el,2,{
+            TweenMax.to('.work__thumbnail__shadow',2,{
               scale:1.4
             })
           })
           a_two_el.addEventListener('mouseout',()=>{
-            TweenMax.to(shadow_el,2,{
+            TweenMax.to('.work__thumbnail__shadow',2,{
               scale:1
             })
           })
         }
       },
+      onLeave(origin,destination){
+        console.log('onLeave');
+        if (true) {
+          // console.log(origin.item.querySelector("h1"));
+          // console.log(destination.item.querySelector("h1"));
+        }
+      },
       afterRender(){
         const el_thumbnail = document.querySelectorAll('.work')
         const section_length = document.querySelectorAll('.section').length
-        console.log(section_length);
         TweenMax.set('.work__thumbnail__image,.work__link__text',{y:'110%'})
         TweenMax.set('.work__thumbnail__shadow',{scale:0})
         document.querySelector('.fp-nav__index').innerHTML = section_length
+        return section_length
       }
     },
   }
 </script>
 
 <style lang="scss" scoped>
-
+.first{
+  @include full_size;
+  &__wrap{
+    @include full_size;
+    @include middle;
+  }
+  h1{
+    display: inline-block;
+  }
+}
 .work{
   @include full_screen;
   &__wrap{

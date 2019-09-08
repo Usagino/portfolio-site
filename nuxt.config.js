@@ -1,3 +1,5 @@
+const config = require('./.contentful.json')
+
 module.exports = {
   head: {
     title: 'Front-artgraph',
@@ -55,7 +57,6 @@ module.exports = {
     }
   },
   plugins: [
-    { src: '~/plugins/vue-masonry-css', ssr: false },
     { src: '~/plugins/fullpage', ssr: false }
   ],
   markdownit: {
@@ -68,6 +69,12 @@ module.exports = {
     xhtmlOut: true,
     langPrefix: 'language-',
     quotes: '“”‘’',
+  },
+  env: {
+    CTF_SPACE_ID: config.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+    CTF_PERSON_ID: config.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
   },
   mode: 'universal',
 }

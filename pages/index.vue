@@ -8,6 +8,7 @@ section
         .first__wrap
           .first__wrap__logo
             myLogo
+          mouseScrollAnime
       .works.section
         .works__wrap
           nuxt-link.works__wrap--title(to="/works") Works
@@ -30,7 +31,7 @@ import Lottie from '@/components/lottie/Lottie'
 import myLogo from '@/components/lottie/myLogo'
 import cube from '@/components/lottie/cube'
 import fp_nav from '@/components/fp-nav'
-
+import mouseScrollAnime from '@/components/lottie/mouseScrollAnime'
 // library
 import * as animationData from "~/assets/json/my_logo.json";
 import inView from 'in-view'
@@ -45,7 +46,8 @@ export default {
     myLogo,
     vueFooter,
     cube,
-    fp_nav
+    fp_nav,
+    mouseScrollAnime
   },
   data () {
     return {
@@ -91,6 +93,7 @@ export default {
     &__wrap{
       @include full_size;
       @include middle;
+      position: relative;
       &__logo{
         width: 40vw;
       }
