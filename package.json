@@ -1,7 +1,7 @@
 {
-  "name": "posrtfolio site",
+  "name": "ec-site",
   "version": "1.0.0",
-  "description": "this is portflio",
+  "description": "Nuxt.js project",
   "author": "Usagino <yuki.itoh@front-artgraph.com>",
   "private": true,
   "scripts": {
