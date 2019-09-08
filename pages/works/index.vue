@@ -59,10 +59,7 @@
         }
       }
     },
-    // async asyncData ({ params }) {
-    //   let { data } = await axios.get('https://script.googleusercontent.com/macros/echo?user_content_key=ykmzprBhxIgeyx2EJO00xMRZcrspmD2LwvThc2zvztcfn70I-aDutJMragDjbltjp6CB6kDzEybu2t3HsEODtYttLhuVSIBmm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnCijglmWlxAmF13opfkr7Kunlc5NaKK-uUgvVWdy6J2_PV1KDXweF4KGaJfRhoZeWqV-rV9yhQ38&lib=M3OFKgHajIZP3__lgiCKQyHrg4_LTEsPs')
-    //   console.log({data});
-    // },
+
     methods:{
       afterLoad(anchorLink, index){
         console.log(index.index);
@@ -174,6 +171,7 @@
     }
     &__item{
       width: 100%;
+      height: 45%;
     }
     &__thumbnail{
       h2{
