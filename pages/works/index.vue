@@ -158,84 +158,33 @@
     filter: blur(1rem);
   }
 }
-// .work{
-//   @include full_screen;
-//   &__wrap{
-//     @include custom_size;
-//     margin: auto;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//   }
-//   &__thumbnail{
-//     height: 100%;
-//     width: 50vw;
-//     position: relative;
-//     &__wrap{
-//       @include full_size;
-//       overflow: hidden;
-//     }
-//     &__image{
-//       @include full_size;
-//       object-fit: cover;
-//     }
-//     &__shadow{
-//       position: absolute;
-//       z-index: -1;
-//       top: 6rem;
-//       left: 3rem;
-//       opacity: 0.8;
-//       filter: blur(3rem);
-//       @include full_size;
-//       object-fit: cover;
-//     }
-//   }
-//   &__link{
-//     margin-left: 6rem;
-//     width: calc(100% - 6rem - 50vw);
-//     overflow: hidden;
-//     &__text{
-//
-//     }
-//   }
-// }
+
 
 @include mq(sm){
-
+  .first{
+    h1{
+      font-size: 10vh;
+    }
+  }
   .work{
-    &__wrap{
-      position: relative;
+    &__box{
+      margin:0 40px;
+      height: 65vh;
+      flex-direction: column;
+    }
+    &__item{
+      width: 100%;
     }
     &__thumbnail{
-      width: 100%;
-      &__wrap{
-      }
-      &__image{
-
-      }
-      &__shadow{
-        top: 1rem;
-        left: 0rem;
-        filter: blur(1rem);
+      h2{
+        display: none;
       }
     }
-    &__link{
-      width: auto;
-      position: absolute;
-      margin: auto;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 10rem;
-      padding: 1rem;
-      // background:linear-gradient(#ffffff00, #323232aa);
-      display: flex;
-      align-items: flex-end;
-      &__text{
-        font-size: 3rem;
-        color: #ededed;
-
-      }
+    &__shadow{
+      bottom: -2rem;
+      left: 2rem;
+      opacity: 0.4;
+      filter: blur(1rem);
     }
   }
 }
