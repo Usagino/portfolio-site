@@ -1,11 +1,22 @@
 <template lang="pug">
   .fp-nav
-    p.fp-nav__count
+    p.fp-nav__count {{index}}
     hr.fp-nav__line
-    p.fp-nav__index
+    p.fp-nav__index {{base}}
 </template>
+
 <script>
 export default {
+  props:{
+    index:{
+      type:Number,
+      default:0
+    },
+    base:{
+      type:Number,
+      default:0
+    }
+  }
 }
 </script>
 

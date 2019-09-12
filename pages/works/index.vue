@@ -42,9 +42,6 @@
       vueFooter,
       fp_nav
     },
-    props:{
-      indexLength :Number
-    },
     data () {
       return {
         index: 0,
@@ -52,9 +49,7 @@
         options: {
           licenseKey: 'C369A22F-73704243-8980D98A-0B1A5553',
           css3: true,
-
           afterLoad:this.afterLoad,
-
           afterRender: this.afterRender,
         }
       }
@@ -62,12 +57,14 @@
 
     methods:{
       afterLoad(anchorLink, index){
-        console.log(index.index);
+        // console.log(index.index);
         document.querySelector('.fp-nav__count').innerHTML = index.index + 1;
+        return index.index + 1;
       },
       afterRender(){
         const section_length = document.querySelectorAll('.section').length
         document.querySelector('.fp-nav__index').innerHTML = section_length
+        return section_length
       },
       itmesDivision(){
         const items_len = this.items.length;
@@ -80,17 +77,6 @@
         }
         return works_arr
       },
-      // test(e){
-      //   console.log(e.path[2]);
-      //   TweenMax.to(e.path[2],0.5,{'opacity':'.8'})
-      // },
-      // test2(e){
-      //   console.log(e.path[0]);
-      //   TweenMax.to(e.path[0],0.5,{'opacity':'1'})
-      // }
-    },
-    mounted(){
-      console.log(this.itmesDivision());
     }
   }
 </script>

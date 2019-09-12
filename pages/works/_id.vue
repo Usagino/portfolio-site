@@ -35,9 +35,6 @@ export default {
       items: works,
     }
   },
-  props:{
-    animate:true
-  },
   mounted:()=>{
     const a_el = document.querySelectorAll('.article__wrap a');
     for (var i = 0; i < a_el.length; i++) {
