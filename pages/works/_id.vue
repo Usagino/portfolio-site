@@ -15,36 +15,36 @@
 </template>
 
 <script>
-// components
-import cursorPointer from '@/components/cursorPointer'
-import sideMenu from '@/components/sideMenu'
-import vueFooter from '@/components/vueFooter'
-// library
-import works from '@/assets/works.json'
-import { TweenMax } from 'gsap';
+  // components
+  import cursorPointer from '@/components/cursorPointer'
+  import sideMenu from '@/components/sideMenu'
+  import vueFooter from '@/components/vueFooter'
+  // library
+  import works from '@/assets/works.json'
+  import { TweenMax } from 'gsap';
 
-export default {
-  components: {
-    cursorPointer,
-    sideMenu,
-    vueFooter
-  },
-  data () {
-    return {
-      hello:"hello",
-      items: works,
-    }
-  },
-  mounted:()=>{
-    const a_el = document.querySelectorAll('.article__wrap a');
-    for (var i = 0; i < a_el.length; i++) {
-      a_el[i].setAttribute('target','_brank')
-    }
-    console.log("hi");
-    let target = document.querySelectorAll('.article__wrap__text section p')
+  export default {
+    components: {
+      cursorPointer,
+      sideMenu,
+      vueFooter
+    },
+    data () {
+      return {
+        hello:"hello",
+        items: works,
+      }
+    },
+    mounted:()=>{
+      const a_el = document.querySelectorAll('.article__wrap a');
+      for (var i = 0; i < a_el.length; i++) {
+        a_el[i].setAttribute('target','_brank')
+      }
+      console.log("hi");
+      let target = document.querySelectorAll('.article__wrap__text section p')
 
+    }
   }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -97,18 +97,25 @@ export default {
   }
   .article{
     &__wrap{
-      padding-top: 20rem;
+      padding-top: 10rem;
       height: auto;
       margin: auto;
       &__text{
         /deep/ section{
           width: 100vw;
+          iframe{
+            padding: 0 calc((100vw - 80vw)/2);
+            margin:0 auto;
+            width: 100%;
+            text-align: center;
+          }
           p{
-            padding: 0 30rem;
+            padding: 0 calc((100vw - 80vw)/2);
             margin: 3rem 0;
             line-height: 3rem;
             letter-spacing: 0.2rem;
             font-size: 2rem;
+            text-align: left;
 
             img{
               width: 60%;

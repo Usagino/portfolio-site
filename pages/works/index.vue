@@ -15,11 +15,11 @@
 
           .work__box
             .work__item(v-for="(works,index_child) in item" :key="index_child")
-              //p {{works.title}}
               nuxt-link.work__thumbnail(:to="`/works/${index * 2 + index_child}`")
-                img(:src="`/markdown/thumbnail/${works.thumbnail}`" decoding="async")
-                h2 {{works.title}}
-              img.work__shadow(:src="`/markdown/thumbnail/${works.thumbnail}`" decoding="async")
+                .work__thumbnail__wrap
+                  img(:src="`/markdown/thumbnail/${works.thumbnail}`" decoding="async")
+                  h2 {{works.title}}
+                // img.work__shadow(:src="`/markdown/thumbnail/${works.thumbnail}`" decoding="async")
         vueFooter.section
 </template>
 
@@ -105,32 +105,42 @@
     width: 45%;
     transition: all .6s ease .2s;
     position: relative;
+    box-shadow: 4rem 4rem 4rem #a1a1a130;
   }
   &__thumbnail{
-    overflow: hidden;
-    display: block;
     height: 100%;
     width: 100%;
-    position: relative;
-    @include middle;
-    &:hover > img{
-      transform: scale(3)
-    }
-    &:hover > h2{
-      transform: translateY(-6rem);
-    }
-    img{
+
+    &__wrap{
+      overflow: hidden;
       height: 100%;
-      transform: scale(2);
-      transition: all .6s ease .2s;
+      width: 100%;
+      position: relative;
+      &:hover > img{
+        transform: scale(1.1);
+      }
+      &:hover > h2{
+        opacity: 1;
+        bottom: 1rem;
+      }
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        transform: scale(1);
+        transition: all .3s ease .2s;
+      }
+      h2{
+        opacity: 0;
+        position: absolute;
+        bottom: -1rem;
+        left: 2rem;
+        z-index: 2;
+        transition: all .3s ease-in .2s;
+      }
     }
-    h2{
-      position: absolute;
-      bottom: -4rem;
-      left: 2rem;
-      z-index: 2;
-      transition: all .6s ease .2s;
-    }
+
   }
   &__shadow{
     position: absolute;
