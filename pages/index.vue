@@ -1,6 +1,5 @@
 <template lang="pug">
 section
-  sideMenu
   no-ssr
     fp_nav
     full-page( ref="fullpage" :options="options" id="fullpage")

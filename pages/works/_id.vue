@@ -1,195 +1,123 @@
 <template lang="pug">
-  section
-    .first
-      .first__wrap
-        .first__wrap__title-box
-          h1.first__wrap__title-box--title {{ items[$route.params.id].title }}
-          p.first__wrap__title-box--date {{ items[$route.params.id].date }}
-        img.first__wrap--image(:src="`/markdown/thumbnail/${items[$route.params.id].thumbnail}`" decoding="async")
-    .article
-      .article__wrap
-        div.article__wrap__text(v-html="$md.render(require(`@/static/markdown/${items[$route.params.id].fileName}`).default)")
-
-    sideMenu
-    vueFooter
+  .work
+    .work__wrap
+      .work__thumbnail
+        img.work__thumbnail__image(:src="post_thumbnail")
+      h1.work__title {{post_title}}
+      .work__body(v-html="post_body")
+    vueFooter.section
 </template>
 
 <script>
-  // components
-  import cursorPointer from '@/components/cursorPointer'
-  import sideMenu from '@/components/sideMenu'
   import vueFooter from '@/components/vueFooter'
-  // library
-  import works from '@/assets/works.json'
-  import { TweenMax } from 'gsap';
 
+  import axios from "axios";
   export default {
     components: {
-      cursorPointer,
-      sideMenu,
-      vueFooter
+      vueFooter,
     },
     data () {
       return {
-        hello:"hello",
-        items: works,
+        id: this.$route.params.id,
+        post: null,
+        post_title:null,
+        post_body:null,
+        post_thumbnail:null
       }
     },
-    mounted:()=>{
-      const a_el = document.querySelectorAll('.article__wrap a');
-      for (var i = 0; i < a_el.length; i++) {
-        a_el[i].setAttribute('target','_brank')
+    methods:{
+      fetchArticles_single_post() {
+        axios.get(`https://frontart-tokyo.microcms.io/api/v1/works/${this.$route.params.id}`, {
+            headers: { "X-API-KEY": "79b473a7-50ee-4d1a-af50-5298d6a778d8" }
+          })
+          .then(res => {
+            console.log(res.data);
+            this.post = res.data;
+            this.post_title = res.data.title
+            this.post_body = res.data.body
+            this.post_thumbnail = res.data.thumbnail.url
+          })
+          .catch(err => {
+            console.log(err);
+          });
       }
-      console.log("hi");
-      let target = document.querySelectorAll('.article__wrap__text section p')
+    },
+    mounted() {
+      this.fetchArticles_single_post();
+    },
 
-    }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+.work{
+  &__wrap{
+    margin:0 calc(40px + 8rem);
+  }
+  &__thumbnail{
+    @include full_screen;
+    width: 100%;
+    @include middle;
+    &__image{
+      height: 70%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__title{
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+  &__body{
+    p,span{
+      font-size: 18px;
+      line-height: 36px;
+      margin: 36px 0;
+      img{
+        display: block;
+        border: 1px solid #f2f2f2;
+        height: auto;
+        max-width: 50%;
 
-  .first{
+        margin:36px auto;
+        text-align: center;
+        border-radius: 16px;
+      }
+    }
+  }
+}
+@include mq(sm){
+  .work{
     &__wrap{
+      margin:0 30px;
+    }
+    &__thumbnail{
       @include full_screen;
-      position: relative;
-      overflow: hidden;
-      &::before{
-        /* 透過した黒を上から重ねるイメージ */
-        background-color: rgba(0,0,0,0.2);
-        /* 自由に位置指定 */
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        content: ' ';
-        z-index: 2
-      }
-      &__title-box{
-        position: absolute;
-        height: 20%;
-        width: 50vw;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        z-index: 2;
-        display: flex;
-        justify-content: space-between;
-        color: #ffffff;
-        &--title{
-          font-size: 10rem;
-          align-self:flex-start
-        }
-        &--date{
-          font-size: 4rem;
-          align-self:flex-end;
-        }
-      }
-      &--image{
-        width: 100vw;
-        height: 100vh;
+      width: 100%;
+      @include middle;
+      &__image{
+        height: 70%;
+        width: 100%;
         object-fit: cover;
       }
     }
-  }
-  .article{
-    &__wrap{
-      padding-top: 10rem;
-      height: auto;
-      margin: auto;
-      &__text{
-        /deep/ section{
-          width: 100vw;
-          iframe{
-            padding: 0 calc((100vw - 80vw)/2);
-            margin:0 auto;
-            width: 100%;
-            text-align: center;
-          }
-          p{
-            padding: 0 calc((100vw - 80vw)/2);
-            margin: 3rem 0;
-            line-height: 3rem;
-            letter-spacing: 0.2rem;
-            font-size: 2rem;
-            text-align: left;
-
-            img{
-              width: 60%;
-              margin: auto;
-              display:block;
-              margin: 25vh;
-              box-shadow: 2rem 2rem 4rem #e6e6e660;
-            }
-            a{
-              color: #717171 !important;
-            }
-          }
-        }
+    &__title{
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+    &__body{
+      p,span{
+        font-size: 16px;
+        line-height: 30px;
+        margin: 36px 0;
         img{
-          width: 100% !important;
+          border: 1px solid #f2f2f2;
+          height: auto;
+          max-width: 100% !important;
+          margin: 36px 0;
         }
       }
     }
   }
-
-
-  @include mq(sm){
-    .first{
-      &__wrap{
-        @include full_screen;
-        position: relative;
-        &__title-box{
-          position: absolute;
-          height: 20%;
-          width: 50vw;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          margin: auto;
-          z-index: 2;
-          display: flex;
-          justify-content: space-between;
-          flex-direction: column;
-          align-items: center;
-          &--title{
-            font-size: 5rem;
-            align-self:auto;
-          }
-          &--date{
-            font-size: 3rem;
-            align-self:auto;
-          }
-        }
-      }
-    }
-    .article{
-      &__wrap{
-        padding-top: 2rem;
-        @include custom_size;
-        height: auto;
-        margin: auto;
-        &__text{
-          /deep/ section{
-            width: auto;
-            p{
-              margin: 3rem 0;
-              line-height: 2.7rem;
-              letter-spacing: 0.3rem;
-              font-size: 1.5rem;
-              padding: 0 10%;
-              img{
-                width: 100%;
-                margin: 25vh auto;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+}
 </style>
