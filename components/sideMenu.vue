@@ -5,20 +5,20 @@
         :options="lottieOptions"
         v-on:animCreated="handleAnimation"
         )
-    span.menu__back
+    // span.menu__back
     nav.menu__nav
       ul.menu__nav__list
         li(v-on:click="play")
-          nuxt-link(to="/") TOP
+          nuxt-link(to="/") Top
         li(v-on:click="play")
-          nuxt-link(to="/works") WORKS
+          nuxt-link(to="/works") Works
         li(v-on:click="play")
-          nuxt-link(to="/about") ABOUT
-        li.menu__nav__list__media
+          nuxt-link(to="/about") About
+        li.menu__nav__list__media.sns__twitter
           a(href="https://twitter.com/_Frontart" target="_blank") Twitter
-        li.menu__nav__list__media
+        li.menu__nav__list__media.sns__insta
           a(href="https://www.instagram.com/frontartgraph/" target="_blank") Instagram
-        li.menu__nav__list__media
+        li.menu__nav__list__media.sns__dribble
           a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
       menuAnime
 </template>
@@ -125,7 +125,7 @@
     &__nav{
       height: 100vh;
       width: 100vw;
-      background: #FF6161;
+      background: #f2f5fc;
       z-index: 1000;
       right: 0;
       transform: translateX(100%);
@@ -144,16 +144,46 @@
         flex-direction: column;
         li{
           margin:1rem 0;
+          &:hover{
+            opacity: 0.9;
+          }
         }
         a{
-          font-size: 6rem;
-          color: #f9f9f9;
+          color: #4f4f4f;
+          font-size: 5rem;
+          font-weight: bold;
         }
         &__media{
           a{
-            font-size: 4rem;
+            font-size: 5rem;
+            font-weight: bold;
           }
+        }
+        .sns{
+          &__twitter{
 
+            &:hover{
+              & > a{
+                color: #1dcaff ;
+              }
+            }
+          }
+          &__insta{
+            transition: all .4s ease .2s;
+            &:hover{
+              background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+              -webkit-background-clip: text;//テキストでくり抜く
+              -webkit-text-fill-color: transparent;//くり抜いた部分は背景を表示
+            }
+          }
+          &__dribble{
+
+            &:hover{
+              & > a{
+                color: #ea4c89;
+              }
+            }
+          }
         }
       }
     }
