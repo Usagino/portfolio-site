@@ -6,14 +6,13 @@
         v-on:animCreated="handleAnimation"
         )
     span.menu__back
-
     nav.menu__nav
       ul.menu__nav__list
-        li
+        li(v-on:click="play")
           nuxt-link(to="/") TOP
-        li
+        li(v-on:click="play")
           nuxt-link(to="/works") WORKS
-        li
+        li(v-on:click="play")
           nuxt-link(to="/about") ABOUT
         li.menu__nav__list__media
           a(href="https://twitter.com/_Frontart" target="_blank") Twitter
@@ -51,6 +50,7 @@
       },
       play: function () {
         if (side_toggle == 0) {
+          console.log("bye");
           // 消える方
           this.anim.setDirection(-1)
           this.anim.play();
@@ -74,6 +74,7 @@
           TweenMax.to('.follower',1,{borderColor:'',delay:0.6,})
           side_toggle = 1;
         }else{
+          console.log("hi");
           // 出てくる方
           this.anim.setDirection(1)
           this.anim.play();
