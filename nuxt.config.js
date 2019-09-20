@@ -9,6 +9,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' },
       { name: 'twitter:card' , content:'summary'},
       { name: 'twitter:site' , content:'@_Frontart'},
+      { name: 'description', content:'いとうゆうきのポートフォリオサイト。デザインとプログラミングが得意だよ。'},
       { property: 'og:url',content:'https://frontart.tokyo/' },
       { property: 'og:title',content:'Frontart' },
       { property: 'og:description',content:'This is my Portfolio' },

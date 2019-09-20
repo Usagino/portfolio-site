@@ -1,11 +1,12 @@
 <template lang="pug">
-  .work
-    .work__wrap
-      .work__thumbnail
-        img.work__thumbnail__image(:src="post_thumbnail")
-      h1.work__title {{post_title}}
-      .work__body(v-html="post_body")
-    vueFooter.section
+  no-ssr
+    .work
+      .work__wrap
+        .work__thumbnail
+          img.work__thumbnail__image(:src="post_thumbnail")
+        h1.work__title {{post_title}}
+        .work__body(v-html="post_body")
+      vueFooter.section
 </template>
 
 <script>
