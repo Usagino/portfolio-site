@@ -1,85 +1,62 @@
 <template lang="pug">
   section
-    fp_nav
     no-ssr
-      full-page( ref="fullpage" :options="options" id="fullpage")
-        .first.section
-          .first__wrap
-            .first__wrap__title-box
-              h1.first__wrap__title-box--text YUKI ITOH
-        .caption.section
-          .caption__wrap
-            aboutMe.caption__wrap__image
-            .caption__wrap__text-box
-              h1 About me
-              p 日本工学院専門学校所属、デザイン専攻。
-              p 画面の中のデザインだけではなく、使用者の将来までもをデザインできるデザイナーになりたいと考えている。趣味は写真とコーヒー。最近はモーショングラフィックスにはまっている。
-              p 愛読書は伊藤計劃の「Harmony」と森博嗣の「すべてがFになる」
-        .caption.section
-          .caption__wrap
-            .caption__wrap__text-box
-              h1 Programming for the Design
-              p IllustratorやPhotoshop、XDやFigma、これらはどれもデザインツールと呼ばれるものだ。個人ないし集団が何かを表現したいとき表現したいときに使うツールだ。
-              p 私の場合はそれがプログラミングだった。高校生の頃からプログラミングにふれ、JavaScriptなど多々あるプログラミング言語を使って、何かを表現してきた。
-              p プログラミングは必ずしも技術者だけのものではない、表現者の道具でもあるのだと私は考えている。
-            codeDesign.caption__wrap__image
-        vueFooter.section
+      .first.section
+        .first__wrap
+          .first__wrap__title-box
+            h1.first__wrap__title-box--text YUKI ITOH
+      .caption.section
+        .caption__wrap
+          aboutMe.caption__wrap__image
+          .caption__wrap__text-box
+            h1(v-html="get_about.about_title_1")
+            p.caption__text(v-html="get_about.about_text_1")
+      .caption.section
+        .caption__wrap
+          .caption__wrap__text-box
+            h1(v-html="get_about.about_title_2")
+            p.caption__text(v-html="get_about.about_text_2")
+          codeDesign.caption__wrap__image
+      vueFooter.section
 </template>
 
 <script>
   // components
-  import cursorPointer from '@/components/cursorPointer'
-  import sideMenu from '@/components/sideMenu'
   import vueFooter from '@/components/vueFooter'
   import codeDesign from '@/components/lottie/codeDesign'
   import aboutMe from '@/components/lottie/aboutMe'
-  import fp_nav from '@/components/fp-nav'
 
   import { TweenMax } from 'gsap'
-  import inView from 'in-view'
-  import { init } from 'ityped'
+  import axios from "axios";
+
   export default {
     components: {
-      cursorPointer,
-      sideMenu,
       vueFooter,
       codeDesign,
       aboutMe,
-      fp_nav
     },
     data(){
       return {
-        options: {
-          licenseKey: 'C369A22F-73704243-8980D98A-0B1A5553',
-          css3: true,
-          afterLoad:this.afterLoad,
-          afterRender: this.afterRender
-        }
+        get_about:Object
       }
     },
-    methods:{
-      afterLoad(anchorLink, index){
-        document.querySelector('.fp-nav__count').innerHTML = index.index + 1;
-      },
-      afterRender(){
-        const section_length = document.querySelectorAll('.section').length
-        document.querySelector('.fp-nav__index').innerHTML = section_length
 
-        // .first view animations
-        TweenMax.to('.first__wrap__image-box img',0.6,{
-          scale:1,
-          delay:0.3
-        })
-        TweenMax.to('.first__wrap__image-box img',0.6,{
-          opacity:0.6,
-          delay:0.8
-        })
-        TweenMax.to('.first__wrap__title-box',1,{
-          width:'100vw',
-          delay:0.8
-        })
+    methods:{
+      fetchAbout() {
+        axios.get('https://frontart-tokyo.microcms.io/api/v1/about', {
+            headers: { "X-API-KEY": "79b473a7-50ee-4d1a-af50-5298d6a778d8" }
+          })
+          .then(res => {
+            this.get_about = res.data
+          })
+          .catch(err => {
+            console.log(err);
+          });
       }
     },
+    mounted(){
+      this.fetchAbout();
+    }
   }
 </script>
 
@@ -96,11 +73,10 @@
       bottom: 0; right: 0;
       margin: auto;
       height: 30vh;
-      width: 0vw;
+      width: 100vw;
       overflow: hidden;
       &--text{
         @include text_center;
-
         z-index: 2;
         font-size: 10vw;
         letter-spacing: 30px;
@@ -122,10 +98,10 @@
 }
 
 .caption{
-  @include full_screen
+  width: 100vw;
   @include middle
   &__wrap{
-    padding: 10rem;
+    padding: 12rem $outside_space;
     @include full_size;
     display: flex;
     justify-content: center;

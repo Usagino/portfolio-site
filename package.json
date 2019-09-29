@@ -17,6 +17,8 @@
     "fullpage.js": "^3.0.5",
     "gsap": "^2.1.2",
     "in-view": "^0.6.1",
+    "lodash": "^4.17.15",
+    "lodash.template": "^4.5.0",
     "macy": "^2.5.0",
     "nuxt": "^2.0.0",
     "nuxt-fullpage.js": "0.0.3",
