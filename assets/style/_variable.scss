@@ -3,6 +3,8 @@ $text_color2:#666666;
 $material_color:#AEAEAE;
 $header_size:15rem;
 
+$outside_space: calc(40px + 8rem);
+
 @mixin Title_font{
   font-family: "Raleway",'Noto Sans JP';
   font-size: 8rem
