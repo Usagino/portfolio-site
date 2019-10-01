@@ -2,14 +2,14 @@ const config = require('./.contentful.json')
 
 module.exports = {
   head: {
-    title: 'Front-artgraph',
+    title: 'frontart tokyo',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' },
       { name: 'twitter:card' , content:'summary'},
       { name: 'twitter:site' , content:'@_Frontart'},
-      { name: 'description', content:'いとうゆうきのポートフォリオサイト。デザインとプログラミングが得意だよ。'},
+      { name: 'description', content:'日本工学院専門学校所属、デザイン専攻。画面の中のデザインだけではなく、使用者の将来までもをデザインできるデザイナーになりたいと考えている。趣味は写真とコーヒー。最近はモーショングラフィックスにはまっている。'},
       { property: 'og:url',content:'https://frontart.tokyo/' },
       { property: 'og:title',content:'Frontart' },
       { property: 'og:description',content:'This is my Portfolio' },
