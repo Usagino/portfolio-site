@@ -17,6 +17,12 @@
             h1(v-html="get_about.about_title_2")
             p.caption__text(v-html="get_about.about_text_2")
           codeDesign.caption__wrap__image
+      .caption.section
+        .caption__wrap
+          mineGlitch.caption__wrap__image
+          .caption__wrap__text-box
+            h1(v-html="get_about.about_title_3")
+            p.caption__text(v-html="get_about.about_text_3")
       vueFooter.section
 </template>
 
@@ -25,7 +31,7 @@
   import vueFooter from '@/components/vueFooter'
   import codeDesign from '@/components/lottie/codeDesign'
   import aboutMe from '@/components/lottie/aboutMe'
-
+  import mineGlitch from '@/components/lottie/mineglitch'
   import { TweenMax } from 'gsap'
   import axios from "axios";
 
@@ -34,6 +40,7 @@
       vueFooter,
       codeDesign,
       aboutMe,
+      mineGlitch
     },
     data(){
       return {
