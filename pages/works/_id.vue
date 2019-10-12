@@ -74,12 +74,22 @@
       font-size: 18px;
       line-height: 36px;
       margin: 36px 0;
+      a{
+        padding: 8px 24px;
+        border: 1px solid #c9c9c9;
+        border-radius: 16px;
+        &:before{
+          content: "☞ "
+        }
+        &:hover{
+          opacity: 0.6;
+        }
+      }
       img{
         display: block;
         border: 1px solid #f2f2f2;
         height: auto;
         max-width: 50%;
-
         margin:36px auto;
         text-align: center;
         border-radius: 16px;
