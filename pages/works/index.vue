@@ -53,7 +53,6 @@
             headers: { "X-API-KEY": "79b473a7-50ee-4d1a-af50-5298d6a778d8" }
           })
           .then(res => {
-            console.table(res.data);
             this.articles = res.data.contents;
           })
           .catch(err => {

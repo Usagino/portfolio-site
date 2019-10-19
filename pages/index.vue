@@ -1,89 +1,67 @@
 <template lang="pug">
-section
-  no-ssr
-    fp_nav
-    full-page( ref="fullpage" :options="options" id="fullpage")
-      .first.section
-        .first__wrap
-          .first__wrap__logo
-            myLogo
-          mouseScrollAnime
-      .works.section
-        .works__wrap
-          nuxt-link.works__wrap--title(to="/works") Works
-          span.works__wrap--circle
-            span.works__wrap--circle--inner
-      .about.section
-        .about__wrap
-          .about__wrap__image
-            cube
-          nuxt-link.about__wrap__title(to="/about") About me
-      vueFooter.section
+  section
+    .first.section
+      .first__wrap(:style="{ transform: 'rotateX('+ first_rotate_x +'deg) ' }")
+        .first__wrap__logo
+          myLogo
+
+    .works.section
+      .works__wrap
+        nuxt-link.works__wrap--title(to="/works") Works
+        span.works__wrap--circle
+          span.works__wrap--circle--inner
+    .about.section
+      .about__wrap
+        .about__wrap__image
+          cube
+        nuxt-link.about__wrap__title(to="/about") About me
+    vueFooter.section
 </template>
 
 <script>
 // components
-import cursorPointer from '@/components/cursorPointer'
 import sideMenu from '@/components/sideMenu'
 import vueFooter from '@/components/vueFooter'
 import Lottie from '@/components/lottie/Lottie'
 import myLogo from '@/components/lottie/myLogo'
 import cube from '@/components/lottie/cube'
-import fp_nav from '@/components/fp-nav'
-import mouseScrollAnime from '@/components/lottie/mouseScrollAnime'
 // library
-import * as animationData from "~/assets/json/my_logo.json";
 import inView from 'in-view'
 import { init } from 'ityped'
 import {TweenMax} from 'gsap'
 
 export default {
   components: {
-    cursorPointer,
     Lottie,
     sideMenu,
     myLogo,
     vueFooter,
     cube,
-    fp_nav,
-    mouseScrollAnime
   },
   data () {
     return {
-      options: {
-        licenseKey: 'C369A22F-73704243-8980D98A-0B1A5553',
-        css3: true,
-        afterLoad:this.afterLoad,
-        afterRender: this.afterRender
-      }
-    }
-  },
-  methods:{
-    afterLoad(anchorLink, index){
-      console.log(index.index);
-      document.querySelector('.fp-nav__count').innerHTML = index.index + 1;
-    },
-    afterRender(){
-      const section_length = document.querySelectorAll('.section').length
-      document.querySelector('.fp-nav__index').innerHTML = section_length
+      first_rotate_x: 0,
+      works_rotate_x:0,
+      about_rotate_x: 0
 
-      const about_el = document.querySelector('.about__wrap__title')
-      about_el.addEventListener('mousemove',()=>{
-        TweenMax.to('.about__wrap__image',0.2,{
-          'scale':0.8
-        })
-      });
-      about_el.addEventListener('mouseout',()=>{
-        TweenMax.to('.about__wrap__image',0.2,{
-          'scale':1
-        })
-      });
     }
   },
+  mounted(){
+    window.onscroll = event =>{
+      let scroll_move = window.pageYOffset
+      let view_hight = window.parent.screen.height;
+      let doc_hight = document.documentElement.scrollHeight
+      let scroll_percent = scroll_move / doc_hight * -100
+      this.first_rotate_x = scroll_percent
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+  .section{
+    perspective: 200px;
+  }
   .page{
     @include full_screen
   }
@@ -93,8 +71,13 @@ export default {
       @include full_size;
       @include middle;
       position: relative;
+      border: 1px solid #e4e4e4;
+      background: #fcfcfc;
+      perspective: 200px;
+
       &__logo{
         width: 40vw;
+
       }
     }
   }
