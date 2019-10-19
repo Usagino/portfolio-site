@@ -61,6 +61,9 @@ export default {
 <style lang="scss" scoped>
   .section{
     perspective: 200px;
+    *{
+      font-family: futura-pt, sans-serif;
+    }
   }
   .page{
     @include full_screen

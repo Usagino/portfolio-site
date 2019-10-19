@@ -102,6 +102,9 @@
 
 <style lang="scss" scoped>
   .menu{
+    *{
+      font-family: futura-pt, sans-serif;
+    }
     &__icon, &__nav,&__back{
       position: fixed;
       top: 0;
