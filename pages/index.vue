@@ -75,7 +75,7 @@ export default {
       @include middle;
       position: relative;
       border: 1px solid #e4e4e4;
-      background: #fcfcfc;
+      background: #f6f6f6;
       perspective: 200px;
 
       &__logo{
