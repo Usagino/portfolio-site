@@ -8,8 +8,8 @@
     .works.section
       .works__wrap
         nuxt-link.works__wrap--title(to="/works") Works
-        span.works__wrap--circle
-          span.works__wrap--circle--inner
+        - for (var x = 0; x < 10; x++)
+          .works__wrap--circle
     .about.section
       .about__wrap
         .about__wrap__image
@@ -74,8 +74,8 @@ export default {
       @include full_size;
       @include middle;
       position: relative;
-      border: 1px solid #e4e4e4;
-      background: #f6f6f6;
+      border: 2px solid #e4e4e4;
+      border-top: none;
       perspective: 200px;
 
       &__logo{
@@ -97,30 +97,15 @@ export default {
         font-size: 10rem;
         font-weight: bold;
         color: $text_color1;
-        &:hover + .works__wrap--circle{
-          border-radius: 100% 90% 100% 100%/90% 100% 100% 100%;
-          height: 42vw;
-          width: 42vw;
-          background: #90acf4;
-        }
-        &:hover + .works__wrap--circle > .works__wrap--circle--inner{
-          border-radius: 40% 30% 20% 80%/20% 30% 50% ;
-          height: 7vw;
-          width: 7vw;
+        &:hover{
+          opacity: 0.7;
         }
       }
       &--circle{
         content: "";
-        height: 40vw;
-        width: 40vw;
-        background: #84bff6;
         @include middle-absolute;
         z-index: -1;
-        animation: rotate-anime 10s linear 0s forwards;
-        animation-iteration-count: infinite;
-        border-radius: 40% 40% 50% 40%/30% 50% 50% ;
         transition: all .2s ease .1s;
-
         @keyframes rotate-anime{
           to{
             transform: rotate(0deg);
@@ -129,16 +114,15 @@ export default {
             transform: rotate(360deg);
           }
         }
-        &--inner{
-          transition: all .2s ease .1s;
-          height: 10vw;
-          width: 10vw;
-          background: #ffffff;
-          @include middle-absolute;
-          z-index: -1;
-          border-radius: 40% 80% 50% 80%/30% 50% 50% ;
-          animation: rotate-anime 10s linear 0s forwards;
-          animation-iteration-count: infinite;
+        @for $i from 1 through 10 {
+          &:nth-of-type(#{$i}){
+            border-radius: #{random(100)}% #{random(100)}% #{random(100)}% #{random(100)}%/ 30% #{random(100)}% #{random(100)}% 20% ;
+            border: 1px solid hsl(random(254), 86%, 74%);
+            animation: rotate-anime #{$i/4 + 10}s linear 0s forwards;
+            animation-iteration-count: infinite;
+            height: #{$i / 5 + 25}vw;
+            width: #{$i / 5 + 25}vw;
+          }
         }
       }
     }
@@ -169,9 +153,8 @@ export default {
         white-space: nowrap;
         font-size: 10rem;
         font-weight: bold;
-        &:hover + div{
-          height: 70%;
-          width: 70%;
+        &:hover{
+          opacity: 0.7;
         }
       }
     }
