@@ -8,10 +8,9 @@
           v-for="article in articles"
           :key="article.id"
           )
-
           nuxt-link.work__thumbnail(:to="`/works/${article.id}`")
             .work__thumbnail__wrap
-              img(:src="article.thumbnail.url" decoding="async")
+              img(:src="article.thumbnail.url")
               span.work__thumbnail__overay
               h2 {{ article.title }}
       vueFooter.section
@@ -19,6 +18,7 @@
 
 <script>
   // components
+
   import vueFooter from '@/components/vueFooter'
   // library
   import inView from 'in-view'
@@ -27,15 +27,13 @@
 
   export default {
     components: {
-      vueFooter,
+      vueFooter
     },
     data () {
       return {
         articles: null,
-
       }
     },
-
     methods:{
       afterLoad(anchorLink, index){
         // console.log(index.index);
