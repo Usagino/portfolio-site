@@ -28,8 +28,7 @@
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
-    "sass": "^1.23.0-module.beta.1",
-    "sass-loader": "^8.0.0",
+    "sass": "^1.22.0",
     "superagent": "^5.0.5",
     "vue-fullpage.js": "^0.1.3",
     "vue-intersect": "^1.1.3",
@@ -47,11 +46,8 @@
     "eslint-loader": "^3.0.0",
     "eslint-plugin-vue": "^5.2.3",
     "ityped": "^1.0.3",
-    "markdown-it-anchor": "^5.2.3",
-    "markdown-it-highlight": "^0.2.0",
-    "markdown-it-meta": "0.0.1",
-    "markdown-it-table-of-contents": "^0.4.4",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "vue-lottie": "^0.2.1",
     "vue-masonry-css": "^1.0.3"
   }

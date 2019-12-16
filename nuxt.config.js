@@ -7,6 +7,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { name:"google-site-verification", content:"YgGTUH4xiuEVbvxh8XP911v5EW_CNOZUo-SvUcvRKk4"},
       { name: 'twitter:card' , content:'summary'},
       { name: 'twitter:site' , content:'@_Frontart'},
       { name: 'description', content:'日本工学院専門学校所属、デザイン専攻。画面の中のデザインだけではなく、使用者の将来までもをデザインできるデザイナーになりたいと考えている。趣味は写真とコーヒー。最近はモーショングラフィックスにはまっている。'},
@@ -46,11 +47,7 @@ module.exports = {
     'nuxt-fullpage.js'
   ],
   styleResources: {
-    sass: [
-      '~/assets/style/_variable.scss',
-      '~/assets/style/_reset.scss',
-      '~/assets/style/_transition.scss',
-    ],
+    scss: '~/assets/style/style.scss',
   },
   webfontloader: {
     google: {
@@ -60,17 +57,6 @@ module.exports = {
   plugins: [
     { src: '~/plugins/fullpage', ssr: false }
   ],
-  markdownit: {
-    preset: 'default',
-    injected: true,
-    breaks: true,
-    html: true,
-    linkify: true,
-    typography: true,
-    xhtmlOut: true,
-    langPrefix: 'language-',
-    quotes: '“”‘’',
-  },
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,

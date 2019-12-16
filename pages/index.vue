@@ -1,7 +1,7 @@
 <template lang="pug">
   section
     .first.section
-      .first__wrap(:style="{ transform: 'rotateX('+ first_rotate_x +'deg) ' }")
+      .first__wrap
         .first__wrap__logo
           myLogo
 
@@ -43,16 +43,6 @@ export default {
       first_rotate_x: 0,
       works_rotate_x:0,
       about_rotate_x: 0
-
-    }
-  },
-  mounted(){
-    window.onscroll = event =>{
-      let scroll_move = window.pageYOffset
-      let view_hight = window.parent.screen.height;
-      let doc_hight = document.documentElement.scrollHeight
-      let scroll_percent = scroll_move / doc_hight * -100
-      this.first_rotate_x = scroll_percent
     }
   }
 }
@@ -74,8 +64,6 @@ export default {
       @include full_size;
       @include middle;
       position: relative;
-      border: 2px solid #e4e4e4;
-      border-top: none;
       perspective: 200px;
 
       &__logo{
