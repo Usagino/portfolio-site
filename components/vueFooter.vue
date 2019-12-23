@@ -4,14 +4,13 @@
       .footer__wrap
         .footer__wrap__container
           nav.footer__wrap__container__sns
-
             ul.footer__wrap__container__sns__list
               li
                 h2 SNS
               li
-                a(href="https://twitter.com/_Frontart" target="_blank") Twitter
+                a(href="https://twitter.com/FrontartTokyo" target="_blank") Twitter
               li
-                a(href="https://www.instagram.com/frontartgraph/" target="_blank") Instagram
+                a(href="https://www.instagram.com/frontart.tokyo/" target="_blank") Instagram
               li
                 a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
           .footer__wrap__container__contact

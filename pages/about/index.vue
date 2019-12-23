@@ -169,7 +169,7 @@
           font-size: 3rem
         }
         p{
-          line-height: 2rem;
+          line-height: 3rem;
           letter-spacing: 2px;
           font-size: 1.5rem;
         }

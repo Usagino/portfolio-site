@@ -4,16 +4,18 @@
       .first__wrap
         .first__wrap__logo
           myLogo
-
     .works.section
       .works__wrap
+        .please_click
+          p 👉
         nuxt-link.works__wrap--title(to="/works") Works
-        - for (var x = 0; x < 10; x++)
-          .works__wrap--circle
+        img(src="/image/works.svg")
     .about.section
       .about__wrap
         .about__wrap__image
           cube
+        .please_click
+          p 👉
         nuxt-link.about__wrap__title(to="/about") About me
     vueFooter.section
 </template>
@@ -65,7 +67,6 @@ export default {
       @include middle;
       position: relative;
       perspective: 200px;
-
       &__logo{
         width: 40vw;
 
@@ -80,7 +81,6 @@ export default {
       @include middle;
       position: relative;
       &--title{
-        line-height: 72vh;
         display: block;
         font-size: 10rem;
         font-weight: bold;
@@ -89,29 +89,14 @@ export default {
           opacity: 0.7;
         }
       }
-      &--circle{
-        content: "";
-        @include middle-absolute;
+      img{
+        position: absolute;
+        width: 30vw;
+        height: auto;
+        top: 0;bottom: 0;
+        left: 0;right: 0;
+        margin: auto;
         z-index: -1;
-        transition: all .2s ease .1s;
-        @keyframes rotate-anime{
-          to{
-            transform: rotate(0deg);
-          }
-          from{
-            transform: rotate(360deg);
-          }
-        }
-        @for $i from 1 through 10 {
-          &:nth-of-type(#{$i}){
-            border-radius: #{random(100)}% #{random(100)}% #{random(100)}% #{random(100)}%/ 30% #{random(100)}% #{random(100)}% 20% ;
-            border: 1px solid hsl(random(254), 86%, 74%);
-            animation: rotate-anime #{$i/4 + 10}s linear 0s forwards;
-            animation-iteration-count: infinite;
-            height: #{$i / 5 + 25}vw;
-            width: #{$i / 5 + 25}vw;
-          }
-        }
       }
     }
   }
@@ -144,6 +129,25 @@ export default {
         &:hover{
           opacity: 0.7;
         }
+      }
+    }
+  }
+  .please_click{
+    height: 60px;
+    width: 60px;
+    @include middle;
+    margin-right: 16px;
+    overflow: hidden;
+    p{
+      font-size: 40px;
+      animation: click_show 300ms infinite alternate ease-in-out;
+    }
+    @keyframes click_show{
+      to{
+        transform: scale(0.9);
+      }
+      from{
+        transform: scale(1);
       }
     }
   }
@@ -211,6 +215,9 @@ export default {
 
          }
        }
+     }
+     .please_click{
+       margin-right: 4px;
      }
    }
 </style>
