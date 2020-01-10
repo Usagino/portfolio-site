@@ -15,6 +15,7 @@ module.exports = {
       { property: 'og:title',content:'Frontart' },
       { property: 'og:description',content:'This is my Portfolio' },
       { property: 'og:image',content:'https://frontart.tokyo/image/screen.png' },
+      { name: 'google-site-verification',content:'I5npgtyBbLAzXczrlqCu5XyLT6xtnKvyA2oroNv1om0'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
