@@ -11,10 +11,10 @@ module.exports = {
       { name: 'twitter:card' , content:'summary'},
       { name: 'twitter:site' , content:'@_Frontart'},
       { name: 'description', content:'画面の中のデザインだけではなく、使用者の将来までもをデザインできるデザイナーになりたいと考えている。趣味は写真とコーヒー。最近はモーショングラフィックスにはまっている。'},
-      { property: 'og:url',content:'https://frontart.tokyo/' },
+      { property: 'og:url',content:'https://frontartgraph.com/' },
       { property: 'og:title',content:'Frontart' },
       { property: 'og:description',content:'This is my Portfolio' },
-      { property: 'og:image',content:'https://frontart.tokyo/image/screen.png' },
+      { property: 'og:image',content:'https://frontartgraph.com/image/screen.png' },
       { name: 'google-site-verification',content:'I5npgtyBbLAzXczrlqCu5XyLT6xtnKvyA2oroNv1om0'}
     ],
     link: [

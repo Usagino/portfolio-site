@@ -1,4 +1,4 @@
-<template lang="pug">
+yuki@frontartgraph.com<template lang="pug">
   footer(id="footer")
     .footer
       .footer__wrap
@@ -10,14 +10,14 @@
               li
                 a(href="https://twitter.com/FrontartTokyo" target="_blank") Twitter
               li
-                a(href="https://www.instagram.com/frontart.tokyo/" target="_blank") Instagram
+                a(href="https://www.instagram.com/frontartgraph.com/" target="_blank") Instagram
               li
                 a(href="https://dribbble.com/usaginoniku" target="_blank") Dribbble
           .footer__wrap__container__contact
             ul.footer__wrap__container__contact__list
               li
                 h2 Contact
-              li yuki.itoh@front-artgraph.com
+              li yuki@frontartgraph.com
               li Japan Tokyo
               li copylight 2019 yuki itoh
           .footer__wrap__container__image
