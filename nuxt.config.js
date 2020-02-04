@@ -42,7 +42,8 @@ module.exports = {
     'nuxt-webfontloader',
     '@nuxtjs/markdownit',
     'nuxt-user-agent',
-    'nuxt-fullpage.js'
+    'nuxt-fullpage.js',
+    '@nuxtjs/pwa'
   ],
   styleResources: {
     scss: '~/assets/style/style.scss',

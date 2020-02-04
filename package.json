@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.5",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
     "fullpage.js": "^3.0.8",
     "gsap": "^2.1.2",
     "in-view": "^0.6.1",
