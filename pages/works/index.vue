@@ -18,18 +18,12 @@
 </template>
 
 <script>
-  // components
-
-  import VueFooter from '@/components/VueFooter'
   // library
   import inView from 'in-view'
   import { TweenMax } from 'gsap'
   import axios from 'axios'
 
   export default {
-    components: {
-      VueFooter
-    },
     data () {
       return {
         articles: null,

@@ -10,13 +10,8 @@
 </template>
 
 <script>
-  import VueFooter from '@/components/VueFooter'
-
   import axios from "axios";
   export default {
-    components: {
-      VueFooter,
-    },
     data () {
       return {
         id: this.$route.params.id,

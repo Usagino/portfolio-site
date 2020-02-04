@@ -30,7 +30,6 @@
 <script>
   import { TweenMax } from 'gsap'
   import axios from "axios";
-
   export default {
     data(){
       return {
