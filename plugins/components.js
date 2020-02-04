@@ -1,13 +1,12 @@
 import Vue from 'vue'
 // molecules
 import VueFooter from '@/components/VueFooter.vue'
-import card from '@/components/card.vue'
-import FpNav from '@/components/FpNav.vue'
+// import card from '@/components/card.vue'
+// import FpNav from '@/components/FpNav.vue'
 import loading from '@/components/loading.vue'
 import loadingAnime from '@/components/loadingAnime.vue'
 import sideMenu from '@/components/sideMenu.vue'
 import LetsDiving from '@/components/LetsDiving.vue'
-
 //lottie
 import aboutMe from '@/components/lottie/aboutMe.vue'
 import codeDesign from '@/components/lottie/codeDesign.vue'
@@ -21,8 +20,8 @@ import myLogo from '@/components/lottie/myLogo.vue'
 
 // Vue original component
 Vue.component('VueFooter', VueFooter)
-Vue.component('card', card)
-Vue.component('FpNav', FpNav)
+// Vue.component('card', card)
+// Vue.component('FpNav', FpNav)
 Vue.component('loading', loading)
 Vue.component('loadingAnime', loadingAnime)
 Vue.component('sideMenu', sideMenu)
