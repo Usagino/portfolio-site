@@ -21,25 +21,12 @@
 </template>
 
 <script>
-// components
-import sideMenu from '@/components/sideMenu'
-import VueFooter from '@/components/VueFooter'
-import Lottie from '@/components/lottie/Lottie'
-import myLogo from '@/components/lottie/myLogo'
-import cube from '@/components/lottie/cube'
 // library
 import inView from 'in-view'
 import { init } from 'ityped'
 import {TweenMax} from 'gsap'
 
 export default {
-  components: {
-    Lottie,
-    sideMenu,
-    myLogo,
-    VueFooter,
-    cube,
-  },
   data () {
     return {
       first_rotate_x: 0,
