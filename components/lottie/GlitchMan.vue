@@ -6,7 +6,7 @@
 
 <script>
 import Lottie from '@/components/lottie/Lottie'
-import * as animationData from "~/assets/json/mineglitch.json";
+import * as animationData from "~/assets/json/GlitchMan.json";
 export default {
   components:{
     Lottie

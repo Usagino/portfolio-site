@@ -14,7 +14,7 @@ import cube from '@/components/lottie/cube.vue'
 import itohLogo from '@/components/lottie/itohLogo.vue'
 import Lottie from '@/components/lottie/Lottie.vue'
 import menuAnime from '@/components/lottie/menuAnime.vue'
-import mineGlitch from '@/components/lottie/mineGlitch.vue'
+import GlitchMan from '@/components/lottie/GlitchMan.vue'
 import mouseScrollAnime from '@/components/lottie/mouseScrollAnime.vue'
 import myLogo from '@/components/lottie/myLogo.vue'
 
@@ -32,7 +32,7 @@ Vue.component('cube', cube)
 Vue.component('itohLogo',itohLogo )
 Vue.component('Lottie', Lottie)
 Vue.component('menuAnime', menuAnime)
-Vue.component('mineGlitch', mineGlitch)
+Vue.component('GlitchMan', GlitchMan)
 Vue.component('mouseScrollAnime', mouseScrollAnime)
 Vue.component('myLogo', myLogo)
 Vue.component('LetsDiving', LetsDiving)
