@@ -6,7 +6,7 @@
           img.work__thumbnail__image(:src="post_thumbnail")
         h1.work__title {{post_title}}
         .work__body(v-html="post_body")
-      VueFooter.section
+      AppFooter.section
 </template>
 
 <script>

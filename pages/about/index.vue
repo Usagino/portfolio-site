@@ -24,7 +24,7 @@
           .caption__wrap__text-box
             h1(v-html="get_about.about_title_3")
             p.caption__text(v-html="get_about.about_text_3")
-      VueFooter.section
+      AppFooter.section
 </template>
 
 <script>

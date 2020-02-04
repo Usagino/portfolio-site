@@ -6,7 +6,7 @@
         h1.container__not-found--text 404
       <h1 v-else>エラーが発生しました</h1>
       <h2><nuxt-link to="/">Back to Home</nuxt-link></h2>
-    VueFooter
+    AppFooter
 </template>
 
 <script>

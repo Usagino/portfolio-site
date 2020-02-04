@@ -1,6 +1,6 @@
 import Vue from 'vue'
 // molecules
-import VueFooter from '@/components/VueFooter.vue'
+import AppFooter from '@/components/AppFooter.vue'
 // import card from '@/components/card.vue'
 // import FpNav from '@/components/FpNav.vue'
 import loading from '@/components/loading.vue'
@@ -19,7 +19,7 @@ import mouseScrollAnime from '@/components/lottie/mouseScrollAnime.vue'
 import myLogo from '@/components/lottie/myLogo.vue'
 
 // Vue original component
-Vue.component('VueFooter', VueFooter)
+Vue.component('AppFooter', AppFooter)
 // Vue.component('card', card)
 // Vue.component('FpNav', FpNav)
 Vue.component('loading', loading)

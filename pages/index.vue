@@ -17,7 +17,7 @@
         .please_click
           p 👉
         nuxt-link.about__wrap__title(to="/about") About me
-    VueFooter.section
+    AppFooter.section
 </template>
 
 <script>

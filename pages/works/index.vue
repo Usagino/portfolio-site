@@ -14,7 +14,7 @@
               img(:src="article.thumbnail.url")
               span.work__thumbnail__overay
               h2 {{ article.title }}
-      VueFooter.section
+      AppFooter.section
 </template>
 
 <script>
