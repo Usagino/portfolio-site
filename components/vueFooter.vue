@@ -1,4 +1,4 @@
-yuki@frontartgraph.com<template lang="pug">
+<template lang="pug">
   footer(id="footer")
     .footer
       .footer__wrap
