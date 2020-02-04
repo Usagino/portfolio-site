@@ -10,7 +10,7 @@
 
 <script>
 import sideMenu from '@/components/sideMenu'
-import vueFooter from '@/components/vueFooter'
+import VueFooter from '@/components/VueFooter'
 export default {
   props: ['error'],
   layout: 'blog', // エラーページ用のカスタムレイアウトを指定できます,

@@ -3,6 +3,7 @@
     no-ssr
       .first
         h1 Works
+        LetsDiving
       .work
         .work__item(
           v-for="article in articles"
@@ -13,13 +14,13 @@
               img(:src="article.thumbnail.url")
               span.work__thumbnail__overay
               h2 {{ article.title }}
-      vueFooter.section
+      VueFooter.section
 </template>
 
 <script>
   // components
 
-  import vueFooter from '@/components/vueFooter'
+  import VueFooter from '@/components/VueFooter'
   // library
   import inView from 'in-view'
   import { TweenMax } from 'gsap'
@@ -27,7 +28,7 @@
 
   export default {
     components: {
-      vueFooter
+      VueFooter
     },
     data () {
       return {
@@ -35,16 +36,6 @@
       }
     },
     methods:{
-      afterLoad(anchorLink, index){
-        // console.log(index.index);
-        document.querySelector('.fp-nav__count').innerHTML = index.index + 1;
-        return index.index + 1;
-      },
-      afterRender(){
-        const section_length = document.querySelectorAll('.section').length
-        document.querySelector('.fp-nav__index').innerHTML = section_length
-        return section_length
-      },
       fetchArticles() {
         axios
           .get("https://frontart-tokyo.microcms.io/api/v1/works", {
@@ -70,6 +61,8 @@
 </script>
 
 <style lang="scss" scoped>
+
+
 .first{
   @include full_screen;
   @include middle;
@@ -91,20 +84,29 @@
     transition: all .6s ease .2s;
     position: relative;
     box-shadow: 4rem 4rem 4rem #a1a1a130;
-    &:hover{
-      box-shadow: 3rem 3rem 4rem #a1a1a130;
+    &:nth-child(3n - 1){
+      transform: translateY(-48px);
+    }
+    &:nth-child(3n){
+      transform: translateY(-96px);
+    }
 
+    &:hover{
+      transform: scale(0.9);
+      box-shadow: 3rem 3rem 4rem #a1a1a130;
     }
   }
   &__thumbnail{
     height: 100%;
     width: 100%;
 
+
     &__wrap{
       overflow: hidden;
       height: 100%;
       width: 100%;
       position: relative;
+
       &:hover > img{
         transform: scale(1.1);
       }

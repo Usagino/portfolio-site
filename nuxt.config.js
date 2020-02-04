@@ -1,8 +1,8 @@
-const config = require('./.contentful.json')
+import axios from 'axios'
 
 module.exports = {
   head: {
-    title: 'frontart tokyo',
+    title: 'Frontartgraph',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,14 +24,11 @@ module.exports = {
   },
 
   build: {
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+    hardSource: true,
+    extend(config, ctx) {},
+    terser: {
+      terserOptions: {
+        compress: { drop_console: true }
       }
     }
   },
@@ -56,13 +53,37 @@ module.exports = {
     }
   },
   plugins: [
+    {src: '~/plugins/library'},
+    {src: '~/plugins/components'},
     { src: '~/plugins/fullpage', ssr: false }
   ],
-  env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: config.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
+  // env: {
+  //   CTF_SPACE_ID: config.CTF_SPACE_ID,
+  //   CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
+  //   CTF_PERSON_ID: config.CTF_PERSON_ID,
+  //   CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
+  // },
+  generate: {
+    interval: 2000,
+    async routes() {
+      // paginate
+      const paginate = await axios.get(
+        "https://frontart-tokyo.microcms.io/api/v1/works",{
+          headers: { "X-API-KEY": "79b473a7-50ee-4d1a-af50-5298d6a778d8" }
+        }
+      )
+      const paginateRes = paginate.data.contents.map((res) => {
+        return {
+          route: '/works/' + res.id,
+          payload: { paginate }
+        }
+      })
+      // console.log(paginateRes)
+
+      return Promise.all([paginateRes]).then((values) => {
+        return [...values[0]]
+      })
+    }
   },
   mode: 'universal',
 }

@@ -17,13 +17,13 @@
         .please_click
           p 👉
         nuxt-link.about__wrap__title(to="/about") About me
-    vueFooter.section
+    VueFooter.section
 </template>
 
 <script>
 // components
 import sideMenu from '@/components/sideMenu'
-import vueFooter from '@/components/vueFooter'
+import VueFooter from '@/components/VueFooter'
 import Lottie from '@/components/lottie/Lottie'
 import myLogo from '@/components/lottie/myLogo'
 import cube from '@/components/lottie/cube'
@@ -37,7 +37,7 @@ export default {
     Lottie,
     sideMenu,
     myLogo,
-    vueFooter,
+    VueFooter,
     cube,
   },
   data () {

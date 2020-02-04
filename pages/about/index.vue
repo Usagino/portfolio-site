@@ -2,6 +2,7 @@
   section
     no-ssr
       .first.section
+        LetsDiving
         .first__wrap
           .first__wrap__title-box
             h1.first__wrap__title-box--text YUKI ITOH
@@ -23,25 +24,14 @@
           .caption__wrap__text-box
             h1(v-html="get_about.about_title_3")
             p.caption__text(v-html="get_about.about_text_3")
-      vueFooter.section
+      VueFooter.section
 </template>
 
 <script>
-  // components
-  import vueFooter from '@/components/vueFooter'
-  import codeDesign from '@/components/lottie/codeDesign'
-  import aboutMe from '@/components/lottie/aboutMe'
-  import mineGlitch from '@/components/lottie/mineglitch'
   import { TweenMax } from 'gsap'
   import axios from "axios";
 
   export default {
-    components: {
-      vueFooter,
-      codeDesign,
-      aboutMe,
-      mineGlitch
-    },
     data(){
       return {
         get_about:Object
@@ -68,9 +58,14 @@
 </script>
 
 <style lang="scss" scoped>
+.section{
+  max-width: 1440px;
+  margin: auto;
+}
 .first{
   &__wrap{
     @include full_screen;
+    width: auto;
     @include middle;
     position: relative;
     &__title-box{
@@ -103,7 +98,6 @@
     }
   }
 }
-
 .caption{
   width: 100vw;
   @include middle

@@ -6,16 +6,16 @@
           img.work__thumbnail__image(:src="post_thumbnail")
         h1.work__title {{post_title}}
         .work__body(v-html="post_body")
-      vueFooter.section
+      VueFooter.section
 </template>
 
 <script>
-  import vueFooter from '@/components/vueFooter'
+  import VueFooter from '@/components/VueFooter'
 
   import axios from "axios";
   export default {
     components: {
-      vueFooter,
+      VueFooter,
     },
     data () {
       return {
@@ -52,7 +52,9 @@
 <style lang="scss">
 .work{
   &__wrap{
-    margin:0 calc(40px + 8rem);
+    max-width: 1440px;
+    padding: 0 calc(32px + 8rem);
+    margin:0 auto;
   }
   &__thumbnail{
     @include full_screen;

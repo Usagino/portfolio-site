@@ -5,13 +5,9 @@
 </template>
 
 <script>
-import Lottie from "~/components/Lottie.vue";
 import * as animationData from "~/assets/json/loading.json";
 
 export default {
-  components:{
-    Lottie
-  },
   data() {
     return {
       lottieOptions: {
