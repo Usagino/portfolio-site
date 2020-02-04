@@ -8,7 +8,7 @@
               li
                 h2 SNS
               li
-                a(href="https://twitter.com/FrontartTokyo" target="_blank") Twitter
+                a(href="https://twitter.com/FrontArtGraph" target="_blank") Twitter
               li
                 a(href="https://www.instagram.com/frontartgraph.com/" target="_blank") Instagram
               li
@@ -19,7 +19,7 @@
                 h2 Contact
               li yuki@frontartgraph.com
               li Japan Tokyo
-              li copylight 2019 yuki itoh
+              li copylight 2020 yuki itoh
           .footer__wrap__container__image
             img.footer__wrap__container__image__logo(src="/image/my_logo.svg")
 </template>
