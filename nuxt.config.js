@@ -42,6 +42,7 @@ module.exports = {
     'nuxt-user-agent',
     'nuxt-fullpage.js',
     '@nuxtjs/style-resources',
+    'nuxt-user-agent',
     '@nuxtjs/markdownit',
     '@nuxtjs/pwa',
     "@nuxtjs/axios",
@@ -58,7 +59,7 @@ module.exports = {
     {src: '~/plugins/decodeNode'},
     {src: '~/plugins/fetchData'},
     {src: '~/plugins/components'},
-    { src: '~/plugins/fullpage', ssr: false }
+    { src: '~/plugins/swiper', ssr: false }
   ],
   // env: {
   //   CTF_SPACE_ID: config.CTF_SPACE_ID,
