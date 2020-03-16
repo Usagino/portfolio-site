@@ -77,10 +77,7 @@
     position: relative;
     @include middle;
     @include mq(sm){
-      height: fit-content;
-      width: 340px;
       margin: auto;
-      margin-bottom: 40px;
     }
     &__cover{
       position: absolute;
@@ -104,12 +101,7 @@
     }
     display: block;
   }
-  &--sp{
 
-    &__item{
-
-    }
-  }
 }
 
 .swiper-wrapper{transition-timing-function:cubic-bezier(0.000, 0.000, 0.580, 1.000) !important; }
