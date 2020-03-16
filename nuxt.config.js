@@ -8,6 +8,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'yuki ito Portfolio' },
       //{ name:"google-site-verification", content:"YgGTUH4xiuEVbvxh8XP911v5EW_CNOZUo-SvUcvRKk4"},
+      { meta:'viewport',content:'minimal-ui'},
       { name: 'twitter:card' , content:'summary'},
       { name: 'twitter:site' , content:'@_Frontart'},
       { name: 'description', content:'画面の中のデザインだけではなく、使用者の将来までもをデザインできるデザイナーになりたいと考えている。趣味は写真とコーヒー。最近はモーショングラフィックスにはまっている。'},
