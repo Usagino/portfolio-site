@@ -7,6 +7,8 @@ import loading from '@/components/loading.vue'
 import loadingAnime from '@/components/loadingAnime.vue'
 import sideMenu from '@/components/sideMenu.vue'
 import LetsDiving from '@/components/LetsDiving.vue'
+import mouseStoker from '@/components/mouseStoker.vue'
+
 //lottie
 import aboutMe from '@/components/lottie/aboutMe.vue'
 import codeDesign from '@/components/lottie/codeDesign.vue'
@@ -36,3 +38,4 @@ Vue.component('GlitchMan', GlitchMan)
 Vue.component('mouseScrollAnime', mouseScrollAnime)
 Vue.component('myLogo', myLogo)
 Vue.component('LetsDiving', LetsDiving)
+Vue.component('mouseStoker', mouseStoker)

@@ -1,71 +1,50 @@
 <template lang="pug">
-  no-ssr
-    .work
-      .work__wrap
-        .work__thumbnail
-          img.work__thumbnail__image(:src="post_thumbnail")
-        h1.work__title {{post_title}}
-        .work__body(v-html="post_body")
-      AppFooter.section
+  .work
+    .work__thumbnail(:style="{backgroundImage:'url('+this.workContents.thumbnail.url+')'}")
+      h1.work__title {{this.workContents.title}}
+    .work__wrap
+      .work__body(v-html="this.workContents.body")
+    AppFooter.section
 </template>
 
 <script>
-  import axios from "axios";
   export default {
-    data () {
-      return {
-        id: this.$route.params.id,
-        post: null,
-        post_title:null,
-        post_body:null,
-        post_thumbnail:null
-      }
-    },
-    methods:{
-      fetchArticles_single_post() {
-        axios.get(`https://frontart-tokyo.microcms.io/api/v1/works/${this.$route.params.id}`, {
-            headers: { "X-API-KEY": "79b473a7-50ee-4d1a-af50-5298d6a778d8" }
-          })
-          .then(res => {
-            this.post = res.data;
-            this.post_title = res.data.title
-            this.post_body = res.data.body
-            this.post_thumbnail = res.data.thumbnail.url
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      }
-    },
-    mounted() {
-      this.fetchArticles_single_post();
-    },
 
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .work{
   &__wrap{
-    max-width: 1440px;
-    padding: 0 calc(32px + 8rem);
+    max-width: 1080px;
     margin:0 auto;
   }
   &__thumbnail{
     @include full_screen;
     width: 100%;
     @include middle;
-    &__image{
-      height: 70%;
-      width: 100%;
-      object-fit: cover;
+    background-attachment: fixed;
+
+    position: relative;
+
+    &:before{
+      content: '';
+      position: absolute;
+      @include full_screen;
+      top: 0;left: 0;
+      background:rgba(0, 0, 0, 0.4);
     }
+
   }
   &__title{
     font-size: 32px;
-    margin-bottom: 18px;
+    color: white;
+
+    z-index: 10;
   }
   &__body{
+    margin: auto;
+    box-sizing: border-box;
     p,span{
       font-size: 18px;
       line-height: 36px;
@@ -96,14 +75,14 @@
 @include mq(sm){
   .work{
     &__wrap{
-      margin:0 30px;
+      max-width: 340px;
     }
     &__thumbnail{
       @include full_screen;
       width: 100%;
       @include middle;
       &__image{
-        height: 70%;
+        height: 100%;
         width: 100%;
         object-fit: cover;
       }

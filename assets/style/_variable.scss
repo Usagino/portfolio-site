@@ -71,3 +71,10 @@ $breakpoints: (
     @content;
   }
 }
+@mixin strok_text{
+  font-family: futura-pt, sans-serif;
+  -webkit-text-stroke: 1px $text_color1;
+  font-weight: bold;
+  text-stroke: 1px $text_color1;
+  color: white;
+}

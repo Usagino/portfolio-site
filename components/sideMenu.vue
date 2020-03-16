@@ -115,21 +115,30 @@
       height: 4rem;
       width: 4rem;
       right: 4rem;
-      z-index: 1001;
+      z-index: 11;
       cursor: pointer;
+      @include mq(sm){
+        height: 5rem !important;
+        width: 5rem !important;
+        top: auto;
+        left: auto;
+        bottom: 4rem !important;
+        right: 4rem !important;
+        margin: 0px;
+      }
     }
     &__back{
       height: 100vh;
       width: 100vw;
       background: #6188ff;
-      z-index: 999;
+      z-index: 9;
       transform: translateX(-100%);
     }
     &__nav{
       height: 100vh;
       width: 100vw;
       background: #f2f5fc;
-      z-index: 1000;
+      z-index: 10;
       right: 0;
       transform: translateX(100%);
 

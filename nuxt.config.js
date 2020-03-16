@@ -38,23 +38,25 @@ module.exports = {
     // host: '0.0.0.0', // デフォルト: localhost
   },
   modules: [
-    '@nuxtjs/style-resources',
     'nuxt-webfontloader',
-    '@nuxtjs/markdownit',
     'nuxt-user-agent',
     'nuxt-fullpage.js',
-    '@nuxtjs/pwa'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit',
+    '@nuxtjs/pwa',
+    "@nuxtjs/axios",
   ],
   styleResources: {
     scss: '~/assets/style/style.scss',
   },
   webfontloader: {
     google: {
-      families: ['Noto+Sans+JP','Raleway']
+      families: ["Noto Sans JP",'Raleway']
     }
   },
   plugins: [
-    {src: '~/plugins/library'},
+    {src: '~/plugins/decodeNode'},
+    {src: '~/plugins/fetchData'},
     {src: '~/plugins/components'},
     { src: '~/plugins/fullpage', ssr: false }
   ],
