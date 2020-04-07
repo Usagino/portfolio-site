@@ -64,8 +64,7 @@
         display: block;
         border: 1px solid #f2f2f2;
         height: auto;
-        max-width: 1000px;
-        margin:36px auto;
+        width: 100%;
         text-align: center;
       }
     }
