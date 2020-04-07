@@ -13,7 +13,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .work{
   &__wrap{
     max-width: 1080px;
@@ -64,10 +64,9 @@
         display: block;
         border: 1px solid #f2f2f2;
         height: auto;
-        max-width: 50%;
+        max-width: 1000px;
         margin:36px auto;
         text-align: center;
-        border-radius: 16px;
       }
     }
   }

@@ -3,14 +3,14 @@
     mouseStoker(ref="ms")
     .first
       h1 WORKS
-    swiper.work(:options="swiperOption")
-      swiper-slide.work__item(
+    swiper.project(:options="swiperOption")
+      swiper-slide.project__item(
         v-for="article in this.worksList.contents"
         :key="article.id"
         )
-        .work__item__cover
-        .work__item__wrap(@mouseover="linkMouseover(article.title)" @mouseleave="linkMouseLeave")
-          nuxt-link.work__thumbnail(:to="`/works/${article.id}`" :style="{backgroundImage:'url('+article.thumbnail.url+')'}")
+        .project__item__cover
+        .project__item__wrap(@mouseover="linkMouseover(article.title)" @mouseleave="linkMouseLeave")
+          nuxt-link.project__thumbnail(:to="`/works/${article.id}`" :style="{backgroundImage:'url('+article.thumbnail.url+')'}")
 </template>
 
 <script>
@@ -32,8 +32,8 @@
           watchSlidesVisibility: true,
           on:{
             transitionEnd:()=>{
-              TweenMax.to('.swiper-slide-visible > .work__item__cover',0.3,{scaleX:0})
-              TweenMax.to('.swiper-slide-visible .work__thumbnail',0.3,{delay:0.1,boxShadow:'rgba(184, 184, 184, 0.6) 8px 8px 40px 4px'})
+              TweenMax.to('.swiper-slide-visible > .project__item__cover',0.3,{scaleX:0})
+              TweenMax.to('.swiper-slide-visible .project__thumbnail',0.3,{delay:0.1,boxShadow:'rgba(184, 184, 184, 0.6) 8px 8px 40px 4px'})
             }
           }
         },
@@ -69,7 +69,7 @@
     }
   }
 }
-.work{
+.project{
   @include full_screen;
   &__item{
 
