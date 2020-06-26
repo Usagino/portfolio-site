@@ -17,7 +17,7 @@
             ul.footer__wrap__container__contact__list
               li
                 h2 Contact
-              li yuki@frontartgraph.com
+              li hello@frontartgraph.com
               li Japan Tokyo
               li copylight 2020 yuki itoh
           .footer__wrap__container__image
