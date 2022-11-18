@@ -21,7 +21,7 @@
     "lodash": "^4.17.15",
     "lodash.template": "^4.5.0",
     "macy": "^2.5.1",
-    "nuxt": "^2.11.0",
+    "nuxt": "^2.15.8",
     "nuxt-fullpage.js": "0.0.3",
     "nuxt-sass-resources-loader": "^2.0.5",
     "nuxt-user-agent": "^1.2.2",
